@@ -1,0 +1,393 @@
+'use strict';
+
+// This is a read-only static storybook. Edit content/memories.json to add stories.
+// No accounts, tokens, local storage, upload endpoint or backend is required.
+const chapterLabels = { pregnancy: '還未見面', birth: '你好，承熹', growing: '一起長大' };
+const kindLabels = { memory: '日常回憶', milestone: '每個第一次', letter: '寫給你的信' };
+const supportedMime = new Set([
+  'image/jpeg', 'image/png', 'image/webp', 'image/gif', 'image/avif',
+  'video/mp4', 'video/quicktime', 'video/webm'
+]);
+const state = {
+  profile: { name: '許承熹', birthday: '2025-09-20', birthTime: '15:08' },
+  memories: [], filter: 'all', mediaFilter: 'all', sort: 'asc', cover: null
+};
+const byId = (id) => document.getElementById(id);
+const isPhoto = (file) => file.mime.startsWith('image/');
+const dotDate = (date) => date.replaceAll('-', '.');
+const originalCover = byId('cover-window').firstElementChild.cloneNode(true);
+
+function el(tag, className, text) {
+  const element = document.createElement(tag);
+  if (className) element.className = className;
+  if (text !== undefined) element.textContent = text;
+  return element;
+}
+
+function icon(name, size = 24) {
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.setAttribute('class', 'icon');
+  svg.setAttribute('width', size);
+  svg.setAttribute('height', size);
+  svg.setAttribute('aria-hidden', 'true');
+  const use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+  use.setAttribute('href', '#icon-' + name);
+  svg.append(use);
+  return svg;
+}
+
+function calendarDate(value) {
+  if (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
+  const [year, month, day] = value.split('-').map(Number);
+  if (year < 1000 || month < 1 || month > 12 || day < 1) return false;
+  const actual = new Date(Date.UTC(year, month - 1, day));
+  return actual.getUTCFullYear() === year && actual.getUTCMonth() === month - 1 && actual.getUTCDate() === day;
+}
+
+function todayHK() {
+  const parts = new Intl.DateTimeFormat('en', {
+    timeZone: 'Asia/Hong_Kong', year: 'numeric', month: '2-digit', day: '2-digit'
+  }).formatToParts(new Date());
+  const part = (type) => parts.find((entry) => entry.type === type).value;
+  return `${part('year')}-${part('month')}-${part('day')}`;
+}
+
+function ageLabel(date) {
+  if (!calendarDate(date)) return '';
+  const birthday = state.profile.birthday;
+  if (date < birthday) return '期待初次見面';
+  const [birthYear, birthMonth, birthDay] = birthday.split('-').map(Number);
+  const [year, month, day] = date.split('-').map(Number);
+  let months = (year - birthYear) * 12 + month - birthMonth;
+  const anniversary = (count) => {
+    const first = new Date(Date.UTC(birthYear, birthMonth - 1 + count, 1));
+    const lastDay = new Date(Date.UTC(first.getUTCFullYear(), first.getUTCMonth() + 1, 0)).getUTCDate();
+    return Date.UTC(first.getUTCFullYear(), first.getUTCMonth(), Math.min(birthDay, lastDay));
+  };
+  const now = Date.UTC(year, month - 1, day);
+  if (now < anniversary(months)) months -= 1;
+  const days = Math.floor((now - anniversary(months)) / 86400000);
+  return [Math.floor(months / 12) ? `${Math.floor(months / 12)}歲` : '',
+    months % 12 ? `${months % 12}個月` : '', days ? `${days}日` : ''].filter(Boolean).join(' ') || '出生的第一天';
+}
+
+// Only HTTPS or project-relative files can become media URLs. In particular,
+// protocol-relative, root-relative, javascript:, data:, file: and traversal URLs
+// are rejected. Local media stays inside this Pages site's base directory.
+function safeMediaUrl(value) {
+  if (typeof value !== 'string' || !value || value !== value.trim()) return null;
+  if (/[\u0000-\u001f\u007f\\]/.test(value)) return null;
+  try {
+    if (/^https:\/\//i.test(value)) {
+      const url = new URL(value);
+      return url.protocol === 'https:' && !url.username && !url.password ? url.href : null;
+    }
+    if (/^[a-z][a-z\d+.-]*:/i.test(value) || /^[/?#]/.test(value)) return null;
+    const decodedPath = decodeURIComponent(value.split(/[?#]/)[0]);
+    if (decodedPath.includes('\\') || decodedPath.split('/').some((part) => part === '..')) return null;
+    const base = new URL('./', document.baseURI);
+    const resolved = new URL(value, base);
+    if (resolved.origin !== base.origin || !resolved.pathname.startsWith(base.pathname)) return null;
+    return value;
+  } catch {
+    return null;
+  }
+}
+
+function readContent(data) {
+  if (!data || typeof data !== 'object' || !Array.isArray(data.memories)) throw new Error('Invalid story data');
+  let skipped = 0;
+  const profile = data.profile && typeof data.profile === 'object' ? data.profile : {};
+  state.profile = {
+    name: typeof profile.name === 'string' && profile.name.trim() ? profile.name.trim().slice(0, 80) : '許承熹',
+    birthday: calendarDate(profile.birthday) ? profile.birthday : '2025-09-20',
+    birthTime: typeof profile.birthTime === 'string' && /^([01]\d|2[0-3]):[0-5]\d$/.test(profile.birthTime) ? profile.birthTime : '15:08'
+  };
+  const memories = [];
+  const seenIds = new Set();
+  for (const source of data.memories) {
+    if (!source || typeof source !== 'object' || typeof source.id !== 'string' || !source.id.trim() ||
+        seenIds.has(source.id) || typeof source.title !== 'string' || !source.title.trim() ||
+        !calendarDate(source.date) || !Object.hasOwn(chapterLabels, source.chapter) ||
+        !Object.hasOwn(kindLabels, source.kind)) {
+      skipped += 1;
+      continue;
+    }
+    const media = [];
+    for (const file of Array.isArray(source.media) ? source.media : []) {
+      const url = file && typeof file === 'object' ? safeMediaUrl(file.url) : null;
+      if (!url || typeof file.mime !== 'string' || !supportedMime.has(file.mime.toLowerCase())) {
+        skipped += 1;
+        continue;
+      }
+      media.push({
+        id: typeof file.id === 'string' ? file.id : `${source.id}-media-${media.length + 1}`,
+        name: typeof file.name === 'string' ? file.name.slice(0, 200) : '',
+        mime: file.mime.toLowerCase(), size: Number.isFinite(file.size) ? file.size : 0, url
+      });
+    }
+    seenIds.add(source.id);
+    memories.push({
+      id: source.id, title: source.title.trim().slice(0, 120), date: source.date,
+      chapter: source.chapter, kind: source.kind,
+      note: typeof source.note === 'string' ? source.note.slice(0, 10000) : '',
+      featured: source.featured === true,
+      createdAt: typeof source.createdAt === 'string' ? source.createdAt : source.date, media
+    });
+  }
+  state.memories = memories;
+  return skipped;
+}
+
+function updateProfile() {
+  byId('profile-eyebrow').textContent = 'THE STORY OF ' + state.profile.name;
+  byId('age-label').textContent = '承熹今天 ' + ageLabel(todayHK());
+  const [year, month, day] = state.profile.birthday.split('-');
+  byId('birth-stamp-day').textContent = `${day} · ${month}`;
+  byId('birth-stamp-time').textContent = `${year} · ${state.profile.birthTime}`;
+  byId('footer-years').textContent = `${year} — ${todayHK().slice(0, 4)} · 我們的故事，未完待續。`;
+}
+
+function photo(file, alt, className, lazy = true) {
+  const image = el('img', className);
+  image.src = file.url;
+  image.alt = alt;
+  image.decoding = 'async';
+  image.loading = lazy ? 'lazy' : 'eager';
+  image.referrerPolicy = 'no-referrer';
+  image.addEventListener('error', () => {
+    const fallback = el('div', `${className || ''} media-unavailable`, '相片暫時未能顯示');
+    image.replaceWith(fallback);
+  }, { once: true });
+  return image;
+}
+
+function renderCover() {
+  state.cover = [...state.memories]
+    .filter((memory) => memory.featured && memory.media.some(isPhoto))
+    .sort((a, b) => b.createdAt.localeCompare(a.createdAt))[0] || null;
+  const window = byId('cover-window');
+  if (state.cover) {
+    window.replaceChildren(photo(state.cover.media.find(isPhoto), state.cover.title, '', false));
+    byId('cover-link').setAttribute('aria-label', '閱讀精選回憶：' + state.cover.title);
+  } else {
+    window.replaceChildren(originalCover.cloneNode(true));
+    byId('cover-link').setAttribute('aria-label', '翻開承熹的相簿');
+  }
+}
+
+function birthCard() {
+  const card = el('div', 'birth-entry');
+  const illustration = el('div', 'birth-illustration');
+  illustration.append(icon('flower', 46));
+  const text = el('div');
+  text.append(el('h3', '', '你好，承熹。'));
+  const [year, month, day] = state.profile.birthday.split('-').map(Number);
+  const [hour, minute] = state.profile.birthTime.split(':').map(Number);
+  const clock = `${hour < 12 ? '上午' : '下午'} ${hour % 12 || 12} 時 ${String(minute).padStart(2, '0')} 分。`;
+  const description = el('p');
+  description.append(document.createTextNode(`${year} 年 ${month} 月 ${day} 日，${clock}`), el('br'), document.createTextNode('我們的故事，從此多了一個你。'));
+  text.append(description);
+  card.append(illustration, text);
+  return card;
+}
+
+function memoryCard(memory) {
+  const card = el('button', 'memory-entry');
+  card.type = 'button';
+  card.setAttribute('aria-label', `閱讀回憶：${memory.title}`);
+  const first = memory.media[0];
+  if (first && isPhoto(first)) {
+    card.append(photo(first, '', 'entry-thumb'));
+  } else {
+    const placeholder = el('span', 'entry-thumb text-thumb');
+    placeholder.append(icon(first ? 'play' : memory.kind === 'milestone' ? 'star' : 'book', 30));
+    card.append(placeholder);
+  }
+  const body = el('span', 'entry-body');
+  body.append(el('span', 'entry-tag', kindLabels[memory.kind] + (memory.featured ? ' · 精選' : '')),
+    el('h3', '', memory.title), el('p', '', memory.note || `${memory.media.length} 個珍貴瞬間`));
+  card.append(body, icon('chevron', 16));
+  card.addEventListener('click', () => showMemory(memory));
+  return card;
+}
+
+function renderTimeline() {
+  const memories = state.memories.filter((memory) => memory.kind !== 'letter' &&
+    (state.filter === 'all' || memory.chapter === state.filter || state.filter === 'milestone' && memory.kind === 'milestone'));
+  const items = [...memories];
+  if (state.filter === 'all' || state.filter === 'birth') items.push({ builtin: true, date: state.profile.birthday });
+  items.sort((a, b) => (state.sort === 'asc' ? 1 : -1) * a.date.localeCompare(b.date));
+  const fragment = document.createDocumentFragment();
+  for (const item of items) {
+    const row = el('div', 'timeline-row');
+    const date = el('div', 'timeline-date', dotDate(item.date));
+    date.append(el('span', '', item.builtin ? '我們的第一天' : chapterLabels[item.chapter]));
+    row.append(date, item.builtin ? birthCard() : memoryCard(item));
+    fragment.append(row);
+  }
+  byId('timeline').replaceChildren(fragment);
+  byId('timeline').hidden = items.length === 0;
+  byId('story-empty').hidden = items.length !== 0;
+  byId('story-count').textContent = `${memories.length} 段回憶`;
+  byId('chapter-invitations').hidden = state.memories.length > 0 || state.filter !== 'all';
+  for (const button of document.querySelectorAll('[data-filter]')) {
+    const active = button.dataset.filter === state.filter;
+    button.classList.toggle('active', active);
+    button.setAttribute('aria-pressed', String(active));
+  }
+}
+
+function renderGallery() {
+  const media = state.memories.flatMap((memory) => memory.media.map((file) => ({ memory, file })));
+  const visible = media.filter(({ file }) => state.mediaFilter === 'all' ||
+    state.mediaFilter === 'photo' && isPhoto(file) || state.mediaFilter === 'video' && !isPhoto(file));
+  const fragment = document.createDocumentFragment();
+  for (const { memory, file } of visible) {
+    const tile = el('button', 'gallery-tile');
+    tile.type = 'button';
+    tile.setAttribute('aria-label', `查看${isPhoto(file) ? '相片' : '影片'}：${memory.title}`);
+    const frame = el('div', 'gallery-image' + (isPhoto(file) ? '' : ' video-placeholder'));
+    if (isPhoto(file)) frame.append(photo(file, memory.title));
+    else frame.append(icon('play', 38));
+    const badge = el('span', 'media-badge');
+    badge.append(icon(isPhoto(file) ? 'camera' : 'play', 10), document.createTextNode(isPhoto(file) ? '相片' : '影片'));
+    frame.append(badge);
+    tile.append(frame, el('h3', '', memory.title), el('small', '', dotDate(memory.date)));
+    tile.addEventListener('click', () => showMemory(memory, file));
+    fragment.append(tile);
+  }
+  byId('gallery').replaceChildren(fragment);
+  byId('gallery').hidden = visible.length === 0;
+  byId('album-empty').hidden = media.length !== 0 || state.mediaFilter !== 'all';
+  byId('album-filter-empty').hidden = visible.length > 0 || media.length === 0 && state.mediaFilter === 'all';
+  byId('album-filter-empty').textContent = `這裏還未有${state.mediaFilter === 'video' ? '影片' : state.mediaFilter === 'photo' ? '相片' : '回憶'}，故事等我們慢慢放進來。`;
+  byId('media-count').textContent = `${visible.length} 個瞬間`;
+  for (const button of document.querySelectorAll('[data-media-filter]')) {
+    const active = button.dataset.mediaFilter === state.mediaFilter;
+    button.classList.toggle('active', active);
+    button.setAttribute('aria-pressed', String(active));
+  }
+}
+
+function renderLetters() {
+  const letters = state.memories.filter((memory) => memory.kind === 'letter').sort((a, b) => b.date.localeCompare(a.date));
+  const fragment = document.createDocumentFragment();
+  for (const memory of letters) {
+    const card = el('button', 'letter-card');
+    card.type = 'button';
+    card.append(el('small', '', dotDate(memory.date)), el('h3', '', memory.title), el('p', '', memory.note));
+    card.addEventListener('click', () => showMemory(memory));
+    fragment.append(card);
+  }
+  byId('letters-grid').replaceChildren(fragment);
+  byId('letters-grid').hidden = letters.length === 0;
+  byId('letters-empty').hidden = letters.length !== 0;
+}
+
+function showMemory(memory, chosenFile) {
+  const dialog = byId('memory-dialog');
+  byId('dialog-title').textContent = memory.title;
+  byId('dialog-date').textContent = `${dotDate(memory.date)} · ${chapterLabels[memory.chapter]} · ${ageLabel(memory.date)} · ${kindLabels[memory.kind]}`;
+  byId('dialog-note').textContent = memory.note;
+  byId('dialog-note').hidden = !memory.note;
+  const fragment = document.createDocumentFragment();
+  let chosenFigure = null;
+  for (const file of memory.media) {
+    const figure = el('figure');
+    if (file === chosenFile) chosenFigure = figure;
+    if (isPhoto(file)) figure.append(photo(file, memory.title, '', false));
+    else {
+      const video = el('video');
+      video.src = file.url;
+      video.controls = true;
+      video.playsInline = true;
+      video.preload = 'metadata';
+      video.setAttribute('aria-label', memory.title);
+      video.addEventListener('error', () => {
+        figure.prepend(el('p', 'media-unavailable', '這段影片暫時未能播放，可試試開啟原檔。'));
+      }, { once: true });
+      figure.append(video);
+    }
+    const caption = el('figcaption');
+    const original = el('a', '', '開啟原檔');
+    original.href = file.url;
+    original.target = '_blank';
+    original.rel = 'noopener noreferrer';
+    caption.append(el('span', '', file.name || (isPhoto(file) ? '珍貴相片' : '珍貴影片')), original);
+    figure.append(caption);
+    fragment.append(figure);
+  }
+  byId('dialog-media').replaceChildren(fragment);
+  document.body.classList.add('dialog-open');
+  dialog.showModal();
+  dialog.scrollTop = 0;
+  byId('dialog-close').focus({ preventScroll: true });
+  if (chosenFigure && memory.media.indexOf(chosenFile) > 0) {
+    requestAnimationFrame(() => chosenFigure.scrollIntoView({ block: 'start', behavior: 'instant' }));
+  }
+}
+
+function renderAll() {
+  updateProfile();
+  renderCover();
+  renderTimeline();
+  renderGallery();
+  renderLetters();
+}
+
+async function load() {
+  byId('loading').hidden = false;
+  byId('load-error').hidden = true;
+  byId('reload').disabled = true;
+  try {
+    const response = await fetch('./content/memories.json', { cache: 'no-cache' });
+    if (!response.ok) throw new Error('Story could not be loaded');
+    const skipped = readContent(await response.json());
+    if (skipped) {
+      byId('load-error-message').textContent = '有部分回憶或相片暫時未能顯示。';
+      byId('load-error').hidden = false;
+    }
+  } catch {
+    byId('load-error-message').textContent = '暫時未能讀取回憶，請重新載入；如仍未能開啟，可查看頁尾的使用說明。';
+    byId('load-error').hidden = false;
+  } finally {
+    byId('loading').hidden = true;
+    byId('reload').disabled = false;
+    renderAll();
+  }
+}
+
+for (const button of document.querySelectorAll('[data-filter]')) {
+  button.addEventListener('click', () => { state.filter = button.dataset.filter; renderTimeline(); });
+}
+for (const button of document.querySelectorAll('[data-chapter]')) {
+  button.addEventListener('click', () => {
+    state.filter = button.dataset.chapter;
+    renderTimeline();
+    byId('story').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+  });
+}
+for (const button of document.querySelectorAll('[data-media-filter]')) {
+  button.addEventListener('click', () => { state.mediaFilter = button.dataset.mediaFilter; renderGallery(); });
+}
+byId('story-sort').addEventListener('change', (event) => { state.sort = event.target.value; renderTimeline(); });
+byId('cover-link').addEventListener('click', (event) => {
+  if (state.cover) { event.preventDefault(); showMemory(state.cover); }
+});
+byId('reload').addEventListener('click', load);
+byId('dialog-close').addEventListener('click', () => byId('memory-dialog').close());
+byId('memory-dialog').addEventListener('click', (event) => {
+  if (event.target !== byId('memory-dialog')) return;
+  const rect = event.target.getBoundingClientRect();
+  if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) event.target.close();
+});
+byId('memory-dialog').addEventListener('close', () => {
+  for (const video of byId('dialog-media').querySelectorAll('video')) video.pause();
+  byId('dialog-media').replaceChildren();
+  document.body.classList.remove('dialog-open');
+});
+document.addEventListener('visibilitychange', () => { if (!document.hidden) updateProfile(); });
+setInterval(updateProfile, 60000);
+renderAll();
+void load();

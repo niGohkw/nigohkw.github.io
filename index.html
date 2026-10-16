@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-HK">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="由還未見面，到一起長大。承熹的成長故事、相片、影片，和爸爸媽媽寫給未來的信。">
+  <meta name="theme-color" content="#f9f7f0">
+  <title>承熹的小宇宙 · 我們的成長故事</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#story">跳到成長故事</a>
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M20.9 13a9 9 0 0 1-9.9-9.9A9 9 0 1 0 20.9 13Z"/></symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+    <symbol id="icon-down" viewBox="0 0 24 24"><path d="M12 4v16m-6-6 6 6 6-6"/></symbol>
+    <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
+    <symbol id="icon-star" viewBox="0 0 24 24"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9Z"/></symbol>
+    <symbol id="icon-sparkles" viewBox="0 0 24 24"><path d="m12 3 2.7 6.3L21 12l-6.3 2.7L12 21l-2.7-6.3L3 12l6.3-2.7ZM20 2v4m-2-2h4M3 19v3m-1.5-1.5h3"/></symbol>
+    <symbol id="icon-camera" viewBox="0 0 24 24"><path d="M8 5 6 8H3v12h18V8h-3l-2-3Z"/><circle cx="12" cy="13" r="4"/></symbol>
+    <symbol id="icon-play" viewBox="0 0 24 24"><path d="m8 4 12 8-12 8Z"/></symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></symbol>
+    <symbol id="icon-book" viewBox="0 0 24 24"><path d="M12 6c-3-2-7-2-10-1v15c3-1 7-1 10 1 3-2 7-2 10-1V5c-3-1-7-1-10 1Zm0 0v15"/></symbol>
+    <symbol id="icon-flower" viewBox="0 0 24 24"><path d="M12 3c4-5 8 1 5 4 5-1 7 6 2 8 2 5-4 8-7 4-3 4-9 1-7-4-5-2-3-9 2-8-3-3 1-9 5-4Z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="icon-chevron" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol>
+  </svg>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="承熹的小宇宙首頁">
+        <span class="brand-icon"><svg class="icon" width="23" height="23" aria-hidden="true"><use href="#icon-moon"/></svg></span>
+        <span><strong id="site-name">承熹的小宇宙</strong><small>A LITTLE LIFE, A LOT OF LOVE</small></span>
+      </a>
+      <nav aria-label="主要導覽"><a href="#story">成長故事</a><a href="#album">相片與影片</a><a href="#letters">寫給承熹</a></nav>
+      <a class="btn small" href="#album"><svg class="icon" width="15" height="15" aria-hidden="true"><use href="#icon-camera"/></svg>翻開相簿</a>
+    </header>
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div>
+          <p class="eyebrow" id="profile-eyebrow">THE STORY OF 許承熹</p>
+          <h1 id="hero-title">小小的你，<br><em>大大的世界。</em></h1>
+          <p class="hero-copy">由還未見面，到一起長大。<br>把每個捨不得忘記的瞬間，慢慢收藏。<br>這是屬於承熹，也屬於我們的故事。</p>
+          <div class="hero-buttons"><a class="btn" href="#story">翻開我們的故事<svg class="icon" width="15" height="15" aria-hidden="true"><use href="#icon-down"/></svg></a><a class="link-btn" href="#letters">留給以後的你<svg class="icon" width="14" height="14" aria-hidden="true"><use href="#icon-arrow"/></svg></a></div>
+          <div class="age-row"><span class="age-dot"></span><span id="age-label">從 2025 年 9 月 20 日開始</span><span aria-hidden="true">·</span><span>愛，一天比一天多</span></div>
+        </div>
+        <div class="hero-art">
+          <div class="art-orbit" aria-hidden="true"></div><span class="art-note">our little universe</span>
+          <svg class="icon orbit-spark spark-one" width="37" height="37" aria-hidden="true"><use href="#icon-sparkles"/></svg><svg class="icon orbit-spark spark-two" width="22" height="22" aria-hidden="true"><use href="#icon-star"/></svg>
+          <a class="photo-frame" id="cover-link" href="#album" aria-label="翻開承熹的相簿"><div class="photo-window" id="cover-window"><svg viewBox="0 0 340 340" role="img" aria-label="月亮、星星與小兔的手繪風插畫，陪伴承熹長大的故事"><defs><pattern id="grain" width="19" height="19" patternUnits="userSpaceOnUse"><circle cx="3" cy="6" r=".7" fill="#7d9264" opacity=".1"/><circle cx="13" cy="15" r=".6" fill="#7d9264" opacity=".14"/></pattern></defs><rect width="340" height="340" fill="#e5eadf"/><rect width="340" height="340" fill="url(#grain)"/><path d="M0 288Q80 240 170 289Q270 225 340 278V340H0Z" fill="#d5dfc9"/><path d="M0 316Q120 264 220 310Q285 280 340 294V340H0Z" fill="#c5d2b9"/><path d="M238 55A69 69 0 1 0 270 150A75 75 0 0 1 238 55Z" fill="#f5efdc"/><path d="M121 99V123M109 111H133" stroke="#b79868" stroke-width="2"/><path d="M277 195V209M270 202H284M70 188V202M63 195H77" stroke="#a6b28d" stroke-width="2"/><circle cx="79" cy="74" r="3" fill="#bfaa82"/><circle cx="293" cy="84" r="2" fill="#aab697"/><circle cx="101" cy="246" r="2" fill="#aab697"/><path d="m173 52 4 9 10 1-8 7 3 10-9-5-8 5 2-10-8-7 10-1Z" fill="#c9b58c"/><ellipse cx="177" cy="278" rx="43" ry="51" fill="#f6f2e4"/><ellipse cx="160" cy="207" rx="12" ry="43" transform="rotate(-11 160 207)" fill="#f6f2e4"/><ellipse cx="192" cy="207" rx="12" ry="43" transform="rotate(10 192 207)" fill="#f6f2e4"/><ellipse cx="160" cy="202" rx="5" ry="28" transform="rotate(-11 160 202)" fill="#e7d4bf"/><ellipse cx="192" cy="202" rx="5" ry="28" transform="rotate(10 192 202)" fill="#e7d4bf"/><ellipse cx="176" cy="248" rx="34" ry="31" fill="#f6f2e4"/><path d="M159 247q5 4 9 0m16 0q5 4 9 0" stroke="#697763" stroke-width="1.7" fill="none" stroke-linecap="round"/><path d="m173 257 3 3 3-3" stroke="#c49c85" stroke-width="1.7" fill="none" stroke-linecap="round"/><ellipse cx="154" cy="257" rx="6" ry="3" fill="#e6c9b3" opacity=".7"/><ellipse cx="197" cy="257" rx="6" ry="3" fill="#e6c9b3" opacity=".7"/><path d="M157 280q20 14 39-1l-4 15-17-7-14 8Z" fill="#9daf8d"/><ellipse cx="145" cy="310" rx="14" ry="10" fill="#f6f2e4"/><ellipse cx="207" cy="310" rx="14" ry="10" fill="#f6f2e4"/><path d="M60 321q5-34-13-53m12 37q14-20 27-18m-26 26q-16-14-28-9M276 326q-5-34 13-53m-12 37q-14-20-27-18" stroke="#8ca17c" stroke-width="2" fill="none"/><ellipse cx="49" cy="274" rx="5" ry="10" transform="rotate(-40 49 274)" fill="#9cae8b"/><ellipse cx="79" cy="289" rx="5" ry="10" transform="rotate(67 79 289)" fill="#9cae8b"/><ellipse cx="287" cy="279" rx="5" ry="10" transform="rotate(38 287 279)" fill="#9cae8b"/></svg></div><div class="photo-caption" id="cover-caption">你好呀，承熹。<small id="cover-subtitle">our favourite little person</small></div></a>
+          <div class="birth-stamp"><span>HELLO, WORLD</span><strong id="birth-stamp-day">20 · 09</strong><small id="birth-stamp-time">2025 · 15:08</small><svg class="icon stamp-heart" width="12" height="12" aria-hidden="true"><use href="#icon-heart"/></svg></div>
+        </div>
+      </section>
+      <div class="chapter-strip" aria-label="成長章節">
+        <button class="chapter-link" data-chapter="pregnancy" type="button"><span class="chapter-number">01</span><span><strong>還未見面</strong><small>超聲波 · 在媽媽肚裏</small></span><svg class="icon" width="16" height="16" aria-hidden="true"><use href="#icon-arrow"/></svg></button>
+        <button class="chapter-link" data-chapter="birth" type="button"><span class="chapter-number">02</span><span><strong>你好，承熹</strong><small>初次見面 · 來到這個家</small></span><svg class="icon" width="16" height="16" aria-hidden="true"><use href="#icon-arrow"/></svg></button>
+        <button class="chapter-link" data-chapter="growing" type="button"><span class="chapter-number">03</span><span><strong>一起長大</strong><small>每個日常 · 每個第一次</small></span><svg class="icon" width="16" height="16" aria-hidden="true"><use href="#icon-arrow"/></svg></button>
+      </div>
+      <div class="load-error" id="load-error" role="status" hidden><span id="load-error-message"></span><button class="link-btn" id="reload" type="button">重新載入</button></div>
+      <noscript><p class="load-error">請開啟 JavaScript，便可翻閱成長故事、相片與影片。</p></noscript>
+      <section id="story" class="section" aria-labelledby="story-title">
+        <div class="section-heading"><div><p class="eyebrow">ONE CHAPTER AT A TIME</p><h2 id="story-title">一點點，長大。</h2><p class="section-sub">有些日子很特別。有些日常，也很值得記住。</p></div><span class="count-label" id="story-count"></span></div>
+        <div class="story-controls">
+          <div class="filter-row" role="group" aria-label="篩選成長故事">
+            <button class="filter active" data-filter="all" aria-pressed="true" type="button">所有故事</button><button class="filter" data-filter="pregnancy" aria-pressed="false" type="button">還未見面</button><button class="filter" data-filter="birth" aria-pressed="false" type="button">初次見面</button><button class="filter" data-filter="growing" aria-pressed="false" type="button">一起長大</button><button class="filter" data-filter="milestone" aria-pressed="false" type="button">每個第一次</button>
+          </div>
+          <select class="sort-select" id="story-sort" aria-label="故事排序"><option value="asc">由最初開始 ↓</option><option value="desc">最新回憶在先 ↓</option></select>
+        </div>
+        <p class="loading-label" id="loading" role="status">正在翻開回憶冊…</p>
+        <div class="timeline" id="timeline" aria-live="polite"></div>
+        <div class="empty-result" id="story-empty" hidden>這一章，等我們慢慢放進來。</div>
+        <div class="empty-chapters" id="chapter-invitations">
+          <button class="empty-card" type="button" data-chapter="pregnancy"><svg class="icon" width="27" height="27" aria-hidden="true"><use href="#icon-heart"/></svg><span><strong>還未見面，已經愛你。</strong><span>第一張超聲波、媽媽的孕期相片，都是故事的起點。</span></span></button>
+          <button class="empty-card" type="button" data-chapter="milestone"><svg class="icon" width="27" height="27" aria-hidden="true"><use href="#icon-sparkles"/></svg><span><strong>那些小小的大事。</strong><span>第一聲笑、第一次爬行……每個第一次都值得記住。</span></span></button>
+        </div>
+      </section>
+      <section id="album" class="section gallery-section" aria-labelledby="album-title">
+        <div class="section-heading"><div><p class="eyebrow">LITTLE MOMENTS, FOREVER</p><h2 id="album-title">想留住的瞬間。</h2></div><a class="link-btn" href="#story">回到成長故事<svg class="icon" width="15" height="15" aria-hidden="true"><use href="#icon-arrow"/></svg></a></div>
+        <div class="story-controls"><div class="filter-row" role="group" aria-label="篩選相片與影片"><button class="filter active" data-media-filter="all" type="button" aria-pressed="true">所有瞬間</button><button class="filter" data-media-filter="photo" type="button" aria-pressed="false">相片</button><button class="filter" data-media-filter="video" type="button" aria-pressed="false">影片</button></div><span class="count-label" id="media-count" aria-live="polite">0 個瞬間</span></div>
+        <div class="gallery-grid" id="gallery" hidden></div>
+        <div class="gallery-empty" id="album-empty">
+          <div class="album-blank"><svg class="icon" width="44" height="44" aria-hidden="true"><use href="#icon-camera"/></svg><strong>故事，等我們慢慢放進來</strong><span>那些喜歡的日常，一張一張收藏。</span></div>
+          <div class="album-blank"><svg class="icon" width="40" height="40" aria-hidden="true"><use href="#icon-play"/></svg><strong>連聲音也留住。</strong><span>笑聲、咿呀聲，還有小小動作。</span></div>
+          <div class="album-blank"><svg class="icon" width="40" height="40" aria-hidden="true"><use href="#icon-heart"/></svg><strong>故事的最初。</strong><span>超聲波、孕期與期待。</span></div>
+        </div>
+        <div class="empty-result" id="album-filter-empty" hidden></div>
+      </section>
+    </main>
+  </div>
+  <section id="letters" class="letters-section" aria-labelledby="letters-title"><div class="shell"><div class="letters-intro"><svg class="icon letters-icon" width="76" height="76" aria-hidden="true"><use href="#icon-mail"/></svg><div><p class="eyebrow">TO YOU, WITH LOVE</p><h2 id="letters-title">留給以後的你。</h2><p>有些心情，想等你長大再慢慢讀。<br>寫下今天的愛，留給明天的承熹。</p></div><span class="letter-seal" aria-hidden="true"><svg class="icon" width="25" height="25"><use href="#icon-heart"/></svg></span></div><div class="letters-grid" id="letters-grid" hidden></div><p class="letter-empty" id="letters-empty">這裏，會放著爸爸媽媽想對你說的話。</p></div></section>
+  <footer class="footer shell"><span class="footer-heart"><svg class="icon" width="12" height="12" aria-hidden="true"><use href="#icon-heart"/></svg>給承熹，一份慢慢長大的愛。</span><span id="footer-years">2025 — 2026 · 我們的故事，未完待續。</span><a href="./README.html">使用說明</a></footer>
+  <dialog class="modal detail-modal" id="memory-dialog" aria-labelledby="dialog-title"><div class="modal-top"><div><p class="detail-date" id="dialog-date"></p><h2 id="dialog-title"></h2></div><button class="icon-btn" id="dialog-close" type="button" aria-label="關閉回憶"><svg class="icon" width="18" height="18" aria-hidden="true"><use href="#icon-close"/></svg></button></div><div class="detail-media" id="dialog-media"></div><p class="detail-content" id="dialog-note"></p></dialog>
+</body>
+</html>
