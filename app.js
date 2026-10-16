@@ -14,7 +14,7 @@ const state = {
 };
 const byId = (id) => document.getElementById(id);
 const isPhoto = (file) => file.mime.startsWith('image/');
-const dotDate = (date) => date.replaceAll('-', '.');
+const dotDate = (date) => date ? date.replaceAll('-', '.') : '日期待補';
 const originalCover = byId('cover-window').firstElementChild.cloneNode(true);
 
 function el(tag, className, text) {
@@ -42,6 +42,12 @@ function calendarDate(value) {
   if (year < 1000 || month < 1 || month > 12 || day < 1) return false;
   const actual = new Date(Date.UTC(year, month - 1, day));
   return actual.getUTCFullYear() === year && actual.getUTCMonth() === month - 1 && actual.getUTCDate() === day;
+}
+
+function compareMemoryDates(a, b, direction = 'asc') {
+  if (!a.date) return b.date ? 1 : 0;
+  if (!b.date) return -1;
+  return (direction === 'asc' ? 1 : -1) * a.date.localeCompare(b.date);
 }
 
 function todayHK() {
@@ -108,7 +114,7 @@ function readContent(data) {
   for (const source of data.memories) {
     if (!source || typeof source !== 'object' || typeof source.id !== 'string' || !source.id.trim() ||
         seenIds.has(source.id) || typeof source.title !== 'string' || !source.title.trim() ||
-        !calendarDate(source.date) || !Object.hasOwn(chapterLabels, source.chapter) ||
+        (source.date != null && source.date !== '' && !calendarDate(source.date)) || !Object.hasOwn(chapterLabels, source.chapter) ||
         !Object.hasOwn(kindLabels, source.kind)) {
       skipped += 1;
       continue;
@@ -126,13 +132,14 @@ function readContent(data) {
         mime: file.mime.toLowerCase(), size: Number.isFinite(file.size) ? file.size : 0, url
       });
     }
+    const date = calendarDate(source.date) ? source.date : null;
     seenIds.add(source.id);
     memories.push({
-      id: source.id, title: source.title.trim().slice(0, 120), date: source.date,
+      id: source.id, title: source.title.trim().slice(0, 120), date,
       chapter: source.chapter, kind: source.kind,
       note: typeof source.note === 'string' ? source.note.slice(0, 10000) : '',
       featured: source.featured === true,
-      createdAt: typeof source.createdAt === 'string' ? source.createdAt : source.date, media
+      createdAt: typeof source.createdAt === 'string' ? source.createdAt : date || '', media
     });
   }
   state.memories = memories;
@@ -217,7 +224,7 @@ function renderTimeline() {
     (state.filter === 'all' || memory.chapter === state.filter || state.filter === 'milestone' && memory.kind === 'milestone'));
   const items = [...memories];
   if (state.filter === 'all' || state.filter === 'birth') items.push({ builtin: true, date: state.profile.birthday });
-  items.sort((a, b) => (state.sort === 'asc' ? 1 : -1) * a.date.localeCompare(b.date));
+  items.sort((a, b) => compareMemoryDates(a, b, state.sort));
   const fragment = document.createDocumentFragment();
   for (const item of items) {
     const row = el('div', 'timeline-row');
@@ -271,7 +278,7 @@ function renderGallery() {
 }
 
 function renderLetters() {
-  const letters = state.memories.filter((memory) => memory.kind === 'letter').sort((a, b) => b.date.localeCompare(a.date));
+  const letters = state.memories.filter((memory) => memory.kind === 'letter').sort((a, b) => compareMemoryDates(a, b, 'desc'));
   const fragment = document.createDocumentFragment();
   for (const memory of letters) {
     const card = el('button', 'letter-card');
@@ -288,7 +295,7 @@ function renderLetters() {
 function showMemory(memory, chosenFile) {
   const dialog = byId('memory-dialog');
   byId('dialog-title').textContent = memory.title;
-  byId('dialog-date').textContent = `${dotDate(memory.date)} · ${chapterLabels[memory.chapter]} · ${ageLabel(memory.date)} · ${kindLabels[memory.kind]}`;
+  byId('dialog-date').textContent = [dotDate(memory.date), chapterLabels[memory.chapter], ageLabel(memory.date), kindLabels[memory.kind]].filter(Boolean).join(' · ');
   byId('dialog-note').textContent = memory.note;
   byId('dialog-note').hidden = !memory.note;
   const fragment = document.createDocumentFragment();
