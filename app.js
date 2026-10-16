@@ -231,7 +231,7 @@ function initHeroSlideshow() {
     timer = setInterval(() => {
       const next = ready[(ready.findIndex((slide) => slide === slides[active]) + 1) % ready.length];
       activate(slides.indexOf(next));
-    }, 6000);
+    }, 3000);
   };
   heroSlideshow = { sync };
   toggle.addEventListener('click', () => { paused = !paused; sync(); });
@@ -289,23 +289,57 @@ function birthCard() {
   return card;
 }
 
-function memoryCard(memory) {
-  const card = el('button', 'memory-entry');
-  card.type = 'button';
-  card.setAttribute('aria-label', `閱讀回憶：${memory.title}`);
-  const first = memory.media[0];
-  if (first && isPhoto(first)) {
-    card.append(photo(first, '', 'entry-thumb'));
-  } else {
-    const placeholder = el('span', 'entry-thumb text-thumb');
-    placeholder.append(icon(first ? 'play' : memory.kind === 'milestone' ? 'star' : 'book', 30));
-    card.append(placeholder);
+function memoryMedia(memory) {
+  if (!memory.media.length) return null;
+  const grid = el('div', 'memory-media' + (memory.media.length > 1 && memory.media.length % 2 ? ' memory-media-odd' : ''));
+  const counts = { photo: memory.media.filter(isPhoto).length, video: memory.media.filter((file) => !isPhoto(file)).length };
+  const positions = { photo: 0, video: 0 };
+  for (const file of memory.media) {
+    const picture = isPhoto(file);
+    const type = picture ? 'photo' : 'video';
+    const label = `${picture ? '相片' : '影片'} ${++positions[type]}/${counts[type]}`;
+    const figure = el('figure', 'memory-media-item');
+    if (picture) {
+      const button = el('button', 'memory-photo-button');
+      button.type = 'button';
+      button.setAttribute('aria-label', `放大${label}：${memory.title}`);
+      button.append(photo(file, `${memory.title} · ${label}`, 'memory-photo'));
+      button.addEventListener('click', () => showMemory(memory, file));
+      figure.append(button);
+    } else {
+      const video = el('video', 'memory-video');
+      video.src = file.url;
+      video.controls = true;
+      video.playsInline = true;
+      video.preload = 'metadata';
+      video.setAttribute('aria-label', `${memory.title} · ${label}`);
+      video.addEventListener('error', () => {
+        const message = el('p', 'media-unavailable', '這段影片暫時未能播放。');
+        const original = el('a', '', '開啟原檔');
+        original.href = file.url;
+        original.target = '_blank';
+        original.rel = 'noopener noreferrer';
+        message.append(original);
+        figure.prepend(message);
+      }, { once: true });
+      figure.append(video);
+    }
+    figure.append(el('figcaption', 'memory-media-caption', label));
+    grid.append(figure);
   }
-  const body = el('span', 'entry-body');
+  return grid;
+}
+
+function memoryCard(memory) {
+  const card = el('article', 'memory-entry memory-expanded');
+  card.setAttribute('aria-label', memory.title);
+  card.setAttribute('data-memory-id', memory.id);
+  const body = el('div', 'entry-body');
   body.append(el('span', 'entry-tag', kindLabels[memory.kind] + (memory.featured ? ' · 精選' : '')),
     el('h3', '', memory.title), el('p', '', memory.note || `${memory.media.length} 個珍貴瞬間`));
-  card.append(body, icon('chevron', 16));
-  card.addEventListener('click', () => showMemory(memory));
+  card.append(body);
+  const media = memoryMedia(memory);
+  if (media) card.append(media);
   return card;
 }
 
@@ -371,10 +405,14 @@ function renderLetters() {
   const letters = state.memories.filter((memory) => memory.kind === 'letter').sort((a, b) => compareMemoryDates(a, b, 'desc'));
   const fragment = document.createDocumentFragment();
   for (const memory of letters) {
-    const card = el('button', 'letter-card');
-    card.type = 'button';
-    card.append(el('small', '', dotDate(memory.date)), el('h3', '', memory.title), el('p', '', memory.note));
-    card.addEventListener('click', () => showMemory(memory));
+    const card = el('article', 'letter-card memory-expanded');
+    card.setAttribute('aria-label', memory.title);
+    card.setAttribute('data-memory-id', memory.id);
+    const body = el('div', 'entry-body');
+    body.append(el('small', '', dotDate(memory.date)), el('h3', '', memory.title), el('p', '', memory.note));
+    card.append(body);
+    const media = memoryMedia(memory);
+    if (media) card.append(media);
     fragment.append(card);
   }
   byId('letters-grid').replaceChildren(fragment);
@@ -383,6 +421,7 @@ function renderLetters() {
 }
 
 function showMemory(memory, chosenFile) {
+  for (const video of document.querySelectorAll('.memory-media video')) video.pause();
   const dialog = byId('memory-dialog');
   byId('dialog-title').textContent = memory.title;
   byId('dialog-date').textContent = [dotDate(memory.date), chapterLabels[memory.chapter], ageLabel(memory.date), kindLabels[memory.kind]].filter(Boolean).join(' · ');
