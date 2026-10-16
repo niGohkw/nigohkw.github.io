@@ -56,6 +56,53 @@
           "url": "media/newborn-first-moments.mp4"
         }
       ]
+    },
+    {
+      "id": "newborn-portraits",
+      "title": "初生寫真：小小的你。",
+      "date": null,
+      "chapter": "birth",
+      "kind": "memory",
+      "note": "小小的笑容、認真的眼神，還有蜷起的小腳。\n把初生時的每個模樣，留在這一輯相片裏。",
+      "featured": false,
+      "createdAt": "2026-10-17T05:41:24+08:00",
+      "media": [
+        {
+          "id": "newborn-portrait-01",
+          "name": "newborn-portraits-01.jpg",
+          "mime": "image/jpeg",
+          "size": 179793,
+          "url": "media/newborn-portraits-01.jpg"
+        },
+        {
+          "id": "newborn-portrait-02",
+          "name": "newborn-portraits-02.jpg",
+          "mime": "image/jpeg",
+          "size": 185757,
+          "url": "media/newborn-portraits-02.jpg"
+        },
+        {
+          "id": "newborn-portrait-03",
+          "name": "newborn-portraits-03.jpg",
+          "mime": "image/jpeg",
+          "size": 194399,
+          "url": "media/newborn-portraits-03.jpg"
+        },
+        {
+          "id": "newborn-portrait-04",
+          "name": "newborn-portraits-04.jpg",
+          "mime": "image/jpeg",
+          "size": 292519,
+          "url": "media/newborn-portraits-04.jpg"
+        },
+        {
+          "id": "newborn-portrait-05",
+          "name": "newborn-portraits-05.jpg",
+          "mime": "image/jpeg",
+          "size": 209297,
+          "url": "media/newborn-portraits-05.jpg"
+        }
+      ]
     }
   ]
 }
