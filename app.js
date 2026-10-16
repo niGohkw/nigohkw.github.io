@@ -16,6 +16,7 @@ const byId = (id) => document.getElementById(id);
 const isPhoto = (file) => file.mime.startsWith('image/');
 const dotDate = (date) => date ? date.replaceAll('-', '.') : '日期待補';
 const originalCover = byId('cover-window').firstElementChild.cloneNode(true);
+let heroSlideshow = null;
 
 function el(tag, className, text) {
   const element = document.createElement(tag);
@@ -183,6 +184,95 @@ function renderCover() {
   }
 }
 
+function initHeroSlideshow() {
+  if (heroSlideshow) return;
+  const memory = state.memories.find((item) => item.id === 'newborn-portraits');
+  const files = memory ? memory.media.filter(isPhoto) : [];
+  const hero = document.querySelector('.hero');
+  if (!hero || !files.length) return;
+  hero.firstElementChild.classList.add('hero-intro');
+  const background = el('div', 'hero-slideshow');
+  background.setAttribute('aria-hidden', 'true');
+  const controls = el('div', 'hero-slideshow-controls');
+  controls.setAttribute('role', 'group');
+  controls.setAttribute('aria-label', '初生寫真背景輪播');
+  controls.hidden = true;
+  const dots = el('div', 'slideshow-dots');
+  const toggle = el('button', 'slideshow-toggle');
+  toggle.type = 'button';
+  controls.append(el('span', 'slideshow-caption', '初生寫真 · ' + dotDate(memory.date)), dots, toggle);
+  hero.prepend(background);
+  hero.append(controls);
+  const motion = matchMedia('(prefers-reduced-motion: reduce)');
+  let paused = motion.matches;
+  let visible = true;
+  let active = -1;
+  let timer = null;
+  const slides = [];
+  const activate = (index) => {
+    if (!slides[index].ready) return;
+    active = index;
+    for (const [position, slide] of slides.entries()) {
+      const current = position === active;
+      slide.image.classList.toggle('is-active', current);
+      slide.button.classList.toggle('is-active', current);
+      slide.button.setAttribute('aria-pressed', String(current));
+    }
+    hero.classList.add('has-slideshow');
+    controls.hidden = false;
+  };
+  const sync = () => {
+    clearInterval(timer);
+    timer = null;
+    toggle.textContent = paused ? '播放輪播' : '暫停輪播';
+    const ready = slides.filter((slide) => slide.ready);
+    toggle.disabled = ready.length < 2;
+    if (paused || !visible || document.hidden || byId('memory-dialog').open || ready.length < 2) return;
+    timer = setInterval(() => {
+      const next = ready[(ready.findIndex((slide) => slide === slides[active]) + 1) % ready.length];
+      activate(slides.indexOf(next));
+    }, 6000);
+  };
+  heroSlideshow = { sync };
+  toggle.addEventListener('click', () => { paused = !paused; sync(); });
+  motion.addEventListener('change', (event) => { paused = event.matches; sync(); });
+  if (typeof IntersectionObserver === 'function') {
+    heroSlideshow.observer = new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+      sync();
+    });
+    heroSlideshow.observer.observe(hero);
+  }
+  for (const [index, file] of files.entries()) {
+    const image = el('img', 'hero-slide');
+    image.alt = '';
+    image.decoding = 'async';
+    image.referrerPolicy = 'no-referrer';
+    const button = el('button', 'slideshow-dot');
+    button.type = 'button';
+    button.disabled = true;
+    button.setAttribute('aria-label', `顯示第 ${index + 1} 張初生寫真`);
+    button.setAttribute('aria-pressed', 'false');
+    button.addEventListener('click', () => { paused = true; activate(index); sync(); });
+    const slide = { image, button, ready: false };
+    slides.push(slide);
+    dots.append(button);
+    background.append(image);
+    image.src = file.url;
+    image.decode().then(() => {
+      slide.ready = true;
+      button.disabled = false;
+      if (active < 0) activate(index);
+      sync();
+    }).catch(() => { sync(); });
+  }
+  sync();
+}
+
+function syncHeroSlideshow() {
+  if (heroSlideshow) heroSlideshow.sync();
+}
+
 function birthCard() {
   const card = el('div', 'birth-entry');
   const illustration = el('div', 'birth-illustration');
@@ -328,6 +418,7 @@ function showMemory(memory, chosenFile) {
   byId('dialog-media').replaceChildren(fragment);
   document.body.classList.add('dialog-open');
   dialog.showModal();
+  syncHeroSlideshow();
   dialog.scrollTop = 0;
   byId('dialog-close').focus({ preventScroll: true });
   if (chosenFigure && memory.media.indexOf(chosenFile) > 0) {
@@ -338,6 +429,7 @@ function showMemory(memory, chosenFile) {
 function renderAll() {
   updateProfile();
   renderCover();
+  initHeroSlideshow();
   renderTimeline();
   renderGallery();
   renderLetters();
@@ -393,8 +485,12 @@ byId('memory-dialog').addEventListener('close', () => {
   for (const video of byId('dialog-media').querySelectorAll('video')) video.pause();
   byId('dialog-media').replaceChildren();
   document.body.classList.remove('dialog-open');
+  syncHeroSlideshow();
 });
-document.addEventListener('visibilitychange', () => { if (!document.hidden) updateProfile(); });
+document.addEventListener('visibilitychange', () => {
+  if (!document.hidden) updateProfile();
+  syncHeroSlideshow();
+});
 setInterval(updateProfile, 60000);
 renderAll();
 void load();
