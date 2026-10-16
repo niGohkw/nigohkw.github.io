@@ -223,6 +223,133 @@
           "url": "media/monthly-growth-06.jpg"
         }
       ]
+    },
+    {
+      "id": "monthly-growth-07",
+      "title": "7個月 · 名字旁邊的笑容。",
+      "date": null,
+      "ageMonths": 7,
+      "chapter": "growing",
+      "kind": "memory",
+      "note": "彩色字母排在身旁，你在成長毯上笑開了。\n七個月的這個笑容，也要好好收藏。",
+      "featured": false,
+      "createdAt": "2026-10-17T07:07:07+08:00",
+      "media": [
+        {
+          "id": "monthly-growth-photo-07",
+          "name": "monthly-growth-07.jpg",
+          "mime": "image/jpeg",
+          "size": 592245,
+          "url": "media/monthly-growth-07.jpg"
+        }
+      ]
+    },
+    {
+      "id": "monthly-growth-08",
+      "title": "8個月 · 笑得合不攏嘴。",
+      "date": null,
+      "ageMonths": 8,
+      "chapter": "growing",
+      "kind": "memory",
+      "note": "軟綿綿的玩偶陪在身邊，你笑得合不攏嘴。\n同一張成長毯，留下八個月的你。",
+      "featured": false,
+      "createdAt": "2026-10-17T07:07:08+08:00",
+      "media": [
+        {
+          "id": "monthly-growth-photo-08",
+          "name": "monthly-growth-08.jpg",
+          "mime": "image/jpeg",
+          "size": 652878,
+          "url": "media/monthly-growth-08.jpg"
+        }
+      ]
+    },
+    {
+      "id": "monthly-growth-09",
+      "title": "9個月 · 小手忙着探索。",
+      "date": null,
+      "ageMonths": 9,
+      "chapter": "growing",
+      "kind": "memory",
+      "note": "兩隻小手捧着玩具，嘴角帶着笑。\n九個月的你，把這個小小瞬間留給我們。",
+      "featured": false,
+      "createdAt": "2026-10-17T07:07:09+08:00",
+      "media": [
+        {
+          "id": "monthly-growth-photo-09",
+          "name": "monthly-growth-09.jpg",
+          "mime": "image/jpeg",
+          "size": 510680,
+          "url": "media/monthly-growth-09.jpg"
+        }
+      ]
+    },
+    {
+      "id": "monthly-growth-10",
+      "title": "10個月 · 又長大一點點。",
+      "date": null,
+      "ageMonths": 10,
+      "chapter": "growing",
+      "kind": "memory",
+      "note": "坐在熟悉的成長毯上，望着鏡頭微笑。\n心形圈圈來到數字十，一個月又一個月，你慢慢長大。",
+      "featured": false,
+      "createdAt": "2026-10-17T07:07:10+08:00",
+      "media": [
+        {
+          "id": "monthly-growth-photo-10",
+          "name": "monthly-growth-10.jpg",
+          "mime": "image/jpeg",
+          "size": 449175,
+          "url": "media/monthly-growth-10.jpg"
+        }
+      ]
+    },
+    {
+      "id": "monthly-growth-11",
+      "title": "11個月 · 滿滿陽光的笑容。",
+      "date": null,
+      "ageMonths": 11,
+      "chapter": "growing",
+      "kind": "memory",
+      "note": "穿上鮮黃色的小褲子，帶着燦爛的笑容。\n十一個月的你，離一歲又近了一點。",
+      "featured": false,
+      "createdAt": "2026-10-17T07:07:11+08:00",
+      "media": [
+        {
+          "id": "monthly-growth-photo-11",
+          "name": "monthly-growth-11.jpg",
+          "mime": "image/jpeg",
+          "size": 575694,
+          "url": "media/monthly-growth-11.jpg"
+        }
+      ]
+    },
+    {
+      "id": "monthly-growth-12",
+      "title": "1歲 · 生日快樂，承熹。",
+      "date": null,
+      "ageMonths": 12,
+      "chapter": "growing",
+      "kind": "milestone",
+      "note": "從「12個月」到「1歲」，用兩張相片記下這個特別的里程碑。\n由滿月時的小小身影，到今天的模樣，我們一起走過了第一年。\n生日快樂，承熹。接下來的每一天，也陪你慢慢長大。",
+      "featured": false,
+      "createdAt": "2026-10-17T07:07:12+08:00",
+      "media": [
+        {
+          "id": "monthly-growth-photo-12",
+          "name": "monthly-growth-12.jpg",
+          "mime": "image/jpeg",
+          "size": 574077,
+          "url": "media/monthly-growth-12.jpg"
+        },
+        {
+          "id": "monthly-growth-photo-12-02",
+          "name": "monthly-growth-12-02.jpg",
+          "mime": "image/jpeg",
+          "size": 503861,
+          "url": "media/monthly-growth-12-02.jpg"
+        }
+      ]
     }
   ]
 }
