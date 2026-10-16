@@ -103,6 +103,126 @@
           "url": "media/newborn-portraits-05.jpg"
         }
       ]
+    },
+    {
+      "id": "monthly-growth-01",
+      "title": "滿月 · 我們一起的第一個月。",
+      "date": "2025-10-20",
+      "ageMonths": 1,
+      "chapter": "growing",
+      "kind": "memory",
+      "note": "第一個月，在成長毯上留下小小的身影。\n由今天開始，一個月一張，慢慢收藏你長大的模樣。",
+      "featured": false,
+      "createdAt": "2026-10-17T06:52:01+08:00",
+      "media": [
+        {
+          "id": "monthly-growth-photo-01",
+          "name": "monthly-growth-01.jpg",
+          "mime": "image/jpeg",
+          "size": 753560,
+          "url": "media/monthly-growth-01.jpg"
+        }
+      ]
+    },
+    {
+      "id": "monthly-growth-02",
+      "title": "2個月 · 小手舉高高。",
+      "date": null,
+      "ageMonths": 2,
+      "chapter": "growing",
+      "kind": "memory",
+      "note": "戴着小帽子，舉起兩隻小手。\n同一張成長毯，記下兩個月的你。",
+      "featured": false,
+      "createdAt": "2026-10-17T06:52:02+08:00",
+      "media": [
+        {
+          "id": "monthly-growth-photo-02",
+          "name": "monthly-growth-02.jpg",
+          "mime": "image/jpeg",
+          "size": 952727,
+          "url": "media/monthly-growth-02.jpg"
+        }
+      ]
+    },
+    {
+      "id": "monthly-growth-03",
+      "title": "3個月 · 每個表情，都想記住。",
+      "date": null,
+      "ageMonths": 3,
+      "chapter": "growing",
+      "kind": "memory",
+      "note": "這次拍照，留下了你張嘴哭哭的模樣。\n笑容也好，眼淚也好，都是想好好收藏的回憶。",
+      "featured": false,
+      "createdAt": "2026-10-17T06:52:03+08:00",
+      "media": [
+        {
+          "id": "monthly-growth-photo-03",
+          "name": "monthly-growth-03.jpg",
+          "mime": "image/jpeg",
+          "size": 671416,
+          "url": "media/monthly-growth-03.jpg"
+        }
+      ]
+    },
+    {
+      "id": "monthly-growth-04",
+      "title": "4個月 · 戴上小帽子的你。",
+      "date": null,
+      "ageMonths": 4,
+      "chapter": "growing",
+      "kind": "memory",
+      "note": "黃色小帽子、棕色小衣服，還有望向鏡頭的眼神。\n四個月的你，留下了這個可愛的造型。",
+      "featured": false,
+      "createdAt": "2026-10-17T06:52:04+08:00",
+      "media": [
+        {
+          "id": "monthly-growth-photo-04",
+          "name": "monthly-growth-04.jpg",
+          "mime": "image/jpeg",
+          "size": 916933,
+          "url": "media/monthly-growth-04.jpg"
+        }
+      ]
+    },
+    {
+      "id": "monthly-growth-05",
+      "title": "5個月 · 把笑容收進相簿。",
+      "date": null,
+      "ageMonths": 5,
+      "chapter": "growing",
+      "kind": "memory",
+      "note": "心形圈圈來到數字五，鏡頭前是你的笑容。\n一張張相片，陪我們記住每個月的你。",
+      "featured": false,
+      "createdAt": "2026-10-17T06:52:05+08:00",
+      "media": [
+        {
+          "id": "monthly-growth-photo-05",
+          "name": "monthly-growth-05.jpg",
+          "mime": "image/jpeg",
+          "size": 773435,
+          "url": "media/monthly-growth-05.jpg"
+        }
+      ]
+    },
+    {
+      "id": "monthly-growth-06",
+      "title": "6個月 · 半歲快樂，承熹。",
+      "date": null,
+      "ageMonths": 6,
+      "chapter": "growing",
+      "kind": "memory",
+      "note": "心形圈圈來到數字六，你已經半歲了。\n由滿月到今天，把這六個月的模樣，好好留在相簿裏。",
+      "featured": false,
+      "createdAt": "2026-10-17T06:52:06+08:00",
+      "media": [
+        {
+          "id": "monthly-growth-photo-06",
+          "name": "monthly-growth-06.jpg",
+          "mime": "image/jpeg",
+          "size": 209012,
+          "url": "media/monthly-growth-06.jpg"
+        }
+      ]
     }
   ]
 }
