@@ -4,5 +4,58 @@
     "birthday": "2025-09-20",
     "birthTime": "15:08"
   },
-  "memories": []
+  "memories": [
+    {
+      "id": "ultrasound-20250807",
+      "title": "還未見面，已經愛你。",
+      "date": "2025-08-07",
+      "chapter": "pregnancy",
+      "kind": "memory",
+      "note": "在媽媽肚裏的你，透過超聲波，留下兩張珍貴的相片。\n由螢幕裏的小小身影，開始收藏我們的故事。",
+      "featured": false,
+      "createdAt": "2026-10-17T05:13:12+08:00",
+      "media": [
+        {
+          "id": "ultrasound-photo-01",
+          "name": "ultrasound-2025-08-07-01.jpg",
+          "mime": "image/jpeg",
+          "size": 520025,
+          "url": "media/ultrasound-2025-08-07-01.jpg"
+        },
+        {
+          "id": "ultrasound-photo-02",
+          "name": "ultrasound-2025-08-07-02.jpg",
+          "mime": "image/jpeg",
+          "size": 536661,
+          "url": "media/ultrasound-2025-08-07-02.jpg"
+        }
+      ]
+    },
+    {
+      "id": "welcome-20250920",
+      "title": "你好，承熹。我們終於見面了。",
+      "date": "2025-09-20",
+      "chapter": "birth",
+      "kind": "milestone",
+      "note": "2025 年 9 月 20 日，下午 3 時 08 分，你來到我們身邊。\n用一張合照、一段短片，留住你剛出生的模樣。",
+      "featured": true,
+      "createdAt": "2026-10-17T05:13:13+08:00",
+      "media": [
+        {
+          "id": "newborn-family-photo",
+          "name": "welcome-chenghei-2025-09-20.jpg",
+          "mime": "image/jpeg",
+          "size": 584688,
+          "url": "media/welcome-chenghei-2025-09-20.jpg"
+        },
+        {
+          "id": "newborn-first-video",
+          "name": "newborn-first-moments.mp4",
+          "mime": "video/mp4",
+          "size": 3705928,
+          "url": "media/newborn-first-moments.mp4"
+        }
+      ]
+    }
+  ]
 }
