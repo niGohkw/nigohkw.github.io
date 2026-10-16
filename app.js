@@ -45,10 +45,31 @@ function calendarDate(value) {
   return actual.getUTCFullYear() === year && actual.getUTCMonth() === month - 1 && actual.getUTCDate() === day;
 }
 
+function validAgeMonths(value) {
+  return Number.isInteger(value) && value >= 0 && value <= 120;
+}
+
+function memoryDateLabel(memory) {
+  if (memory.date) return dotDate(memory.date);
+  return validAgeMonths(memory.ageMonths) ? `${memory.ageMonths}個月` : '日期待補';
+}
+
+function memorySortKey(memory) {
+  if (memory.date) return Date.parse(memory.date + 'T00:00:00Z');
+  if (!validAgeMonths(memory.ageMonths)) return null;
+  const [year, month, day] = state.profile.birthday.split('-').map(Number);
+  const target = new Date(Date.UTC(year, month - 1 + memory.ageMonths, 1));
+  const lastDay = new Date(Date.UTC(target.getUTCFullYear(), target.getUTCMonth() + 1, 0)).getUTCDate();
+  // The anniversary is only a sorting key; an unknown capture date stays null.
+  return Date.UTC(target.getUTCFullYear(), target.getUTCMonth(), Math.min(day, lastDay));
+}
+
 function compareMemoryDates(a, b, direction = 'asc') {
-  if (!a.date) return b.date ? 1 : 0;
-  if (!b.date) return -1;
-  return (direction === 'asc' ? 1 : -1) * a.date.localeCompare(b.date);
+  const first = memorySortKey(a);
+  const second = memorySortKey(b);
+  if (first === null) return second === null ? 0 : 1;
+  if (second === null) return -1;
+  return (direction === 'asc' ? 1 : -1) * (first - second);
 }
 
 function todayHK() {
@@ -137,6 +158,7 @@ function readContent(data) {
     seenIds.add(source.id);
     memories.push({
       id: source.id, title: source.title.trim().slice(0, 120), date,
+      ageMonths: validAgeMonths(source.ageMonths) ? source.ageMonths : null,
       chapter: source.chapter, kind: source.kind,
       note: typeof source.note === 'string' ? source.note.slice(0, 10000) : '',
       featured: source.featured === true,
@@ -352,7 +374,7 @@ function renderTimeline() {
   const fragment = document.createDocumentFragment();
   for (const item of items) {
     const row = el('div', 'timeline-row');
-    const date = el('div', 'timeline-date', dotDate(item.date));
+    const date = el('div', 'timeline-date', memoryDateLabel(item));
     date.append(el('span', '', item.builtin ? '我們的第一天' : chapterLabels[item.chapter]));
     row.append(date, item.builtin ? birthCard() : memoryCard(item));
     fragment.append(row);
@@ -384,7 +406,7 @@ function renderGallery() {
     const badge = el('span', 'media-badge');
     badge.append(icon(isPhoto(file) ? 'camera' : 'play', 10), document.createTextNode(isPhoto(file) ? '相片' : '影片'));
     frame.append(badge);
-    tile.append(frame, el('h3', '', memory.title), el('small', '', dotDate(memory.date)));
+    tile.append(frame, el('h3', '', memory.title), el('small', '', memoryDateLabel(memory)));
     tile.addEventListener('click', () => showMemory(memory, file));
     fragment.append(tile);
   }
@@ -409,7 +431,7 @@ function renderLetters() {
     card.setAttribute('aria-label', memory.title);
     card.setAttribute('data-memory-id', memory.id);
     const body = el('div', 'entry-body');
-    body.append(el('small', '', dotDate(memory.date)), el('h3', '', memory.title), el('p', '', memory.note));
+    body.append(el('small', '', memoryDateLabel(memory)), el('h3', '', memory.title), el('p', '', memory.note));
     card.append(body);
     const media = memoryMedia(memory);
     if (media) card.append(media);
@@ -424,7 +446,7 @@ function showMemory(memory, chosenFile) {
   for (const video of document.querySelectorAll('.memory-media video')) video.pause();
   const dialog = byId('memory-dialog');
   byId('dialog-title').textContent = memory.title;
-  byId('dialog-date').textContent = [dotDate(memory.date), chapterLabels[memory.chapter], ageLabel(memory.date), kindLabels[memory.kind]].filter(Boolean).join(' · ');
+  byId('dialog-date').textContent = [memoryDateLabel(memory), chapterLabels[memory.chapter], ageLabel(memory.date), kindLabels[memory.kind]].filter(Boolean).join(' · ');
   byId('dialog-note').textContent = memory.note;
   byId('dialog-note').hidden = !memory.note;
   const fragment = document.createDocumentFragment();
