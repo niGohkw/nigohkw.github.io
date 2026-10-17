@@ -17,6 +17,7 @@ const isPhoto = (file) => file.mime.startsWith('image/');
 const dotDate = (date) => date ? date.replaceAll('-', '.') : '日期待補';
 const originalCover = byId('cover-window').firstElementChild.cloneNode(true);
 let heroSlideshow = null;
+const timelineSlideshows = new Set();
 
 function el(tag, className, text) {
   const element = document.createElement(tag);
@@ -368,6 +369,129 @@ function memoryMedia(memory) {
   return grid;
 }
 
+function syncTimelineSlideshows() {
+  for (const slideshow of timelineSlideshows) slideshow.sync();
+}
+
+function disposeTimelineSlideshows() {
+  for (const slideshow of timelineSlideshows) slideshow.dispose();
+}
+
+function memorySlideshow(memory) {
+  const files = memory.media;
+  const root = el('section', 'memory-slideshow');
+  root.setAttribute('aria-label', `${memory.title}，${files.length} 張相片`);
+  root.setAttribute('aria-roledescription', '相片輪播');
+  const stage = el('button', 'memory-slideshow-stage');
+  stage.type = 'button';
+  const slides = files.map((file, index) => {
+    const slide = el('span', 'memory-slideshow-slide');
+    slide.hidden = index !== 0;
+    slide.append(photo(file, `${memory.title} · 相片 ${index + 1}/${files.length}`, 'memory-slideshow-photo'));
+    stage.append(slide);
+    return slide;
+  });
+  const controls = el('div', 'memory-slideshow-controls');
+  controls.setAttribute('role', 'group');
+  controls.setAttribute('aria-label', '相片輪播控制');
+  const previous = el('button', 'memory-slideshow-arrow previous');
+  const next = el('button', 'memory-slideshow-arrow');
+  for (const [button, label] of [[previous, '上一張相片'], [next, '下一張相片']]) {
+    button.type = 'button';
+    button.setAttribute('aria-label', label);
+    button.disabled = files.length < 2;
+    button.append(icon('chevron', 18));
+  }
+  const counter = el('span', 'memory-slideshow-counter');
+  counter.setAttribute('aria-atomic', 'true');
+  const toggle = el('button', 'memory-slideshow-toggle');
+  toggle.type = 'button';
+  toggle.disabled = files.length < 2;
+  controls.append(previous, counter, next, toggle);
+  root.append(stage, controls);
+
+  const motion = matchMedia('(prefers-reduced-motion: reduce)');
+  let paused = motion.matches;
+  let active = 0;
+  let disposed = false;
+  let timer = null;
+  let observer = null;
+  let visible = typeof IntersectionObserver !== 'function';
+  function activate(index) {
+    if (disposed) return;
+    active = (index + files.length) % files.length;
+    for (const [position, slide] of slides.entries()) slide.hidden = position !== active;
+    for (const index of [active, (active + 1) % files.length]) {
+      const image = slides[index].querySelector('img');
+      if (image) image.loading = 'eager';
+    }
+    counter.textContent = `${active + 1} / ${files.length}`;
+    counter.setAttribute('aria-label', `第 ${active + 1} 張，共 ${files.length} 張相片`);
+    stage.setAttribute('aria-label', `放大第 ${active + 1} 張相片：${memory.title}`);
+  }
+  function sync() {
+    clearInterval(timer);
+    timer = null;
+    if (disposed) return;
+    toggle.textContent = paused ? '播放' : '暫停';
+    toggle.setAttribute('aria-label', paused ? '播放相片輪播' : '暫停相片輪播');
+    counter.setAttribute('aria-live', paused ? 'polite' : 'off');
+    if (paused || !visible || document.hidden || byId('memory-dialog').open || files.length < 2) return;
+    timer = setInterval(() => {
+      if (!disposed && !paused && visible && !document.hidden && !byId('memory-dialog').open) activate(active + 1);
+    }, 3000);
+  }
+  function navigate(index) {
+    if (disposed) return;
+    paused = true;
+    sync();
+    activate(index);
+  }
+  function onMotionChange(event) {
+    if (disposed) return;
+    paused = event.matches;
+    sync();
+  }
+  const controller = {
+    sync,
+    dispose() {
+      disposed = true;
+      clearInterval(timer);
+      timer = null;
+      if (observer) observer.disconnect();
+      motion.removeEventListener('change', onMotionChange);
+      timelineSlideshows.delete(controller);
+    }
+  };
+  timelineSlideshows.add(controller);
+  motion.addEventListener('change', onMotionChange);
+  if (typeof IntersectionObserver === 'function') {
+    observer = new IntersectionObserver(([entry]) => {
+      if (disposed) return;
+      visible = entry.isIntersecting;
+      sync();
+    });
+    observer.observe(root);
+  }
+  previous.addEventListener('click', () => navigate(active - 1));
+  next.addEventListener('click', () => navigate(active + 1));
+  toggle.addEventListener('click', () => {
+    if (disposed) return;
+    paused = !paused;
+    sync();
+  });
+  stage.addEventListener('click', () => { if (!disposed) showMemory(memory, files[active]); });
+  root.addEventListener('keydown', (event) => {
+    const destination = { ArrowLeft: active - 1, ArrowRight: active + 1, Home: 0, End: files.length - 1 };
+    if (!Object.hasOwn(destination, event.key)) return;
+    event.preventDefault();
+    navigate(destination[event.key]);
+  });
+  activate(0);
+  sync();
+  return root;
+}
+
 function memoryCard(memory) {
   const card = el('article', 'memory-entry memory-expanded');
   card.setAttribute('aria-label', memory.title);
@@ -376,12 +500,14 @@ function memoryCard(memory) {
   body.append(el('span', 'entry-tag', kindLabels[memory.kind] + (memory.featured ? ' · 精選' : '')),
     el('h3', '', memory.title), el('p', '', memory.note || `${memory.media.length} 個珍貴瞬間`));
   card.append(body);
-  const media = memoryMedia(memory);
+  const media = memory.id === 'portraits-202602' && memory.media.length && memory.media.every(isPhoto)
+    ? memorySlideshow(memory) : memoryMedia(memory);
   if (media) card.append(media);
   return card;
 }
 
 function renderTimeline() {
+  disposeTimelineSlideshows();
   const memories = state.memories.filter((memory) => memory.kind !== 'letter' &&
     (state.filter === 'all' || memory.chapter === state.filter || state.filter === 'milestone' && memory.kind === 'milestone'));
   const items = [...memories];
@@ -496,6 +622,7 @@ function showMemory(memory, chosenFile) {
   document.body.classList.add('dialog-open');
   dialog.showModal();
   syncHeroSlideshow();
+  syncTimelineSlideshows();
   dialog.scrollTop = 0;
   byId('dialog-close').focus({ preventScroll: true });
   if (chosenFigure && memory.media.indexOf(chosenFile) > 0) {
@@ -563,10 +690,12 @@ byId('memory-dialog').addEventListener('close', () => {
   byId('dialog-media').replaceChildren();
   document.body.classList.remove('dialog-open');
   syncHeroSlideshow();
+  syncTimelineSlideshows();
 });
 document.addEventListener('visibilitychange', () => {
   if (!document.hidden) updateProfile();
   syncHeroSlideshow();
+  syncTimelineSlideshows();
 });
 setInterval(updateProfile, 60000);
 renderAll();
