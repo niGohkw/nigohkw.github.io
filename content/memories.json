@@ -211,6 +211,110 @@
       ]
     },
     {
+      "id": "portraits-202602",
+      "title": "賀年寫真 · 把笑容留住。",
+      "date": null,
+      "dateMonth": "2026-02",
+      "chapter": "growing",
+      "kind": "memory",
+      "note": "紅色小背心、金色元寶，還有你燦爛的笑容。\n2026年2月，把這一輯充滿年味的相片，收進我們的回憶冊。",
+      "featured": false,
+      "createdAt": "2026-10-17T22:33:18+08:00",
+      "media": [
+        {
+          "id": "portraits-2026-02-photo-01",
+          "name": "portraits-2026-02-01.jpg",
+          "mime": "image/jpeg",
+          "size": 372243,
+          "url": "media/portraits-2026-02-01.jpg"
+        },
+        {
+          "id": "portraits-2026-02-photo-02",
+          "name": "portraits-2026-02-02.jpg",
+          "mime": "image/jpeg",
+          "size": 319753,
+          "url": "media/portraits-2026-02-02.jpg"
+        },
+        {
+          "id": "portraits-2026-02-photo-03",
+          "name": "portraits-2026-02-03.jpg",
+          "mime": "image/jpeg",
+          "size": 460918,
+          "url": "media/portraits-2026-02-03.jpg"
+        },
+        {
+          "id": "portraits-2026-02-photo-04",
+          "name": "portraits-2026-02-04.jpg",
+          "mime": "image/jpeg",
+          "size": 423910,
+          "url": "media/portraits-2026-02-04.jpg"
+        },
+        {
+          "id": "portraits-2026-02-photo-05",
+          "name": "portraits-2026-02-05.jpg",
+          "mime": "image/jpeg",
+          "size": 440495,
+          "url": "media/portraits-2026-02-05.jpg"
+        },
+        {
+          "id": "portraits-2026-02-photo-06",
+          "name": "portraits-2026-02-06.jpg",
+          "mime": "image/jpeg",
+          "size": 449291,
+          "url": "media/portraits-2026-02-06.jpg"
+        },
+        {
+          "id": "portraits-2026-02-photo-07",
+          "name": "portraits-2026-02-07.jpg",
+          "mime": "image/jpeg",
+          "size": 452855,
+          "url": "media/portraits-2026-02-07.jpg"
+        },
+        {
+          "id": "portraits-2026-02-photo-08",
+          "name": "portraits-2026-02-08.jpg",
+          "mime": "image/jpeg",
+          "size": 498726,
+          "url": "media/portraits-2026-02-08.jpg"
+        },
+        {
+          "id": "portraits-2026-02-photo-09",
+          "name": "portraits-2026-02-09.jpg",
+          "mime": "image/jpeg",
+          "size": 488806,
+          "url": "media/portraits-2026-02-09.jpg"
+        },
+        {
+          "id": "portraits-2026-02-photo-10",
+          "name": "portraits-2026-02-10.jpg",
+          "mime": "image/jpeg",
+          "size": 499189,
+          "url": "media/portraits-2026-02-10.jpg"
+        },
+        {
+          "id": "portraits-2026-02-photo-11",
+          "name": "portraits-2026-02-11.jpg",
+          "mime": "image/jpeg",
+          "size": 488285,
+          "url": "media/portraits-2026-02-11.jpg"
+        },
+        {
+          "id": "portraits-2026-02-photo-12",
+          "name": "portraits-2026-02-12.jpg",
+          "mime": "image/jpeg",
+          "size": 581191,
+          "url": "media/portraits-2026-02-12.jpg"
+        },
+        {
+          "id": "portraits-2026-02-photo-13",
+          "name": "portraits-2026-02-13.jpg",
+          "mime": "image/jpeg",
+          "size": 483003,
+          "url": "media/portraits-2026-02-13.jpg"
+        }
+      ]
+    },
+    {
       "id": "monthly-growth-05",
       "title": "5個月 · 把笑容收進相簿。",
       "date": null,
