@@ -6,6 +6,32 @@
   },
   "memories": [
     {
+      "id": "ultrasound-20250417",
+      "title": "最早的超聲波 · 故事的起點。",
+      "date": "2025-04-17",
+      "chapter": "pregnancy",
+      "kind": "memory",
+      "note": "2025年4月17日，留下最早的超聲波照片。\n還未抱到你，已經想把你每個小小的模樣，好好收藏。",
+      "featured": false,
+      "createdAt": "2026-10-17T10:39:05+08:00",
+      "media": [
+        {
+          "id": "earliest-ultrasound-photo-01",
+          "name": "ultrasound-2025-04-17-01.jpg",
+          "mime": "image/jpeg",
+          "size": 320288,
+          "url": "media/ultrasound-2025-04-17-01.jpg"
+        },
+        {
+          "id": "earliest-ultrasound-photo-02",
+          "name": "ultrasound-2025-04-17-02.jpg",
+          "mime": "image/jpeg",
+          "size": 375052,
+          "url": "media/ultrasound-2025-04-17-02.jpg"
+        }
+      ]
+    },
+    {
       "id": "ultrasound-20250807",
       "title": "還未見面，已經愛你。",
       "date": "2025-08-07",
