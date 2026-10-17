@@ -177,6 +177,7 @@ function readContent(data) {
       dateMonth: calendarMonth(source.dateMonth) ? source.dateMonth : null,
       ageMonths: validAgeMonths(source.ageMonths) ? source.ageMonths : null,
       chapter: source.chapter, kind: source.kind,
+      presentation: source.presentation === 'slideshow' ? 'slideshow' : 'expanded',
       note: typeof source.note === 'string' ? source.note.slice(0, 10000) : '',
       featured: source.featured === true,
       createdAt: typeof source.createdAt === 'string' ? source.createdAt : date || '', media
@@ -498,14 +499,16 @@ function memorySlideshow(memory) {
 
 function memoryCard(memory) {
   const card = el('article', 'memory-entry memory-expanded');
+  const useSlideshow = (memory.presentation === 'slideshow' || memory.id === 'portraits-202602') &&
+    memory.media.length > 0 && memory.media.every(isPhoto);
+  card.classList.toggle('memory-slideshow-entry', useSlideshow);
   card.setAttribute('aria-label', memory.title);
   card.setAttribute('data-memory-id', memory.id);
   const body = el('div', 'entry-body');
   body.append(el('span', 'entry-tag', kindLabels[memory.kind] + (memory.featured ? ' · 精選' : '')),
     el('h3', '', memory.title), el('p', '', memory.note || `${memory.media.length} 個珍貴瞬間`));
   card.append(body);
-  const media = memory.id === 'portraits-202602' && memory.media.length && memory.media.every(isPhoto)
-    ? memorySlideshow(memory) : memoryMedia(memory);
+  const media = useSlideshow ? memorySlideshow(memory) : memoryMedia(memory);
   if (media) card.append(media);
   return card;
 }
