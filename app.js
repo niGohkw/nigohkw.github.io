@@ -45,17 +45,32 @@ function calendarDate(value) {
   return actual.getUTCFullYear() === year && actual.getUTCMonth() === month - 1 && actual.getUTCDate() === day;
 }
 
+function calendarMonth(value) {
+  if (typeof value !== 'string' || !/^\d{4}-\d{2}$/.test(value)) return false;
+  const [year, month] = value.split('-').map(Number);
+  return year >= 1000 && month >= 1 && month <= 12;
+}
+
 function validAgeMonths(value) {
   return Number.isInteger(value) && value >= 0 && value <= 120;
 }
 
 function memoryDateLabel(memory) {
   if (memory.date) return dotDate(memory.date);
+  if (calendarMonth(memory.dateMonth)) {
+    const [year, month] = memory.dateMonth.split('-').map(Number);
+    return `${year}年${month}月`;
+  }
   return validAgeMonths(memory.ageMonths) ? `${memory.ageMonths}個月` : '日期待補';
 }
 
 function memorySortKey(memory) {
   if (memory.date) return Date.parse(memory.date + 'T00:00:00Z');
+  if (calendarMonth(memory.dateMonth)) {
+    const [year, month] = memory.dateMonth.split('-').map(Number);
+    // The first day is only a sorting key; a month-only capture date stays null.
+    return Date.UTC(year, month - 1, 1);
+  }
   if (!validAgeMonths(memory.ageMonths)) return null;
   const [year, month, day] = state.profile.birthday.split('-').map(Number);
   const target = new Date(Date.UTC(year, month - 1 + memory.ageMonths, 1));
@@ -158,6 +173,7 @@ function readContent(data) {
     seenIds.add(source.id);
     memories.push({
       id: source.id, title: source.title.trim().slice(0, 120), date,
+      dateMonth: calendarMonth(source.dateMonth) ? source.dateMonth : null,
       ageMonths: validAgeMonths(source.ageMonths) ? source.ageMonths : null,
       chapter: source.chapter, kind: source.kind,
       note: typeof source.note === 'string' ? source.note.slice(0, 10000) : '',
