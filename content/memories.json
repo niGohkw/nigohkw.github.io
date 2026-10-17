@@ -375,6 +375,75 @@
       ]
     },
     {
+      "id": "portraits-20260424",
+      "title": "七個月寫真 · 向日葵下的笑容。",
+      "date": "2026-04-24",
+      "chapter": "growing",
+      "kind": "memory",
+      "presentation": "slideshow",
+      "note": "向日葵旁的笑臉，還有我們一家人的合照。\n2026年4月24日，把七個月的你，好好留在這一輯相片裏。",
+      "featured": false,
+      "createdAt": "2026-10-18T00:14:27+08:00",
+      "media": [
+        {
+          "id": "portraits-2026-04-24-photo-01",
+          "name": "portraits-2026-04-24-01.jpg",
+          "mime": "image/jpeg",
+          "size": 627988,
+          "url": "media/portraits-2026-04-24-01.jpg"
+        },
+        {
+          "id": "portraits-2026-04-24-photo-02",
+          "name": "portraits-2026-04-24-02.jpg",
+          "mime": "image/jpeg",
+          "size": 476193,
+          "url": "media/portraits-2026-04-24-02.jpg"
+        },
+        {
+          "id": "portraits-2026-04-24-photo-03",
+          "name": "portraits-2026-04-24-03.jpg",
+          "mime": "image/jpeg",
+          "size": 559594,
+          "url": "media/portraits-2026-04-24-03.jpg"
+        },
+        {
+          "id": "portraits-2026-04-24-photo-04",
+          "name": "portraits-2026-04-24-04.jpg",
+          "mime": "image/jpeg",
+          "size": 472265,
+          "url": "media/portraits-2026-04-24-04.jpg"
+        },
+        {
+          "id": "portraits-2026-04-24-photo-05",
+          "name": "portraits-2026-04-24-05.jpg",
+          "mime": "image/jpeg",
+          "size": 388916,
+          "url": "media/portraits-2026-04-24-05.jpg"
+        },
+        {
+          "id": "portraits-2026-04-24-photo-06",
+          "name": "portraits-2026-04-24-06.jpg",
+          "mime": "image/jpeg",
+          "size": 477360,
+          "url": "media/portraits-2026-04-24-06.jpg"
+        },
+        {
+          "id": "portraits-2026-04-24-photo-07",
+          "name": "portraits-2026-04-24-07.jpg",
+          "mime": "image/jpeg",
+          "size": 504506,
+          "url": "media/portraits-2026-04-24-07.jpg"
+        },
+        {
+          "id": "portraits-2026-04-24-photo-08",
+          "name": "portraits-2026-04-24-08.jpg",
+          "mime": "image/jpeg",
+          "size": 460383,
+          "url": "media/portraits-2026-04-24-08.jpg"
+        }
+      ]
+    },
+    {
       "id": "monthly-growth-08",
       "title": "8個月 · 笑得合不攏嘴。",
       "date": null,
