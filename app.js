@@ -386,7 +386,8 @@ function memorySlideshow(memory) {
   stage.type = 'button';
   const slides = files.map((file, index) => {
     const slide = el('span', 'memory-slideshow-slide');
-    slide.hidden = index !== 0;
+    slide.classList.toggle('is-active', index === 0);
+    slide.setAttribute('aria-hidden', String(index !== 0));
     slide.append(photo(file, `${memory.title} · 相片 ${index + 1}/${files.length}`, 'memory-slideshow-photo'));
     stage.append(slide);
     return slide;
@@ -420,7 +421,10 @@ function memorySlideshow(memory) {
   function activate(index) {
     if (disposed) return;
     active = (index + files.length) % files.length;
-    for (const [position, slide] of slides.entries()) slide.hidden = position !== active;
+    for (const [position, slide] of slides.entries()) {
+      slide.classList.toggle('is-active', position === active);
+      slide.setAttribute('aria-hidden', String(position !== active));
+    }
     for (const index of [active, (active + 1) % files.length]) {
       const image = slides[index].querySelector('img');
       if (image) image.loading = 'eager';
