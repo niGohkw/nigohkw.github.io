@@ -1,5 +1,15 @@
 /* Comparison snapshot: 2026-10-25. User-supplied values are explicitly distinguished. */
 window.SOURCES = {
+  hbrJD: {"title": "京東｜HBR Mpro 2.0 星芒夜光商品（SKU 100084791545）", "url": "https://item.jd.com/100084791545.html", "type": "retailer"},
+  hbrJdImage: {"title": "京東原始商品圖｜Mpro 2.0 · 活動價 ¥2,388", "url": "https://img30.360buyimg.com/imgzone/jfs/t1/543951/1/10603/86210/6adc46c9F0b02105a/00833203207c4ef4.jpg", "type": "retailer"},
+  hbrTmall: {"title": "天貓旗艦店商品資料轉載｜Mpro 2.0（優惠日期及SKU須另核）", "url": "https://tao.hooos.com/goods_y3XP3OoAURt2XNOX3MkSozysvtA-p3j775cgrMyYZ8aHA.html", "type": "reference"},
+  hbrTmallMain: {"title": "天貓商家原圖｜Mpro 2.0 · 新生兒至4歲 · ¥2,388起", "url": "https://img.alicdn.com/bao/uploaded/i4/655916654/O1CN01i9tJXuldAmI3FPpA_!!4611686018427387502-0-item_pic.jpg", "type": "retailer"},
+  hbrSuspensionImage: {"title": "天貓商家原圖｜座底彈簧、四輪懸掛及PU輪", "url": "https://img.alicdn.com/i2/655916654/O1CN01wqsoQQ1z1aYI2lyBu_!!655916654.jpg", "type": "retailer"},
+  hbrSoronaImage: {"title": "天貓商家原圖｜DuPont Sorona 坐墊填充", "url": "https://img.alicdn.com/i3/655916654/O1CN012GRY7A1z1aYHswe3A_!!655916654.jpg", "type": "retailer"},
+  hbrStandardImage: {"title": "天貓商家原圖｜EN1888-2 測試負重標示", "url": "https://img.alicdn.com/i4/655916654/O1CN01w1aM501z1aYJTNHI2_!!655916654.jpg", "type": "retailer"},
+  hbrReview: {"title": "知乎實物開箱｜HBR Mpro 2.0 · 作者測量及操作照片", "url": "https://www.zhihu.com/tardis/bd/art/436178265", "type": "reference"},
+  hbrAngle: {"title": "什麼值得買用家文｜Mpro 2.0 靠背角度（2025-01-11）", "url": "https://post.smzdm.com/p/a4xo33k7/", "type": "reference"},
+  hbrSuning: {"title": "蘇寧｜Mpro2.0 零售參數（圖片及部分參數混版）", "url": "https://www.suning.com/item/0000000000/12276955729.html", "type": "reference"},
   userRecline: {"title": "你提供嘅 TRIV next 三段靠背圖片 · 2026-10-25", "url": null, "type": "user"},
   rdSwan: {"title": "Red Dot｜Swan Pro · Product Design 2025", "url": "https://www.red-dot.org/project/swan-pro-79929", "type": "primary"},
   rdSwanTW: {"title": "gb Taiwan｜SWAN Pro 榮獲 2025 紅點產品設計大獎", "url": "https://www.facebook.com/61571200726107/posts/122120441114706690/", "type": "primary"},
@@ -220,5 +230,33 @@ window.SOURCES = {
         warranty:c('香港適用條款待核','unknown',['aer'],'官方有10年可轉讓保養計劃，但本次未核實香港適用及登記條件，不直接當作港版保證。')
       }
     }
+    ,{
+      id:'hbr-mpro2',name:'HBR 虎貝爾 Mpro 2.0',brand:'HBR',version:'內地版 · 星芒夜光／雅金',category:'輕便旅行',accent:'#95516a',
+      aliases:['虎具爾','虎具尔','虎贝尔','Mpro2.0','Mpro 2.0'],
+      recognitions:[],
+      fields:{
+        price:c('約 HK$2,810起','reference',['hbrJdImage','hbrTmallMain','hbrJD','fxCNY'],'商家圖示活動價¥2,388起；按¥1≈HK$1.176換算。未確認結算價，未計運費／匯差，亦未再扣限量紅包或會員券。',2810),
+        load:c('兒童承重上限待核','unknown',['hbrStandardImage'],'商家圖列22kg測試砝碼；測試負重不等同產品兒童承重上限，須核對實售版說明書。'),
+        weight:c('約 7 kg（參考）','reference',['hbrReview'],'Mpro 2.0實物測評文列全車7.0kg；沒有自行磅重紀錄，亦未交代拆除配件口徑。',7),
+        seatWidth:c('標示38 / 手量36–37 cm','reference',['hbrReview'],'同一篇Mpro 2.0測評：宣傳座闊38cm，作者手量約36–37cm；量法及內外闊度可能有差異。',38),
+        seatHeight:c('約 50 cm','reference',['hbrReview'],'測評文列座高50cm，作者手量約49–50cm；屬參考量度，並非本次實測。',50),
+        backrestHeight:c('未核實','unknown',['hbrReview'],'測評提到嘅85–86cm係躺臥總長，不能當作靠背長度。'),
+        recline:c('綁帶式無段調節','reference',['hbrReview','hbrTmall','hbrAngle'],'實物照片顯示透過綁帶長度調背，沒有固定段數。用家文列95°–175°，未以現售版說明書核實角度。'),
+        calf:c('腿托可另調；段數待核','reference',['hbrReview'],'兩側按鈕調節；腿托向上托起可固定於平直位置。另有下方固定腳踏。'),
+        direction:c('向前 · 標準座椅單向','reference',['hbrReview'],'實物測評明確指出不能雙向推行；勿與M360或其他雙向型號混用。'),
+        structure:c('調背、腿托分開；非固定L形','reference',['hbrReview','hbrTmallMain'],'按實物操作照片判斷，靠背可相對座面改變角度；不是固定L形整張後傾。背板材質及座板微翹角度未核實。'),
+        suspension:c('商家稱三重避震','reference',['hbrSuspensionImage'],'商品圖列座底彈簧、四輪懸掛彈簧及PU輪胎；屬商家結構說明，未有獨立避震性能測試。'),
+        wheels:c('PU輪 · 前輪可定向','reference',['hbrSuspensionImage','hbrReview'],'實物測評顯示前輪可鎖方向及拆卸；前／後輪直徑未核實。'),
+        folded:c('現售2.0尺寸待核','unknown',['hbrSuning'],'零售頁列52×46×24cm，但同頁混有舊Mpro圖片及矛盾參數，未直接套作2.0確定規格。'),
+        unfolded:unknown('未找到可靠對應現售Mpro 2.0嘅整車展開尺寸；87×38×50cm疑似座艙數字，不當作整車尺寸。'),
+        basket:c('有下方購物籃；承重待核','unknown',['hbrReview','hbrTmallMain'],'圖片可見購物籃，未取得對應版本籃內承重標籤或說明書。'),
+        ergonomic:c('無段調背 · 腿托 · 座墊承托','reference',['hbrReview','hbrSoronaImage'],'有助調整坐躺姿勢，腰背是否貼合仍要試坐；未有證據證明護脊優於其他款，亦未核實本型號AGR認證。'),
+        strengths:c('自動收車 · Sorona坐墊 · 反光篷','reference',['hbrTmallMain','hbrSoronaImage','hbrReview'],'單手收車、收後自立；坐墊填充DuPont Sorona；星芒款圖案反射外來光線。防蟎抗菌屬商家宣傳。'),
+        limits:c('單向；現售批次及跨境售後要對清','reference',['hbrJD','hbrTmall','hbrReview'],'Mpro與2.0資料容易混用；未核實指定設計獎或OEKO-TEX證書。可登機宣傳不代表所有航空公司接受。'),
+        included:c('扶手／頭枕；贈品按套裝','reference',['hbrTmallMain','hbrReview'],'圖片可見前扶手及頭枕。測評當次附雨罩、蚊帳、涼席，不能保證現售訂單相同；汽座提籃及適配器按套裝另購。'),
+        warranty:unknown('未核實現售店舖保養期，以及寄到香港後維修、退換安排。')
+      }
+    }
+
   ];
 })();

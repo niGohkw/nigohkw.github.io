@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#f6d6e4">
-  <meta name="description" content="七款 BB 車的完整規格比較，一張表看清座椅、重量、價錢、避震與承托；固定車名，輕鬆左右捲動。">
+  <meta name="description" content="八款 BB 車的完整規格比較，一張表看清座椅、重量、價錢、避震與承托；固定車名，輕鬆左右捲動。">
   <title>BB車比較室｜一張表，慢慢揀</title>
-  <link rel="stylesheet" href="styles.css?v=20261025-transparent">
-  <script src="data.js?v=20261025-transparent" defer></script>
-  <script src="app.js?v=20261025-transparent" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261025-hbr">
+  <script src="data.js?v=20261025-hbr" defer></script>
+  <script src="app.js?v=20261025-hbr" defer></script>
 </head>
 <body>
   <header class="masthead"><a class="wordmark" href="./" aria-label="BB車比較室首頁"><span class="brand-icon" aria-hidden="true">↔</span> BB車比較室</a><span class="edition">選購筆記 <span>／</span> 2026.10.25</span></header>
@@ -19,7 +19,7 @@
     </section>
     <section class="comparison" aria-label="BB車規格比較">
       <div class="toolbar">
-        <div class="toolbar-start"><h2>規格總覽 <span id="model-count">7</span></h2><button id="filter-trigger" class="button filter-button" aria-expanded="false" aria-controls="filter-panel"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 5h14M5.5 10h9M8 15h4"/></svg>選擇車款</button></div>
+        <div class="toolbar-start"><h2>規格總覽 <span id="model-count">8</span></h2><button id="filter-trigger" class="button filter-button" aria-expanded="false" aria-controls="filter-panel"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 5h14M5.5 10h9M8 15h4"/></svg>選擇車款</button></div>
         <div class="toolbar-end"><label class="search-wrap"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4"/></svg><input id="search" type="search" placeholder="搜尋車款或品牌" aria-label="搜尋車款或品牌"></label><label class="sort-wrap"><span>排序</span><select id="sort" aria-label="排序方式"><option value="default">原有次序</option><option value="price">價錢：由低至高</option><option value="weight">標重：由輕至重*</option><option value="seatHeight">座高：由高至低</option><option value="seatWidth">座闊：由闊至窄</option></select></label></div>
       </div>
       <div id="filter-panel" class="filter-panel" hidden><div class="filter-head"><span>顯示車款</span><button id="select-all" class="text-button">全部顯示</button></div><div id="model-filters" class="model-filters"></div></div>
@@ -29,10 +29,10 @@
       <div id="top-scroll" class="top-scroll" aria-label="橫向捲動規格表" tabindex="0"><div id="scroll-spacer"></div></div>
       </div>
       <div id="table-scroll" class="table-scroll" tabindex="0" role="region" aria-label="完整展開、可左右捲動的BB車規格表">
-        <table id="comparison-table"><caption class="sr-only">七款BB車完整規格比較。車名固定，表頭隨頁面捲動保持可見；點擊資料按鈕查看來源及備註。</caption><colgroup id="table-cols"></colgroup><thead id="table-head"></thead><tbody id="table-body"></tbody></table>
+        <table id="comparison-table"><caption class="sr-only">八款BB車完整規格比較。車名固定，表頭隨頁面捲動保持可見；點擊資料按鈕查看來源及備註。</caption><colgroup id="table-cols"></colgroup><thead id="table-head"></thead><tbody id="table-body"></tbody></table>
         <div class="empty-state" id="empty-state" hidden><h3>未有符合條件嘅車款</h3><p>試下清除搜尋，或者重新顯示全部車款。</p><button class="button" id="reset-filters">重設篩選</button></div>
       </div>
-      <div class="table-footer"><span id="result-count" aria-live="polite">顯示7款</span><div class="legend"><span><i class="legend-dot verified"></i>公開資料</span><span><i class="legend-dot user"></i>你提供</span><span><i class="legend-dot reference"></i>參考／有差異</span><span><i class="legend-dot unknown"></i>待確認</span></div><span class="source-hint">點 <span class="mini-info">i</span> 查看來源</span></div>
+      <div class="table-footer"><span id="result-count" aria-live="polite">顯示8款</span><div class="legend"><span><i class="legend-dot verified"></i>公開資料</span><span><i class="legend-dot user"></i>你提供</span><span><i class="legend-dot reference"></i>參考／有差異</span><span><i class="legend-dot unknown"></i>待確認</span></div><span class="source-hint">點 <span class="mini-info">i</span> 查看來源</span></div>
     </section>
     <p class="recognition-note">車名旁嘅 logo 可按入睇年份、適用版本同官方來源。設計獎、AGR 人體工學認證及 OEKO-TEX 紡織品認證各有唔同範圍；未展示代表暫未找到足夠嘅對應型號證據。本表目前未有可確認適用嘅 OEKO-TEX 標誌。</p>
     <section class="reading-notes" aria-label="比較須知"><div><span class="note-index">01</span><p><strong>數字要連計法一齊睇</strong>部分車重未計頂篷或扶手；座闊亦未必採用相同量度方法。排序只按表列數值，唔代表相同配置嘅實測排名。</p></div><div><span class="note-index">02</span><p><strong>承托，最終要試坐</strong>可調靠背、腿托及避震係比較重點。AGR認證可作參考，但唔代表能矯正脊椎；試坐時留意腰背貼合及臀部會否下滑。</p></div><div><span class="note-index">03</span><p><strong>對清版本先落單</strong>Coya主表用2026 Style；你提供嘅46cm座高未指定代別。天鵝Pro部分數據來自海外A8000資料，唔直接等同每個內地銷售批次。</p></div></section>
