@@ -1,5 +1,13 @@
 /* Comparison snapshot: 2026-10-25. User-supplied values are explicitly distinguished. */
 window.SOURCES = {
+  userRecline: {"title": "你提供嘅 TRIV next 三段靠背圖片 · 2026-10-25", "url": null, "type": "user"},
+  rdSwan: {"title": "Red Dot｜Swan Pro · Product Design 2025", "url": "https://www.red-dot.org/project/swan-pro-79929", "type": "primary"},
+  rdSwanTW: {"title": "gb Taiwan｜SWAN Pro 榮獲 2025 紅點產品設計大獎", "url": "https://www.facebook.com/61571200726107/posts/122120441114706690/", "type": "primary"},
+  rdTriv: {"title": "Red Dot｜TRIV next · Product Design 2022", "url": "https://www.red-dot.org/project/triv-next-57012", "type": "primary"},
+  rdLx: {"title": "Red Dot｜TRVL lx · Product Design 2024", "url": "https://www.red-dot.org/project/trvltm-lx-68466", "type": "primary"},
+  ifLx: {"title": "iF Design Award 2024｜Nuna TRVL lx", "url": "https://ifdesign.com/en/winner-ranking/project/nuna-trvl-lx/619919", "type": "primary"},
+  rdCoya: {"title": "Red Dot｜COŸA · Product Design 2026", "url": "https://www.red-dot.org/project/coya-86929", "type": "primary"},
+  rdAer2: {"title": "Red Dot｜Joolz Aer² · Product Design 2025", "url": "https://www.red-dot.org/project/joolz-aer2-79931", "type": "primary"},
   user: {title:'你提供嘅補充數字 · 2026-10-25',url:null,type:'user'},
   tw: {title:'媽咪學苑｜台灣 SWAN Pro.TW 總代理商品頁',url:'https://shop.mommycare.cc/products/gb-swan-pro',type:'primary'},
   twYahoo: {title:'Yahoo 台灣自營｜SWAN Pro 座闊標示',url:'https://tw.buy.yahoo.com/gdsale/gb-SWAN-Pro-%E7%A2%B3%E7%BA%96%E7%B6%AD%E6%A5%B5%E8%87%B4%E8%BC%95%E7%9B%88%E9%9B%99%E5%90%91%E6%8E%A8%E8%BB%8A-%E9%AB%98%E6%99%AF%E8%A7%80-%E6%89%8B%E6%8A%8A%E6%8F%9B%E5%90%91-%E9%99%84%E8%B4%88%E8%9A%8A%E5%B8%B3-12146209.html',type:'retailer'},
@@ -32,6 +40,7 @@ window.SOURCES = {
   window.STROLLER_DATA = [
     {
       id:'swan-tw',name:'gb SWAN Pro',brand:'gb',version:'台灣版 · SWAN Pro.TW',category:'雙向日常',accent:'#7b815b',
+      recognitions:[{"kind":"red-dot","name":"Red Dot Design Award","logo":"award-red-dot.png","sources":["rdSwan","rdSwanTW"],"detail":"Red Dot 官方獲獎名稱為 Swan Pro；gb Taiwan 亦明確宣傳台灣銷售嘅 SWAN Pro 獲 2025 紅點產品設計獎。獎項屬產品設計評選，並非醫療或護脊認證。","year":"2025","scope":"","status":"verified"}],
       fields:{
         price:c('約 HK$4,530','reference',['tw','fxTWD'],'台灣總代理 NT$18,800；查詢時售罄。以 NT$1 ≈ HK$0.2407 換算，未計運費及付款匯差。',4530),
         load:c('22 kg','verified',['tw'],'總代理產品標籤列0–36個月、22kg以下。',22),
@@ -57,6 +66,7 @@ window.SOURCES = {
     },
     {
       id:'swan-cn',name:'gb 天鵝 Pro',brand:'gb',version:'內地 A8000 · 海外資料供對照',category:'雙向日常',accent:'#7b815b',
+      recognitions:[{"kind":"agr","name":"AGR 人體工學認證","logo":"award-agr.png","sources":["agr"],"detail":"AGR 官方推車名單列明 Goodbaby SWAN（A8000、A8100）。本表內地版以 A8000 對照；此標誌不自動涵蓋 SWAN Pro.TW。認證可作人體工學參考，並非治療、矯正脊椎或預防側彎保證。","year":"","scope":"A8000 / A8100","status":"verified"},{"kind":"red-dot","name":"Red Dot Design Award","logo":"award-red-dot.png","sources":["rdSwan"],"detail":"Red Dot 官方列 Swan Pro 為 2025 Product Design 得獎產品，製造商為 Goodbaby Child Products。不是原版 SWAN 嘅 2018 年獎項。","year":"2025","scope":"","status":"verified"},{"kind":"good-design","name":"日本 Good Design Award","logo":"award-good-design.jpg","sources":["gmark"],"detail":"日本設計振興會官方獲獎記錄：SWAN PRO，2024 年，獎項編號 24G020090。此為日本 G Mark 設計獎；不是護脊或醫療認證。","year":"2024","scope":"","status":"verified"}],
       fields:{
         price:c('內地現價待核','unknown',['gmark','fxCNY'],'早期設計獎申報價¥4,699，按本次匯率約HK$5,530；並非現售價，故不參與現價排序。'),
         load:unknown('未成功以對應內地官方說明書核實；不能直接套用台版22kg，亦不採用未核實15kg說法。'),
@@ -82,6 +92,7 @@ window.SOURCES = {
     },
     {
       id:'trvl-urbn',name:'Nuna TRVL urbn',brand:'Nuna',version:'獨立推車 · 香港行貨資料',category:'城市單向',accent:'#587a79',
+      recognitions:[],
       fields:{
         price:c('HK$4,380','verified',['urbnHK'],'香港行貨推車單車售價；不是TRVL加PIPA urbn汽座套裝。',4380),
         load:c('22 kg','verified',['urbn','urbnManual'],'初生至4歲或22kg，以先到者為準。',22),
@@ -107,6 +118,7 @@ window.SOURCES = {
     },
     {
       id:'trvl-lx',name:'Nuna TRVL lx',brand:'Nuna',version:'香港行貨資料',category:'城市單向',accent:'#587a79',
+      recognitions:[{"kind":"red-dot","name":"Red Dot Design Award","logo":"award-red-dot.png","sources":["rdLx"],"detail":"Red Dot 官方直接列明 TRVL lx 獲 2024 Product Design 獎。此為產品設計獎。","year":"2024","scope":"","status":"verified"},{"kind":"if-design","name":"iF Design Award","logo":"award-if-2024.png","sources":["ifLx","lx"],"detail":"iF 官方得獎記錄及 Nuna TRVL lx 官方產品頁均列明 2024 年 iF Design Award。此為設計獎，並非護脊或紡織品安全認證。","year":"2024","scope":"","status":"verified"}],
       fields:{
         price:c('HK$4,380','verified',['lxHK'],'香港行貨推車單車售價。',4380),
         load:c('22 kg','verified',['lx','lxManual'],'初生至4歲或22kg，以先到者為準。',22),
@@ -132,6 +144,7 @@ window.SOURCES = {
     },
     {
       id:'triv-next',name:'Nuna TRIV next',brand:'Nuna',version:'標準款 · 香港行貨資料',category:'雙向日常',accent:'#587a79',
+      recognitions:[{"kind":"red-dot","name":"Red Dot Design Award","logo":"award-red-dot.png","sources":["rdTriv"],"detail":"Red Dot 官方直接列明 TRIV next 獲 2022 Product Design 獎。此記錄對應 next 型號，沒有套用舊版 TRIV 嘅獎項。","year":"2022","scope":"","status":"verified"}],
       fields:{
         price:c('HK$5,680','verified',['trivHK'],'香港行貨標準款；非BMW聯名版或TRIV lx。',5680),
         load:c('22 kg','verified',['triv','trivManual'],'初生至4歲或22kg，以先到者為準。',22),
@@ -139,7 +152,7 @@ window.SOURCES = {
         seatWidth:c('35 cm','user',['user'],'你提供嘅座位闊度；本次未獨立核實量度方法。',35),
         seatHeight:c('55 cm','user',['user','trivHK'],'採用你提供嘅55cm；香港商戶頁另列52cm，可能涉及量法或版本，差異待確認。',55),
         backrestHeight:unknown('未找到可靠、對應香港版本嘅靠背長數字。'),
-        recline:c('4段 · 香港頁115–155°','verified',['trivHK','trivManual','triv'],'4段有官方說明書支持；國際官網稱true-flat，與香港角度標示不同，實物及隨車說明書優先。'),
+        recline:c('3段 · 110° / 135° / 160°','user',['userRecline'],'按你提供嘅圖片修正為3段，角度分別為110°、135°、160°。不同市場版本資料有差異，本表採用你指定版本嘅圖示。'),
         calf:c('2段腿托 + 下方固定腳踏','verified',['trivManual','triv'],'腿托與靠背可分開調，較大孩子可使用下方腳踏。'),
         direction:c('雙向 · 拆座椅反轉','verified',['triv'],'前向、後向都可連座椅收車。'),
         folded:c('32 × 58 × 69 cm','verified',['trivHK','triv'],'長 × 闊 × 高；香港四捨五入標示，國際精確值31.5×57.5×69cm。'),
@@ -157,6 +170,7 @@ window.SOURCES = {
     },
     {
       id:'coya',name:'Cybex Coya',brand:'CYBEX',version:'2026 Style · 玫瑰金款',category:'輕便旅行',accent:'#a27b69',
+      recognitions:[{"kind":"agr","name":"AGR 人體工學認證","logo":"award-agr.png","sources":["coya","agr"],"detail":"CYBEX 現行 Coya Style 官方產品頁嘅 Awards 區直接展示 AGR 認證標誌；AGR 官方推車名單亦列 Coÿa。認證可作人體工學參考，並非治療或矯正脊椎保證。","year":"","scope":"Coya Style","status":"verified"},{"kind":"red-dot","name":"Red Dot Design Award","logo":"award-red-dot.png","sources":["rdCoya","coya"],"detail":"Red Dot 官方 2026 得獎記錄為新代 COŸA；CYBEX Coya Style 官方產品頁亦展示 Red Dot 2026 標誌。此為產品設計獎。","year":"2026","scope":"","status":"verified"}],
       fields:{
         price:c('HK$4,999','verified',['coyaHK'],'Jakewell Style玫瑰金款；查詢時頁面售罄。',4999),
         load:c('22 kg','verified',['coya'],'初生至約4歲，按說明書使用適當躺姿。',22),
@@ -173,7 +187,7 @@ window.SOURCES = {
         wheels:unknown('未找到新代官方輪徑數字。'),
         basket:c('5 kg','reference',['coyaHK'],'香港商品頁列5kg；商品頁有混用舊規格情況，購買新代時宜與隨車說明書核對。',5),
         structure:c('獨立調背、腿托；非固定L形','reference',['coya'],'可變座背夾角，並非固定L形整張傾斜桶座。'),
-        ergonomic:c('可躺 · 可調腿托 · 網背','reference',['coya','agr'],'Coya系列有AGR認證紀錄，但所見名單未明列2026 Style；不能保證個別新版認證涵蓋範圍。'),
+        ergonomic:c('AGR · 可調腿托 · 網背','verified',['coya','agr'],'Coya Style 官方商品頁展示 AGR 標誌；AGR 名單亦列 Coÿa。認證屬人體工學參考，唔代表能矯正脊椎或預防側彎。'),
         strengths:c('一拉安全帶 · 網背 · 肩帶','verified',['coya'],'可拆坐墊、單手收展；新代支援Mios/Coya Fold Lux Carry Cot摺疊睡籃。'),
         limits:c('新舊代要對清；部分配件另購','reference',['coya','coyaOld'],'舊代6.6kg、收52×44×18cm；Mothercourt舊代標HK$4,749（售罄）。機艙攜帶按航空公司規定。'),
         included:c('車架、座椅、頂篷、籃、肩帶','reference',['coyaHK','coya'],'香港普通款前扶手、雨罩等按所選套裝確認；不可套用海外套裝附送項目。'),
@@ -182,6 +196,7 @@ window.SOURCES = {
     },
     {
       id:'aer2',name:'Joolz Aer²',brand:'Joolz',version:'香港太空黑 · Aer²',category:'輕便旅行',accent:'#847196',
+      recognitions:[{"kind":"red-dot","name":"Red Dot Design Award","logo":"award-red-dot.png","sources":["rdAer2"],"detail":"Red Dot 官方直接列明 Joolz Aer² 獲 2025 Product Design 獎。沒有將上一代 Aer／Aer+ 嘅 iF 獎項套用到 Aer²。","year":"2025","scope":"","status":"verified"}],
       fields:{
         price:c('HK$3,999','verified',['aerHK'],'原價HK$4,399；所查太空黑頁面售罄。指定色贈品按訂單確認。',3999),
         load:c('22 kg','verified',['aer'],'香港／歐洲資料標初生至約4歲，初生使用最躺姿。',22),

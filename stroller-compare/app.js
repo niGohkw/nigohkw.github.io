@@ -24,8 +24,22 @@
   }
   function renderFilters(){const list=$('model-filters');data.forEach(m=>{const label=el('label','model-option');const input=document.createElement('input');input.type='checkbox';input.checked=true;input.value=m.id;input.addEventListener('change',()=>{input.checked?selected.add(m.id):selected.delete(m.id);render();});label.append(input,el('span','',m.name));list.append(label);});}
   function currentModels(){const q=$('search').value.trim().toLowerCase();let models=data.filter(m=>selected.has(m.id)&&[m.name,m.brand,m.version].join(' ').toLowerCase().includes(q));const order=$('sort').value;if(order!=='default'){models=[...models].sort((a,b)=>{const x=a.fields[order]?.number,y=b.fields[order]?.number;const xv=typeof x==='number'&&Number.isFinite(x),yv=typeof y==='number'&&Number.isFinite(y);if(!xv)return yv?1:0;if(!yv)return -1;return (order==='seatHeight'||order==='seatWidth')?y-x:x-y;});}return models;}
+  function recognitionBadges(m){
+    if(!Array.isArray(m.recognitions)||!m.recognitions.length)return null;
+    const badges=el('div','model-recognitions');badges.setAttribute('aria-label','認證及設計獎項');
+    m.recognitions.forEach(r=>{
+      const label=[r.name,r.year].filter(Boolean).join(' · '),caption=[r.year,r.scope].filter(Boolean).join(' · ');
+      const b=el('button','recognition-badge');b.type='button';b.dataset.recognition=r.kind;
+      b.setAttribute('aria-label',m.name+'：'+label+(r.scope?'（'+r.scope+'）':'')+'，查看來源及適用版本');
+      b.title=label+(r.scope?' · '+r.scope:'')+'；按一下查看來源及適用版本';
+      const img=document.createElement('img');img.className='recognition-logo';img.src=r.logo;img.alt=r.name;img.width=62;img.height=36;img.decoding='async';
+      b.append(img);if(caption)b.append(el('span','recognition-caption',caption));
+      b.addEventListener('click',()=>showDetail(m,{label:'認證／設計獎項'},{value:label,status:r.status||'verified',sources:r.sources||[],detail:[r.scope?'適用範圍：'+r.scope+'。':'',r.detail].filter(Boolean).join(' ')}));
+      badges.append(b);
+    });return badges;
+  }
   function render(){
-    const rows=currentModels(),body=$('table-body');body.replaceChildren();rows.forEach(m=>{const tr=document.createElement('tr');const name=el('th','model-cell');name.scope='row';name.append(el('div','model-brand',m.brand),el('div','model-title',m.name),el('div','model-version',m.version),el('span','model-number',String(data.findIndex(x=>x.id===m.id)+1).padStart(2,'0')));tr.append(name);
+    const rows=currentModels(),body=$('table-body');body.replaceChildren();rows.forEach(m=>{const tr=document.createElement('tr');const name=el('th','model-cell');name.scope='row';name.append(el('div','model-brand',m.brand),el('div','model-title',m.name),el('div','model-version',m.version));const badges=recognitionBadges(m);if(badges)name.append(badges);name.append(el('span','model-number',String(data.findIndex(x=>x.id===m.id)+1).padStart(2,'0')));tr.append(name);
       cols.forEach((c,i)=>{const cell=m.fields[c.key]||{value:'未公布',status:'unknown',sources:[]};const td=el('td',`${c.numeric?'numeric ':''}${i===0||cols[i-1].group!==c.group?'group-start':''}`);const top=el('div','cell-top'),value=el('div','cell-value',cell.value);const b=el('button','info-button','i');b.type='button';b.setAttribute('aria-label',m.name+'：'+c.label+'，查看來源及備註');b.addEventListener('click',()=>showDetail(m,c,cell));top.append(value,b);td.append(top);if(cell.detail)td.append(el('div','cell-detail',cell.detail));if(cell.status&&cell.status!=='verified'){const tag=el('div','cell-status');tag.append(el('span','pill '+cell.status,statusNames[cell.status]||cell.status));td.append(tag);}tr.append(td);});body.append(tr);
     });$('model-count').textContent=rows.length;$('result-count').textContent=`顯示 ${rows.length} / ${data.length} 款 · ${cols.length} 項規格`;$('empty-state').hidden=rows.length>0;$('comparison-table').hidden=rows.length===0;syncWidth();
   }
