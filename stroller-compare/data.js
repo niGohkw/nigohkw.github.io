@@ -1,5 +1,7 @@
 /* Comparison snapshot: 2026-10-26. User-supplied values are explicitly distinguished. */
 window.SOURCES = {
+  userSwanPrice: {title:'你提供嘅內地天鵝 Pro 售價 ¥4,010 · 2026-10-26',url:null,type:'user'},
+  fxCNY20261026: {title:'Xe｜人民幣兌港幣參考匯率（2026-10-26）',url:'https://www.xe.com/currencyconverter/convert/?Amount=1&From=CNY&To=HKD',type:'reference'},
   ixxa: {"title": "Nuna｜IXXA next 全球官方規格", "url": "https://nunababy.com/en/ixxa-next-pushchair", "type": "primary"},
   ixxaHK: {"title": "Twins Baby｜IXXA next 香港行貨售價及規格", "url": "https://www.twinsbaby.hk/product/nuna-ixxa-next-stroller/", "type": "retailer"},
   ixxaManual: {"title": "Nuna｜IXXA next 全球官方說明書", "url": "https://dl.nunababy.eu/Instruction_Manual/GL/IXXA-next/Nuna_IXXAnext_UserManual_GL.pdf", "type": "primary"},
@@ -135,7 +137,7 @@ window.SOURCES = {
       marketEvidence:{"buttonLabel": "內地資料／圖", "ariaLabel": "內地資料及商品圖", "heading": "內地天鵝 Pro 補充資料", "value": "天鵝 Pro｜天貓、京東及品牌供稿", "status": "reference", "sources": ["swanCnRecline", "swanCnWeight", "swanCnDirection", "swanCnJDImage", "swanCnAdjust", "swanCnTmall", "swanCnJD", "swanCnBrand"], "detail": "只適用內地天鵝Pro列，不套用台灣SWAN Pro。天貓旗艦店原圖列100°／145°／170°，與海外頁160°有差異；8.2kg原圖未交代全配計重口徑。商家圖由公開轉載頁取得，京東資料亦以公開轉載及原圖對照；未登入讀取商品詳情。過期活動價、醫療式宣傳及未對應型號數字不當作確定規格。"},
       fields:{
         launch:{"value": "最遲2024-05-31已有售賣紀錄", "status": "reference", "sources": ["swanCnSale2024"], "detail": "內地優惠紀錄明確列天鵝Pro，更新時間2024-05-31 21:52；這是可查到的售賣紀錄，並非已核實官方首次上市日。"},
-        price:c('內地現價待核','unknown',['swanCnPromo','swanCnTmall'],'天貓原圖曾標¥3,999起，但10月20日至25日活動已結束；轉載頁另有含券及預售價，未核實現售結算，故不參與現價排序。'),
+        price:{...c('約 HK$4,716','user',['userSwanPrice','fxCNY20261026'],'人民幣 ¥4,010（你於2026-10-26提供）；按當日參考匯率 ¥1 ≈ HK$1.17607 換算。未計運費、付款手續費及實際匯差。',4716),providedDate:'2026年10月26日'},
         load:unknown('未成功以對應內地官方說明書核實；不能直接套用台版22kg，亦不採用未核實15kg說法。'),
         weight:c('8.2 kg*','reference',['swanCnWeight','swan','gmark'],'*天貓原圖寫「8.2kg碳纖維輕骨架」，未交代拆配件口徑；海外A8000圖列淨重。內地全配重量仍須核對。',8.2),
         seatWidth:c('36 cm','reference',['swan'],'海外A8000商品圖標示；量度方法未詳，不等於已證實比台版闊3cm。',36),
@@ -152,7 +154,7 @@ window.SOURCES = {
         structure:c('可變座背夾角；非固定L形','reference',['swanCnRecline','swanCnAdjust','swan'],'內地商品圖顯示座背夾角可打開，腿托可另調；並非固定L形整張後傾。背板材質未核實，不能由碳纖維車架推論。'),
         ergonomic:c('AGR列名 A8000 / A8100','verified',['agr'],'認證是人體工學參考，亦涵蓋調節、通風、家長操作等；不是矯正脊椎或預防側彎保證。'),
         strengths:c('碳纖維 · 推把換向 · 單手收車','reference',['swanCnWeight','swanCnDirection','swan'],'內地圖補充碳纖維及單手換向；單手收合、自立、36cm座闊及90cm躺長仍以海外A8000資料供對照。'),
-        limits:c('內地承重、現價及批次資料待核','unknown',['swan'],'已補內地旗艦店圖；座闊及整車尺寸仍以海外A8000資料對照。承重、保養及全配重量未逐項核實，不套用台版或Air。'),
+        limits:c('內地承重及批次資料待核','unknown',['swan'],'已補內地旗艦店圖；座闊及整車尺寸仍以海外A8000資料對照。承重、保養及全配重量未逐項核實，不套用台版或Air。'),
         included:c('隨車配件及贈品待核','unknown',['swanCnPromo','swan'],'內地圖曾送杯架、餐盤及雨罩，但活動已結束；海外頁蚊帳不代表內地標配，按現售套裝確認。'),
         warranty:unknown('未取得內地實售版完整保養條款。')
       }

@@ -44,7 +44,7 @@
     });$('model-count').textContent=rows.length;$('result-count').textContent=`顯示 ${rows.length} / ${data.length} 款 · ${cols.length} 項規格`;$('empty-state').hidden=rows.length>0;$('comparison-table').hidden=rows.length===0;syncWidth();
   }
   function showDetail(m,c,cell){$('detail-model').textContent=m.name+' · '+m.version;$('detail-title').textContent=c.label;$('detail-value').textContent=cell.value;$('detail-note').replaceChildren();if(cell.status)$('detail-note').append(el('span','pill '+cell.status,statusNames[cell.status]));if(cell.detail)$('detail-note').append(el('p','',cell.detail));const source=$('detail-source');source.replaceChildren(el('h3','','資料來源'));
-    if(cell.status==='user')source.append(el('p','','你於2026年10月25日提供嘅數據；本表按你補充更新，未當作獨立實測。'));
+    if(cell.status==='user')source.append(el('p','','你於'+(cell.providedDate||'2026年10月25日')+'提供嘅數據；本表按你補充更新，未當作獨立實測。'));
     let count=0;(cell.sources||[]).forEach(id=>{const s=sources[id];if(!s)return;if(s.url){const a=el('a','',s.title+' ↗');a.href=s.url;a.target='_blank';a.rel='noopener noreferrer';source.append(a);count++;}else if(s.title&&cell.status!=='user'){source.append(el('p','',s.title));count++;}});if(!count&&cell.status!=='user')source.append(el('p','','未找到對應版本嘅可靠公開數據；以實物、隨車說明書及商戶確認為準。'));$('detail-dialog').showModal();
   }
   function syncWidth(){requestAnimationFrame(()=>{$('scroll-spacer').style.width=$('comparison-table').hidden?'0px':Math.max(0,$('comparison-table').scrollWidth-20)+'px';updateScroll();updatePageHeader();});}
