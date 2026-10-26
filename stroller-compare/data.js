@@ -1,5 +1,25 @@
 /* Comparison snapshot: 2026-10-26. User-supplied values are explicitly distinguished. */
 window.SOURCES = {
+  ixxa: {"title": "Nuna｜IXXA next 全球官方規格", "url": "https://nunababy.com/en/ixxa-next-pushchair", "type": "primary"},
+  ixxaHK: {"title": "Twins Baby｜IXXA next 香港行貨售價及規格", "url": "https://www.twinsbaby.hk/product/nuna-ixxa-next-stroller/", "type": "retailer"},
+  ixxaManual: {"title": "Nuna｜IXXA next 全球官方說明書", "url": "https://dl.nunababy.eu/Instruction_Manual/GL/IXXA-next/Nuna_IXXAnext_UserManual_GL.pdf", "type": "primary"},
+  ixxaHeight: {"title": "Nuna 英國官方｜IXXA next 座高56cm", "url": "https://nunababy.eu/uk/ixxa-next-lytl-pipa-urbn-travel-system", "type": "primary"},
+  ixxaJP: {"title": "Katoji｜IXXA next 日本 Seasalt 版規格", "url": "https://www.katoji.co.jp/products-detail.html?_prvw_k__PItem=4734", "type": "primary"},
+  nunaWarnings: {"title": "Nuna｜現行全球推車警告書及各型號購物籃承重", "url": "https://dl.nunababy.eu/Instruction_Manual/GL/0-Documents/Nuna_PushchairWarnings_GL.pdf", "type": "primary"},
+  ixxaAccessories: {"title": "Eugene Baby｜IXXA next 香港套裝及配件", "url": "https://mall.eugenebaby.com/collections/%E8%BC%95%E4%BE%BF%E6%89%8B%E6%8E%A8%E8%BB%8A/products/una-stroller-ixxa-next", "type": "retailer"},
+  ixxaModes: {"title": "Nuna 官方動圖｜IXXA next 雙向座椅及躺姿", "url": "https://nunababy.com/media/wysiwyg/Modes-Loop_1.gif", "type": "primary"},
+  ifIxxa: {"title": "iF Design Award 2026｜Nuna IXXA next（列推出年份2024）", "url": "https://ifdesign.com/en/winner-ranking/project/nuna-ixxa-next/769224", "type": "primary"},
+  rdIxxa: {"title": "Red Dot｜IXXA next · Product Design 2026", "url": "https://www.red-dot.org/ko/project/ixxatm-next-86951", "type": "primary"},
+  swiv: {"title": "Nuna｜SWIV 歐洲官方規格", "url": "https://nunababy.eu/en/swiv-pushchair", "type": "primary"},
+  swivUK: {"title": "Nuna 英國官方｜SWIV 規格及iF 2025獎項", "url": "https://nunababy.eu/uk/pushchairs/swiv-pushchair", "type": "primary"},
+  swivManual: {"title": "Nuna｜SWIV 全球官方說明書", "url": "https://nunababy.com/media/catalog/product/N/u/Nuna_SWIV_UserManual_GL_223c.pdf", "type": "primary"},
+  swivHK: {"title": "Twins Baby｜SWIV 香港行貨售價及規格", "url": "https://twinsbaby.hk/product/nuna-swiv-stroller/", "type": "retailer"},
+  swivJakewell: {"title": "Jakewell｜SWIV 標準款香港售價及規格", "url": "https://www.jakewell.com.hk/products/nuna-swiv-stroller", "type": "retailer"},
+  swivPositions: {"title": "Nuna 官方動圖｜SWIV 雙向座椅及躺姿", "url": "https://dd.nunababy.eu/media/wysiwyg/GL-PDPs/GL-SWIV/md_GL_SWIV_positions.gif", "type": "primary"},
+  swivSeat: {"title": "Nuna 官方圖片｜SWIV 座椅彈簧避震", "url": "https://dd.nunababy.eu/media/wysiwyg/GL-PDPs/GL-SWIV/d_GL_SWIV_seat.png", "type": "primary"},
+  swivLaunch: {"title": "Nuna 官方新聞稿｜SWIV 於2024夏季美國上市（2024-08-19公告）", "url": "https://www.prnewswire.com/news-releases/nuna-baby-elevates-and-simplifies-parenting-with-five-new-products-perfect-for-families-at-home-or-on-the-go-302224812.html", "type": "primary"},
+  ifSwiv: {"title": "iF Design Award 2025｜Nuna SWIV", "url": "https://ifdesign.com/en/winner-ranking/project/nuna-swiv/696261", "type": "primary"},
+  rdSwiv: {"title": "Red Dot｜Nuna SWIV · Product Design 2025", "url": "https://www.red-dot.org/project/nuna-swivtm-79917", "type": "primary"},
   elipto: {"title": "Joie｜Elipto 全球官方規格", "url": "https://joiebaby.com/en/signature-elipto-lightweight-urban-pram", "type": "primary"},
   eliptoManual: {"title": "Joie｜Elipto 全球官方說明書（S2511A）", "url": "https://dl.joiebaby.com/Instruction_Manual/GL/Elipto/Joie-signature-elipto-instruction-manual.pdf", "type": "primary"},
   eliptoHK: {"title": "Twins Baby｜Joie Elipto 香港行貨及售價", "url": "https://www.twinsbaby.hk/product/joie-elipto-two-way-stroller/", "type": "retailer"},
@@ -520,6 +540,494 @@ window.SOURCES = {
         "eliptoHK"
       ],
       "detail": "香港原廠總代理行貨，按實際購買及保養條款。"
+    }
+  }
+},
+{
+  "id": "nuna-ixxa-next",
+  "name": "Nuna IXXA next",
+  "brand": "Nuna",
+  "version": "香港行貨 · 標準碳纖強化款",
+  "category": "雙向日常",
+  "accent": "#8c5f76",
+  "aliases": [
+    "ixxa next",
+    "イクサ ネクスト"
+  ],
+  "recognitions": [
+    {
+      "kind": "red-dot",
+      "name": "Red Dot Design Award",
+      "logo": "award-red-dot.png",
+      "year": "2026",
+      "scope": "",
+      "sources": [
+        "rdIxxa"
+      ],
+      "status": "verified",
+      "detail": "Red Dot 官方列 IXXA next 為2026年得獎產品；不是原版IXXA的獎項。設計獎不等同護脊或醫療認證。"
+    },
+    {
+      "kind": "if-design",
+      "name": "iF Design Award",
+      "logo": "award-if-2026.jpg",
+      "year": "2026",
+      "scope": "",
+      "sources": [
+        "ifIxxa",
+        "ixxa"
+      ],
+      "status": "verified",
+      "detail": "iF官方條目及Nuna產品頁確認IXXA next獲2026年iF設計獎；2026為得獎年份，產品推出年份另列2024。"
+    }
+  ],
+  "marketEvidence": {
+    "buttonLabel": "官方資料／圖",
+    "ariaLabel": "官方資料及商品圖",
+    "heading": "Nuna IXXA next 官方資料",
+    "value": "IXXA next｜標準碳纖強化款",
+    "status": "reference",
+    "sources": [
+      "ixxaModes",
+      "ixxaManual",
+      "ixxa",
+      "ixxaHK",
+      "ixxaHeight",
+      "ixxaJP",
+      "nunaWarnings"
+    ],
+    "detail": "主表採香港／全球標準款規格，座高56cm屬英國官方參考。Riveted Rose為全鋁合金款，沒有碳纖強化，重量亦不同；不套用原版IXXA或IXXA swiv。"
+  },
+  "fields": {
+    "price": {
+      "value": "HK$5,680",
+      "status": "verified",
+      "sources": [
+        "ixxaHK"
+      ],
+      "detail": "Twins Baby香港行貨單車列價；顏色、庫存及實際套裝按訂單確認。",
+      "number": 5680
+    },
+    "launch": {
+      "value": "2024｜iF資料列推出年份",
+      "status": "verified",
+      "sources": [
+        "ifIxxa"
+      ],
+      "detail": "iF官方參賽資料明確列Date of Launch為2024；全球首次開售日及香港上市日未核實，不以2026得獎年份代替。"
+    },
+    "load": {
+      "value": "22 kg",
+      "status": "verified",
+      "sources": [
+        "ixxa",
+        "ixxaManual"
+      ],
+      "detail": "初生至4歲或22kg，以先到者為準；官方未另列較低的後向座椅限重。",
+      "number": 22
+    },
+    "weight": {
+      "value": "6.1 kg*",
+      "status": "verified",
+      "sources": [
+        "ixxa",
+        "ixxaHK"
+      ],
+      "detail": "*不含小座墊、前扶手。Riveted Rose官方標6.3kg，車架為全鋁合金，不能混作標準碳纖強化款。",
+      "number": 6.1
+    },
+    "seatWidth": {
+      "value": "未公布／未核實",
+      "status": "unknown",
+      "sources": [],
+      "detail": "55cm是整架車闊度；原版IXXA座闊數字不能直接套用至next。"
+    },
+    "seatHeight": {
+      "value": "56 cm（英國官方）",
+      "status": "reference",
+      "sources": [
+        "ixxaHeight",
+        "ixxaJP"
+      ],
+      "detail": "英國官方套裝頁分項列IXXA next座高56cm；日本官方列56.5cm。港版適用性及量度方法未核實。",
+      "number": 56
+    },
+    "backrestHeight": {
+      "value": "未公布／未核實",
+      "status": "unknown",
+      "sources": [],
+      "detail": "未取得IXXA next可靠靠背長；不套用原版IXXA或IXXA swiv數字。"
+    },
+    "recline": {
+      "value": "3段靠背",
+      "status": "verified",
+      "sources": [
+        "ixxa",
+        "ixxaManual",
+        "ixxaJP"
+      ],
+      "detail": "可調至官方所稱lie-flat。日本Seasalt版約120°／135°／170°，不直接當作港版精確角度。"
+    },
+    "calf": {
+      "value": "3段腿托 + 下方固定腳踏",
+      "status": "verified",
+      "sources": [
+        "ixxaManual",
+        "ixxa"
+      ],
+      "detail": "腿托與靠背分開調節；現行全球說明書列3段腿托。"
+    },
+    "direction": {
+      "value": "雙向 · 拆座換向",
+      "status": "verified",
+      "sources": [
+        "ixxa",
+        "ixxaManual"
+      ],
+      "detail": "座椅拆下反轉；向前、向後都可帶座收車並自立。"
+    },
+    "structure": {
+      "value": "獨立調背、腿托；非固定L形",
+      "status": "reference",
+      "sources": [
+        "ixxaModes",
+        "ixxaManual"
+      ],
+      "detail": "官方動圖可見靠背相對座面打開至躺姿，腿托另調；並非固定L形整張後傾桶座。"
+    },
+    "suspension": {
+      "value": "四輪避震",
+      "status": "verified",
+      "sources": [
+        "ixxa",
+        "ixxaHK"
+      ],
+      "detail": "搭配EVA泡沫填充輪胎；未見官方列獨立座底彈簧，不能套用SWIV或TRIV next配置。"
+    },
+    "wheels": {
+      "value": "前16.5 / 後17.8 cm",
+      "status": "verified",
+      "sources": [
+        "ixxa",
+        "ixxaHK"
+      ],
+      "detail": "香港／全球官方輪徑；EVA輪胎。不同市場數字略有差異，不混用。"
+    },
+    "folded": {
+      "value": "40 × 55 × 75 cm",
+      "status": "verified",
+      "sources": [
+        "ixxa",
+        "ixxaManual"
+      ],
+      "detail": "長 × 闊 × 高；單手收車、自立。說明書要求收合時推把調至第2段。"
+    },
+    "unfolded": {
+      "value": "95.5 × 55 × 107.5 cm",
+      "status": "verified",
+      "sources": [
+        "ixxa",
+        "ixxaHK"
+      ],
+      "detail": "長 × 闊 × 高；香港及全球標準款資料。"
+    },
+    "basket": {
+      "value": "10 kg（現行全球資料）",
+      "status": "reference",
+      "sources": [
+        "nunaWarnings",
+        "ixxaJP"
+      ],
+      "detail": "現行全球警告書明列IXXA next籃承重10kg；香港實售批次宜核對隨車說明書及籃內標籤。",
+      "number": 10
+    },
+    "ergonomic": {
+      "value": "3段靠背 · 3段腿托 · 透氣網座",
+      "status": "reference",
+      "sources": [
+        "ixxa",
+        "ixxaManual"
+      ],
+      "detail": "方便配合身形及轉換坐躺姿勢，腰背貼合仍要試坐；未有證據證明護脊優於其他款，亦未核實本型號AGR認證。"
+    },
+    "strengths": {
+      "value": "6.1kg標重雙向 · 兩向收車",
+      "status": "verified",
+      "sources": [
+        "ixxa",
+        "ixxaHK"
+      ],
+      "detail": "碳纖維強化鋁車架、3段轉軸推把、磁吸扣；冬墊拆除可露出透氣網座。有機棉內墊的GOTS認證不等同OEKO-TEX。"
+    },
+    "limits": {
+      "value": "標重未計齊；收後高75cm",
+      "status": "reference",
+      "sources": [
+        "ixxa",
+        "ixxaHK"
+      ],
+      "detail": "香港商戶定位機口寄艙，不能保證放入機艙置物櫃。Riveted Rose材質與重量不同；座內闊及靠背長待核。"
+    },
+    "included": {
+      "value": "雨罩 + 汽座／睡籃轉接器",
+      "status": "verified",
+      "sources": [
+        "ixxa",
+        "ixxaAccessories"
+      ],
+      "detail": "香港套裝列專用雨擋及轉接器；汽座、睡籃另購，按實際訂單確認。"
+    },
+    "warranty": {
+      "value": "香港行貨2年",
+      "status": "verified",
+      "sources": [
+        "ixxaHK"
+      ],
+      "detail": "商戶列2024-07-02起出售產品適用；以代理及實際購買條款為準。"
+    }
+  }
+},
+{
+  "id": "nuna-swiv",
+  "name": "Nuna SWIV",
+  "brand": "Nuna",
+  "version": "香港行貨 · 標準款（非BMW）",
+  "category": "雙向日常",
+  "accent": "#6f8ca5",
+  "aliases": [
+    "swiv",
+    "スイブ"
+  ],
+  "recognitions": [
+    {
+      "kind": "red-dot",
+      "name": "Red Dot Design Award",
+      "logo": "award-red-dot.png",
+      "year": "2025",
+      "scope": "",
+      "sources": [
+        "rdSwiv"
+      ],
+      "status": "verified",
+      "detail": "Red Dot官方列Nuna SWIV為2025年Product Design得獎產品；設計獎並非醫療或護脊認證。"
+    },
+    {
+      "kind": "if-design",
+      "name": "iF Design Award",
+      "logo": "award-if-2025.png",
+      "year": "2025",
+      "scope": "",
+      "sources": [
+        "ifSwiv",
+        "swivUK"
+      ],
+      "status": "verified",
+      "detail": "iF官方條目及Nuna英國產品頁確認SWIV獲2025年iF設計獎；不是IXXA swiv。"
+    }
+  ],
+  "marketEvidence": {
+    "buttonLabel": "官方資料／圖",
+    "ariaLabel": "官方資料及商品圖",
+    "heading": "Nuna SWIV 官方資料",
+    "value": "SWIV｜四輪橫移及座椅避震",
+    "status": "reference",
+    "sources": [
+      "swivPositions",
+      "swivSeat",
+      "swivManual",
+      "swiv",
+      "swivHK",
+      "swivJakewell"
+    ],
+    "detail": "香港／歐洲標準款資料；官方動圖顯示座背夾角可打開，座椅下另有彈簧避震。SWIV與IXXA swiv屬不同型號，不混用規格。"
+  },
+  "fields": {
+    "price": {
+      "value": "HK$6,980",
+      "status": "verified",
+      "sources": [
+        "swivHK",
+        "swivJakewell"
+      ],
+      "detail": "Twins Baby及Jakewell標準款列價一致；Jakewell查詢時售完，按所選顏色及存貨確認。",
+      "number": 6980
+    },
+    "launch": {
+      "value": "2024夏季｜美國上市",
+      "status": "verified",
+      "sources": [
+        "swivLaunch"
+      ],
+      "detail": "Nuna於2024-08-19官方新聞稿確認SWIV當年夏季推出且已在售；公告日不當作首次開售日，香港上市日未核實。"
+    },
+    "load": {
+      "value": "22 kg",
+      "status": "verified",
+      "sources": [
+        "swiv",
+        "swivManual"
+      ],
+      "detail": "初生至4歲或22kg，以先到者為準；全球說明書未另列較低的後向座椅限重。",
+      "number": 22
+    },
+    "weight": {
+      "value": "9.5 kg*",
+      "status": "verified",
+      "sources": [
+        "swiv",
+        "swivHK",
+        "swivJakewell"
+      ],
+      "detail": "*不含前扶手、內墊及雨罩；不是完整配件配置的實測重量。",
+      "number": 9.5
+    },
+    "seatWidth": {
+      "value": "未公布／未核實",
+      "status": "unknown",
+      "sources": [],
+      "detail": "54cm是整架車闊度，不能當作座位內闊。"
+    },
+    "seatHeight": {
+      "value": "未公布／未核實",
+      "status": "unknown",
+      "sources": [],
+      "detail": "未取得可靠、對應香港標準款的座椅離地高度；不採用網上推測數字。"
+    },
+    "backrestHeight": {
+      "value": "未公布／未核實",
+      "status": "unknown",
+      "sources": [],
+      "detail": "未取得可靠官方靠背長度；不套用IXXA swiv或TRIV next數字。"
+    },
+    "recline": {
+      "value": "3段靠背",
+      "status": "verified",
+      "sources": [
+        "swiv",
+        "swivManual"
+      ],
+      "detail": "單手調節，官方列near-flat躺姿；未核實香港版精確角度。"
+    },
+    "calf": {
+      "value": "2段腿托 + 下方固定腳踏",
+      "status": "verified",
+      "sources": [
+        "swiv",
+        "swivManual"
+      ],
+      "detail": "腿托與靠背分開調節。"
+    },
+    "direction": {
+      "value": "雙向 · 拆座換向",
+      "status": "verified",
+      "sources": [
+        "swiv",
+        "swivManual"
+      ],
+      "detail": "前向、後向均可帶座單手收車並自立；橫移功能不等於推把換向。"
+    },
+    "structure": {
+      "value": "獨立調背、腿托；非固定L形",
+      "status": "reference",
+      "sources": [
+        "swivPositions",
+        "swivManual"
+      ],
+      "detail": "說明書圖13–16分開展示腿托及靠背調節；官方躺姿動圖可見座背夾角打開。"
+    },
+    "suspension": {
+      "value": "四輪 + 座椅彈簧避震",
+      "status": "verified",
+      "sources": [
+        "swiv",
+        "swivSeat",
+        "swivHK"
+      ],
+      "detail": "除了四輪避震，座椅下方另有彈簧避震結構。"
+    },
+    "wheels": {
+      "value": "前16.5 / 後20 cm",
+      "status": "verified",
+      "sources": [
+        "swiv",
+        "swivHK",
+        "swivManual"
+      ],
+      "detail": "EVA泡沫填充輪胎；按住推把按鈕啟動四輪360°轉向及側移，放開回復一般推行。"
+    },
+    "folded": {
+      "value": "30 × 54 × 78 cm",
+      "status": "verified",
+      "sources": [
+        "swiv",
+        "swivHK"
+      ],
+      "detail": "長 × 闊 × 高；單手收合、收後可自立。"
+    },
+    "unfolded": {
+      "value": "94 × 54 × 103 cm",
+      "status": "verified",
+      "sources": [
+        "swiv",
+        "swivHK"
+      ],
+      "detail": "長 × 闊 × 高；採香港／歐洲資料，台灣及日本版標示不同，不混用。"
+    },
+    "basket": {
+      "value": "10 kg",
+      "status": "verified",
+      "sources": [
+        "swiv",
+        "nunaWarnings"
+      ],
+      "detail": "大購物籃附拉鏈小袋；依隨車標籤承重限制使用。",
+      "number": 10
+    },
+    "ergonomic": {
+      "value": "可調靠背、腿托 + 座椅避震",
+      "status": "reference",
+      "sources": [
+        "swiv",
+        "swivManual",
+        "swivSeat"
+      ],
+      "detail": "方便調整坐躺姿勢；避震結構不等於已證明護脊或能矯正脊椎，亦未核實本型號AGR認證。"
+    },
+    "strengths": {
+      "value": "四輪橫移 · 碳纖強化車架 · 10kg籃",
+      "status": "verified",
+      "sources": [
+        "swiv",
+        "swivHK"
+      ],
+      "detail": "3段轉軸推把、磁吸扣、冬墊拆開成透氣網背；Merino羊毛／TENCEL內墊。碳纖強化鋁車架不等同碳纖背板。"
+    },
+    "limits": {
+      "value": "9.5kg未計齊；收後高78cm",
+      "status": "reference",
+      "sources": [
+        "swiv",
+        "swivHK"
+      ],
+      "detail": "搬樓梯及收納要試清楚；香港商戶定位機口寄艙，不能保證放入機艙置物櫃。不是IXXA swiv或BMW款。"
+    },
+    "included": {
+      "value": "杯架、雨罩、收納袋、汽座轉接器",
+      "status": "verified",
+      "sources": [
+        "swiv",
+        "swivHK"
+      ],
+      "detail": "汽座及睡籃另購；配件按香港實際套裝確認。"
+    },
+    "warranty": {
+      "value": "香港行貨2年",
+      "status": "verified",
+      "sources": [
+        "swivHK",
+        "swivJakewell"
+      ],
+      "detail": "以香港代理及實際購買條款為準。"
     }
   }
 }
