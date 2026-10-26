@@ -12,7 +12,7 @@
   const $ = id => document.getElementById(id);
   const selected = new Set(data.map(m=>m.id));
   const groups = [...new Set(cols.map(c=>c.group))];
-  const statusNames={user:'你提供',reference:'參考／有差異',unknown:'待確認',verified:'公開資料'};
+  const statusNames={user:'自己提供',reference:'參考／有差異',unknown:'待確認',verified:'公開資料'};
   function el(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;}
   function renderHead(){
     $('comparison-table').style.width='calc(var(--first-col) + '+cols.reduce((sum,c)=>sum+c.width,0)+'px)';const cg=$('table-cols');cg.replaceChildren();const namecol=document.createElement('col');namecol.style.width='var(--first-col)';cg.append(namecol);
