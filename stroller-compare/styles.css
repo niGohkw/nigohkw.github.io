@@ -10,3 +10,6 @@
 .recognition-badge[data-recognition="red-dot"] .recognition-logo{mix-blend-mode:multiply}
 /* Clip only the iF artwork's outer padding and central gutter; keep white lettering. */
 .recognition-badge[data-recognition="if-design"] .recognition-logo{height:auto;clip-path:inset(5% 0);mask-image:linear-gradient(to right,transparent 0 2.76%,#000 2.76% 48.83%,transparent 48.83% 51.17%,#000 51.17% 97.45%,transparent 97.45%);-webkit-mask-image:linear-gradient(to right,transparent 0 2.76%,#000 2.76% 48.83%,transparent 48.83% 51.17%,#000 51.17% 97.45%,transparent 97.45%)}
+
+/* Optional merchant evidence stays with the fixed model name. */
+.market-evidence-button{display:block;border:0;border-radius:4px;background:transparent;color:#8e516b;font-size:10px;line-height:1.7;text-align:left;text-decoration:underline;text-underline-offset:3px;padding:4px 0;margin-top:8px}.market-evidence-button:hover{color:#4e7091;background:#e8f2fb}.market-evidence-button:focus-visible{outline:3px solid #6f8fb6;outline-offset:2px}.market-evidence-button+.model-number{margin-top:5px}
