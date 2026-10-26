@@ -1,5 +1,20 @@
 /* Comparison snapshot: 2026-10-26. User-supplied values are explicitly distinguished. */
 window.SOURCES = {
+  elipto: {"title": "Joie｜Elipto 全球官方規格", "url": "https://joiebaby.com/en/signature-elipto-lightweight-urban-pram", "type": "primary"},
+  eliptoManual: {"title": "Joie｜Elipto 全球官方說明書（S2511A）", "url": "https://dl.joiebaby.com/Instruction_Manual/GL/Elipto/Joie-signature-elipto-instruction-manual.pdf", "type": "primary"},
+  eliptoHK: {"title": "Twins Baby｜Joie Elipto 香港行貨及售價", "url": "https://www.twinsbaby.hk/product/joie-elipto-two-way-stroller/", "type": "retailer"},
+  eliptoJP: {"title": "Katoji｜Joie Elipto 日本官方規格（其他市場僅供參考）", "url": "https://www.katoji.co.jp/products-detail_4665.html", "type": "primary"},
+  eliptoLaunch: {"title": "Akachan Honpo｜Elipto 於2026-05-29在日本發售", "url": "https://www.akachan.jp/company/news_release/article/260514_2/", "type": "primary"},
+  eliptoReclineImage: {"title": "Joie 官方圖片｜Elipto 向後躺姿及可變座背夾角", "url": "https://dd.joiebaby.com/media/catalog/product/p/1/p14-joie-signature-pushchair-elipto-evergreen-parent-facing-recline.jpg", "type": "primary"},
+  eliptoProductImage: {"title": "Joie 官方圖片｜Elipto Evergreen 外觀", "url": "https://dd.joiebaby.com/media/catalog/product/p/0/p01-joie-signature-pushchair-elipto-evergreen-hero-right-angle_1.png", "type": "primary"},
+  urbnLaunch: {"title": "AVING｜TRVL urbn 於Kind + Jugend展會公開（2026-09-16）", "url": "https://kr.aving.net/news/articleView.html?idxno=1814532", "type": "reference"},
+  lxLaunch: {"title": "ANB Baby｜Meet the New Nuna TRVL lx（2024-03-07）", "url": "https://www.anbbaby.com/blogs/articles/elevate-your-adventures-meet-the-new-nuna-trvl-lx-stroller-anb-baby", "type": "retailer"},
+  trivLaunch: {"title": "Albee Baby 上市電郵存檔｜TRIV next（2022-10-01）", "url": "https://milled.com/albee-baby/nuna-triv-next-stroller-launch-5JYzGFefdYdKuX3I", "type": "reference"},
+  aerLaunchEU: {"title": "Joolz 公關稿｜Aer² 2025-05-26於德國發售", "url": "https://press.sisteract.at/news-joolz-launcht-den-neuen-aer2?id=215625&imageid=864808&l=deutsch&menueid=32214", "type": "primary"},
+  aerLaunchUS: {"title": "Joolz USA 官方新聞稿｜Aer² 美國推出（2025-08-18）", "url": "https://www.prnewswire.com/news-releases/joolz-unveils-a-new-version-of-its-iconic-travel-stroller-302532741.html", "type": "primary"},
+  coyaLaunch: {"title": "CYBEX 官方新聞稿｜新Platinum系列包括Coya（2026-04-21）", "url": "https://www.prnewswire.com/news-releases/the-new-platinum-line-302747818.html", "type": "primary"},
+  coyaLaunchJP: {"title": "CTP JAPAN 官方新聞稿｜新Coya Style及預購（2026-04-22）", "url": "https://prtimes.jp/main/html/rd/p/000000030.000135228.html", "type": "primary"},
+  swanCnSale2024: {"title": "什麼值得買｜天鵝Pro 售賣紀錄（2024-05-31更新）", "url": "https://www.smzdm.com/p/114498524/", "type": "reference"},
   swanCnTmall: {"title": "天貓 好孩子官方旗艦店｜天鵝Pro 商品資料轉載", "url": "https://tao.hooos.com/goods_G94pbzPC8tYvKXXW03fYYDsQtJ-NeRBBocnG8pm2OjtV.html", "type": "reference"},
   swanCnRecline: {"title": "天貓商家原圖｜天鵝Pro 100°／145°／170°及四輪獨懸", "url": "https://img.alicdn.com/i1/379833581/O1CN01ATlaB6FYzFH2vH2e_!!379833581.jpg_500x500q90", "type": "retailer"},
   swanCnWeight: {"title": "天貓商家原圖｜天鵝Pro「8.2kg碳纖維輕骨架」", "url": "https://img.alicdn.com/i1/379833581/O1CN01nROSKtO7doK2vH2e_!!379833581.jpg_500x500q90", "type": "retailer"},
@@ -71,6 +86,7 @@ window.SOURCES = {
       id:'swan-tw',name:'gb SWAN Pro',brand:'gb',version:'台灣版 · SWAN Pro.TW',category:'雙向日常',accent:'#7b815b',
       recognitions:[{"kind":"red-dot","name":"Red Dot Design Award","logo":"award-red-dot.png","sources":["rdSwan","rdSwanTW"],"detail":"Red Dot 官方獲獎名稱為 Swan Pro；gb Taiwan 亦明確宣傳台灣銷售嘅 SWAN Pro 獲 2025 紅點產品設計獎。獎項屬產品設計評選，並非醫療或護脊認證。","year":"2025","scope":"","status":"verified"}],
       fields:{
+        launch:{"value": "台灣推出日期未核實", "status": "unknown", "sources": ["tw"], "detail": "台灣總代理產品頁未列首次開售日期；不套用內地天鵝Pro的紀錄，亦不以2024／2025設計獎年份代替上市日。"},
         price:c('約 HK$4,530','reference',['tw','fxTWD'],'台灣總代理 NT$18,800；查詢時售罄。以 NT$1 ≈ HK$0.2407 換算，未計運費及付款匯差。',4530),
         load:c('22 kg','verified',['tw'],'總代理產品標籤列0–36個月、22kg以下。',22),
         weight:c('約 7.8 kg','verified',['tw'],'總代理稱「產品重量／淨重」，未列拆除配件條件；另一零售商寫「僅車架」，口徑有差異。',7.8),
@@ -98,6 +114,7 @@ window.SOURCES = {
       recognitions:[{"kind":"agr","name":"AGR 人體工學認證","logo":"award-agr.png","sources":["agr"],"detail":"AGR 官方推車名單列明 Goodbaby SWAN（A8000、A8100）。本表內地版以 A8000 對照；此標誌不自動涵蓋 SWAN Pro.TW。認證可作人體工學參考，並非治療、矯正脊椎或預防側彎保證。","year":"","scope":"A8000 / A8100","status":"verified"},{"kind":"red-dot","name":"Red Dot Design Award","logo":"award-red-dot.png","sources":["rdSwan"],"detail":"Red Dot 官方列 Swan Pro 為 2025 Product Design 得獎產品，製造商為 Goodbaby Child Products。不是原版 SWAN 嘅 2018 年獎項。","year":"2025","scope":"","status":"verified"},{"kind":"good-design","name":"日本 Good Design Award","logo":"award-good-design.svg","sources":["gmark"],"detail":"日本設計振興會官方獲獎記錄：SWAN PRO，2024 年，獎項編號 24G020090。此為日本 G Mark 設計獎；不是護脊或醫療認證。","year":"2024","scope":"","status":"verified"}],
       marketEvidence:{"buttonLabel": "內地資料／圖", "ariaLabel": "內地資料及商品圖", "heading": "內地天鵝 Pro 補充資料", "value": "天鵝 Pro｜天貓、京東及品牌供稿", "status": "reference", "sources": ["swanCnRecline", "swanCnWeight", "swanCnDirection", "swanCnJDImage", "swanCnAdjust", "swanCnTmall", "swanCnJD", "swanCnBrand"], "detail": "只適用內地天鵝Pro列，不套用台灣SWAN Pro。天貓旗艦店原圖列100°／145°／170°，與海外頁160°有差異；8.2kg原圖未交代全配計重口徑。商家圖由公開轉載頁取得，京東資料亦以公開轉載及原圖對照；未登入讀取商品詳情。過期活動價、醫療式宣傳及未對應型號數字不當作確定規格。"},
       fields:{
+        launch:{"value": "最遲2024-05-31已有售賣紀錄", "status": "reference", "sources": ["swanCnSale2024"], "detail": "內地優惠紀錄明確列天鵝Pro，更新時間2024-05-31 21:52；這是可查到的售賣紀錄，並非已核實官方首次上市日。"},
         price:c('內地現價待核','unknown',['swanCnPromo','swanCnTmall'],'天貓原圖曾標¥3,999起，但10月20日至25日活動已結束；轉載頁另有含券及預售價，未核實現售結算，故不參與現價排序。'),
         load:unknown('未成功以對應內地官方說明書核實；不能直接套用台版22kg，亦不採用未核實15kg說法。'),
         weight:c('8.2 kg*','reference',['swanCnWeight','swan','gmark'],'*天貓原圖寫「8.2kg碳纖維輕骨架」，未交代拆配件口徑；海外A8000圖列淨重。內地全配重量仍須核對。',8.2),
@@ -124,6 +141,7 @@ window.SOURCES = {
       id:'trvl-urbn',name:'Nuna TRVL urbn',brand:'Nuna',version:'獨立推車 · 香港行貨資料',category:'城市單向',accent:'#587a79',
       recognitions:[],
       fields:{
+        launch:{"value": "2026-09-16｜德國展會公開", "status": "reference", "sources": ["urbnLaunch"], "detail": "Kind + Jugend 2026現場報道當日展示新款獨立TRVL urbn；未核實全球首次發表或香港開售日。不是2022年的TRVL＋PIPA urbn汽座套裝。"},
         price:c('HK$4,380','verified',['urbnHK'],'香港行貨推車單車售價；不是TRVL加PIPA urbn汽座套裝。',4380),
         load:c('22 kg','verified',['urbn','urbnManual'],'初生至4歲或22kg，以先到者為準。',22),
         weight:c('8.05 kg','verified',['urbn'],'官方明確包含前扶手；與LX不含篷及扶手的7.1kg不是相同口徑。',8.05),
@@ -151,6 +169,7 @@ window.SOURCES = {
       recognitions:[{"kind":"red-dot","name":"Red Dot Design Award","logo":"award-red-dot.png","sources":["rdLx"],"detail":"Red Dot 官方直接列明 TRVL lx 獲 2024 Product Design 獎。此為產品設計獎。","year":"2024","scope":"","status":"verified"},{"kind":"if-design","name":"iF Design Award","logo":"award-if-2024.png","sources":["ifLx","lx"],"detail":"iF 官方得獎記錄及 Nuna TRVL lx 官方產品頁均列明 2024 年 iF Design Award。此為設計獎，並非護脊或紡織品安全認證。","year":"2024","scope":"","status":"verified"}],
       marketEvidence:{"value": "TRVL lx｜收車圖及版本差異", "status": "reference", "sources": ["lxTmallFold", "lxTmallSize", "lxTmall"], "detail": "商家原圖由公開商品轉載頁取得，展示單手自動收車。尺寸圖只標69cm及40.5cm，與香港標示不同，不能拼成完整三維尺寸；轉載頁副標6.8kg亦可能沿用舊TRVL資料，未取代現表7.1kg及配件註腳。圖示可登機不等於所有航空公司接受。"},
       fields:{
+        launch:{"value": "2024-03｜美國上市介紹", "status": "reference", "sources": ["lxLaunch", "ifLx"], "detail": "美國零售商於2024-03-07以新產品介紹TRVL lx，iF參賽資料列推出年份2024；未將介紹日當作全球或香港統一開售日。"},
         price:c('HK$4,380','verified',['lxHK'],'香港行貨推車單車售價。',4380),
         load:c('22 kg','verified',['lx','lxManual'],'初生至4歲或22kg，以先到者為準。',22),
         weight:c('7.1 kg*','verified',['lxHK','lx'],'*香港商戶註明不含頂篷及前扶手。海外官方排除配件口徑不同；完整實用重量未核實。',7.1),
@@ -178,6 +197,7 @@ window.SOURCES = {
       recognitions:[{"kind":"red-dot","name":"Red Dot Design Award","logo":"award-red-dot.png","sources":["rdTriv"],"detail":"Red Dot 官方直接列明 TRIV next 獲 2022 Product Design 獎。此記錄對應 next 型號，沒有套用舊版 TRIV 嘅獎項。","year":"2022","scope":"","status":"verified"}],
       marketEvidence:{"value": "TRIV next｜55cm座高及操作圖", "status": "reference", "sources": ["trivTmallHeight", "trivTmallSuspension", "trivTmallDirection", "trivTmall"], "detail": "商家原圖由公開商品轉載頁取得，座高圖明確寫55cm，與你提供嘅數字一致。商品頁混有標準款及BMW聯名圖，香港頁另寫52cm；保留差異，靠背仍採用你指定嘅3段。"},
       fields:{
+        launch:{"value": "2022-10-01｜美國上市宣傳", "status": "reference", "sources": ["trivLaunch"], "detail": "美國Albee Baby當日發出TRIV next上市電郵，存檔標示美東時間2022-10-01；香港開售日及後續版本另計。"},
         price:c('HK$5,680','verified',['trivHK'],'香港行貨標準款；非BMW聯名版或TRIV lx。',5680),
         load:c('22 kg','verified',['triv','trivManual'],'初生至4歲或22kg，以先到者為準。',22),
         weight:c('8.72 kg*','verified',['trivHK','triv'],'*香港商戶註不含冬墊、頂篷、前扶手；國際頁排除項不同。香港全配重量未核實。',8.72),
@@ -205,6 +225,7 @@ window.SOURCES = {
       recognitions:[{"kind":"agr","name":"AGR 人體工學認證","logo":"award-agr.png","sources":["coya","agr"],"detail":"CYBEX 現行 Coya Style 官方產品頁嘅 Awards 區直接展示 AGR 認證標誌；AGR 官方推車名單亦列 Coÿa。認證可作人體工學參考，並非治療或矯正脊椎保證。","year":"","scope":"Coya Style","status":"verified"},{"kind":"red-dot","name":"Red Dot Design Award","logo":"award-red-dot.png","sources":["rdCoya","coya"],"detail":"Red Dot 官方 2026 得獎記錄為新代 COŸA；CYBEX Coya Style 官方產品頁亦展示 Red Dot 2026 標誌。此為產品設計獎。","year":"2026","scope":"","status":"verified"}],
       marketEvidence:{"value": "Coya｜淘寶圖片代別待確認", "status": "reference", "sources": ["coyaTaobaoImage", "coyaTaobaoRecline", "coyaTaobao"], "detail": "此淘寶商品頁只標Coya，未註明2026 Style或可對應SKU。圖片只供外觀參考，未用來修改主表新代規格、價格或認證；商家護脊宣傳不等於已證實醫療功效。原圖由公開商品轉載頁取得。"},
       fields:{
+        launch:{"value": "2026-04-21｜新代公布", "status": "verified", "sources": ["coyaLaunch", "coyaLaunchJP"], "detail": "CYBEX公布包括Coya在內的新Platinum系列；日本官方翌日亦公布Coya Style及預購安排。香港開售日未核實，不套用舊版Coya的2023年日期。"},
         price:c('HK$4,999','verified',['coyaHK'],'Jakewell Style玫瑰金款；查詢時頁面售罄。',4999),
         load:c('22 kg','verified',['coya'],'初生至約4歲，按說明書使用適當躺姿。',22),
         weight:c('7.3 kg','verified',['coya'],'新代官方規格；普通款前扶手另購。香港部分新款頁仍混用舊代6.6kg。',7.3),
@@ -232,6 +253,7 @@ window.SOURCES = {
       recognitions:[{"kind":"red-dot","name":"Red Dot Design Award","logo":"award-red-dot.png","sources":["rdAer2"],"detail":"Red Dot 官方直接列明 Joolz Aer² 獲 2025 Product Design 獎。沒有將上一代 Aer／Aer+ 嘅 iF 獎項套用到 Aer²。","year":"2025","scope":"","status":"verified"}],
       marketEvidence:{"value": "Joolz Aer²｜天貓商家商品圖", "status": "reference", "sources": ["aerTmallImage", "aerTmall"], "detail": "motherswork旗艦店原圖明確標示Aer²，展示車身及內置腿托；圖片未提供額外座位尺寸。原圖由公開轉載頁取得，疊券價未核實實際結算，主表保留香港行貨價格及官方規格。"},
       fields:{
+        launch:{"value": "2025-05-26｜德國發售", "status": "verified", "sources": ["aerLaunchEU", "aerLaunchUS"], "detail": "Joolz公關稿列明當日起於官網及德國零售商發售；美國另於2025-08-18推出，香港首賣日未核實。"},
         price:c('HK$3,999','verified',['aerHK'],'原價HK$4,399；所查太空黑頁面售罄。指定色贈品按訂單確認。',3999),
         load:c('22 kg','verified',['aer'],'香港／歐洲資料標初生至約4歲，初生使用最躺姿。',22),
         weight:c('6.5 kg','verified',['aer','aerCompare'],'官方stroller with seat；前扶手屬配件，加裝後會增加重量。',6.5),
@@ -260,6 +282,7 @@ window.SOURCES = {
       recognitions:[],
       marketEvidence:{"value": "Mpro 2.0｜天貓商品及結構圖", "status": "reference", "sources": ["hbrTmallMain", "hbrSuspensionImage", "hbrSoronaImage", "hbrStandardImage", "hbrTmall"], "detail": "商家原圖由公開商品轉載頁取得，標示Mpro 2.0、單手自動收車、避震及Sorona坐墊。¥2,388起為圖片宣傳價，現售結算待確認；轉載頁其他優惠有過期或數字不一致情況，未採用。測試圖22kg是砝碼負重，不能當成兒童承重上限。"},
       fields:{
+        launch:{"value": "官方推出日期未核實", "status": "unknown", "sources": ["hbrReview"], "detail": "未取得可確認首次上市日的品牌公告；網上開箱文的編輯日期、商品頁優惠日期及非官方討論日期都不能直接當作推出日期。"},
         price:c('約 HK$2,810起*','reference',['hbrTmallMain','hbrTmall','fxCNY'],'*天貓商家原圖宣傳價¥2,388起；按¥1≈HK$1.176換算，並非已核實現售價。未計運費／匯差，未再扣限量紅包或會員券。',2810),
         load:c('兒童承重上限待核','unknown',['hbrStandardImage'],'商家圖列22kg測試砝碼；測試負重不等同產品兒童承重上限，須核對實售版說明書。'),
         weight:c('約 7 kg（參考）','reference',['hbrReview'],'Mpro 2.0實物測評文列全車7.0kg；沒有自行磅重紀錄，亦未交代拆除配件口徑。',7),
@@ -281,7 +304,225 @@ window.SOURCES = {
         included:c('扶手／頭枕；贈品按套裝','reference',['hbrTmallMain','hbrReview'],'圖片可見前扶手及頭枕。測評當次附雨罩、蚊帳、涼席，不能保證現售訂單相同；汽座提籃及適配器按套裝另購。'),
         warranty:unknown('未核實現售店舖保養期，以及寄到香港後維修、退換安排。')
       }
+    },
+    {
+  "id": "joie-elipto",
+  "name": "Joie Elipto",
+  "brand": "Joie Signature",
+  "version": "香港行貨 · 部分日本規格供對照",
+  "category": "雙向日常",
+  "accent": "#95516a",
+  "aliases": [
+    "elipto",
+    "エリプト"
+  ],
+  "recognitions": [],
+  "marketEvidence": {
+    "buttonLabel": "官方資料／圖",
+    "ariaLabel": "官方資料及商品圖",
+    "heading": "Joie Elipto 官方資料",
+    "value": "Elipto｜香港、全球及日本資料",
+    "status": "reference",
+    "sources": [
+      "eliptoProductImage",
+      "eliptoReclineImage",
+      "eliptoManual",
+      "elipto",
+      "eliptoHK",
+      "eliptoJP"
+    ],
+    "detail": "香港行貨售價及配套配合全球說明書比較；座高56cm及精確靠背角度屬日本官方參考，不直接視為港版實測。官方躺姿圖可見座背夾角打開。"
+  },
+  "fields": {
+    "launch": {
+      "value": "2026-05-29｜日本發售",
+      "status": "verified",
+      "sources": [
+        "eliptoLaunch"
+      ],
+      "detail": "Akachan Honpo於2026-05-14公告日本開售日；香港首次開售及全球首發日期未核實。"
+    },
+    "price": {
+      "value": "HK$3,312",
+      "status": "verified",
+      "sources": [
+        "eliptoHK"
+      ],
+      "detail": "Twins Baby香港行貨單車現售價；原價HK$3,680，按所選顏色及實際訂單確認。",
+      "number": 3312
+    },
+    "load": {
+      "value": "向前22 / 向後15 kg",
+      "status": "verified",
+      "sources": [
+        "elipto",
+        "eliptoManual"
+      ],
+      "detail": "初生起；向前至4歲或22kg，以先到者為準。面向家長使用上限15kg。",
+      "number": 22
+    },
+    "weight": {
+      "value": "7 kg*",
+      "status": "verified",
+      "sources": [
+        "elipto",
+        "eliptoHK",
+        "eliptoJP"
+      ],
+      "detail": "*全球及香港頁未列拆配件口徑。日本6.7kg不含頭枕、內墊、前扶手及杯架，不能直接當相同配置比較。",
+      "number": 7
+    },
+    "seatWidth": {
+      "value": "未公布／未核實",
+      "status": "unknown",
+      "sources": [],
+      "detail": "54cm是整架車闊度，不是座位內闊。"
+    },
+    "seatHeight": {
+      "value": "56 cm（日本資料）",
+      "status": "reference",
+      "sources": [
+        "eliptoJP"
+      ],
+      "detail": "日本Katoji官方公布座高56cm；香港版及量度方法未獨立核實，僅供對照。",
+      "number": 56
+    },
+    "backrestHeight": {
+      "value": "未公布／未核實",
+      "status": "unknown",
+      "sources": [],
+      "detail": "未取得可靠、對應版本的靠背長度數字。"
+    },
+    "recline": {
+      "value": "4段靠背",
+      "status": "verified",
+      "sources": [
+        "eliptoManual",
+        "eliptoHK",
+        "eliptoJP"
+      ],
+      "detail": "全球說明書及香港頁均列4段。日本角度為103.5°／121.2°／138.9°／154.9°，不直接當作港版精確角度。"
+    },
+    "calf": {
+      "value": "2段腿托",
+      "status": "verified",
+      "sources": [
+        "eliptoManual"
+      ],
+      "detail": "腿托與靠背分開調節。"
+    },
+    "direction": {
+      "value": "雙向 · 拆座換向",
+      "status": "verified",
+      "sources": [
+        "elipto",
+        "eliptoManual"
+      ],
+      "detail": "座椅拆下反轉安裝；向前、向後均可帶座收車。"
+    },
+    "structure": {
+      "value": "獨立調背、腿托；非固定L形",
+      "status": "reference",
+      "sources": [
+        "eliptoManual",
+        "eliptoReclineImage"
+      ],
+      "detail": "說明書圖24–27分開展示靠背及腿托調節；官方躺姿照片顯示座背夾角打開，並非固定L形整座後傾。"
+    },
+    "suspension": {
+      "value": "四輪避震 · 10個輪軸承",
+      "status": "verified",
+      "sources": [
+        "elipto",
+        "eliptoHK",
+        "eliptoJP"
+      ],
+      "detail": "日本官網另註沒有座椅避震；四輪避震不等於另有座底彈簧。"
+    },
+    "wheels": {
+      "value": "前16.5 / 後17.8 cm",
+      "status": "verified",
+      "sources": [
+        "elipto",
+        "eliptoJP"
+      ],
+      "detail": "官方輪徑；日本官方另列EVA輪胎材質，其他市場配置按實物確認。"
+    },
+    "folded": {
+      "value": "27.3 × 54 × 72.2 cm",
+      "status": "verified",
+      "sources": [
+        "elipto",
+        "eliptoManual"
+      ],
+      "detail": "長 × 闊 × 高；收後可自立，說明書要求收合時推把置中間位置。"
+    },
+    "unfolded": {
+      "value": "96.6 × 54 × 103 cm",
+      "status": "verified",
+      "sources": [
+        "elipto",
+        "eliptoHK"
+      ],
+      "detail": "長 × 闊 × 高；採全球／香港頁標示，日本可調範圍不混為同一固定尺寸。"
+    },
+    "basket": {
+      "value": "4.5 kg",
+      "status": "verified",
+      "sources": [
+        "elipto",
+        "eliptoManual"
+      ],
+      "detail": "全球官方及說明書列購物籃承重4.5kg。",
+      "number": 4.5
+    },
+    "ergonomic": {
+      "value": "4段靠背 · 腿托 · 透氣網布",
+      "status": "reference",
+      "sources": [
+        "elipto",
+        "eliptoManual"
+      ],
+      "detail": "可調坐躺姿勢，腰背貼合仍要試坐；未取得護脊優於其他款的證據，亦未核實本型號AGR認證。"
+    },
+    "strengths": {
+      "value": "7kg雙向 · 兩向收車 · 透氣網布",
+      "status": "verified",
+      "sources": [
+        "elipto",
+        "eliptoHK"
+      ],
+      "detail": "單手收合、兩個方向均可帶座收車、自立及內置提手；可配另購汽座／睡籃。"
+    },
+    "limits": {
+      "value": "向後限15kg；收後高72.2cm",
+      "status": "reference",
+      "sources": [
+        "elipto",
+        "eliptoManual",
+        "eliptoHK"
+      ],
+      "detail": "不能當作保證登機；座闊、靠背長及港版座高待核實。未找到對應型號的指定獎項或OEKO-TEX認證。"
+    },
+    "included": {
+      "value": "雨罩、杯架、頭枕、內墊、轉接器",
+      "status": "verified",
+      "sources": [
+        "elipto",
+        "eliptoHK"
+      ],
+      "detail": "按香港實際套裝確認；汽座及睡籃另購。"
+    },
+    "warranty": {
+      "value": "香港行貨2年",
+      "status": "verified",
+      "sources": [
+        "eliptoHK"
+      ],
+      "detail": "香港原廠總代理行貨，按實際購買及保養條款。"
     }
+  }
+}
 
   ];
 })();
