@@ -65,16 +65,12 @@ window.SOURCES = {
   coyaTaobaoRecline: {"title": "淘寶商家原圖｜Coya 躺姿（代別未確認）", "url": "https://img.alicdn.com/i4/74341122/O1CN014kDybY1K9vNVx4N7S_!!74341122.jpg_500x500q90", "type": "reference"},
   userRecline: {"title": "你提供嘅 TRIV next 三段靠背圖片 · 2026-10-25", "url": null, "type": "user"},
   rdSwan: {"title": "Red Dot｜Swan Pro · Product Design 2025", "url": "https://www.red-dot.org/project/swan-pro-79929", "type": "primary"},
-  rdSwanTW: {"title": "gb Taiwan｜SWAN Pro 榮獲 2025 紅點產品設計大獎", "url": "https://www.facebook.com/61571200726107/posts/122120441114706690/", "type": "primary"},
   rdTriv: {"title": "Red Dot｜TRIV next · Product Design 2022", "url": "https://www.red-dot.org/project/triv-next-57012", "type": "primary"},
   rdLx: {"title": "Red Dot｜TRVL lx · Product Design 2024", "url": "https://www.red-dot.org/project/trvltm-lx-68466", "type": "primary"},
   ifLx: {"title": "iF Design Award 2024｜Nuna TRVL lx", "url": "https://ifdesign.com/en/winner-ranking/project/nuna-trvl-lx/619919", "type": "primary"},
   rdCoya: {"title": "Red Dot｜COŸA · Product Design 2026", "url": "https://www.red-dot.org/project/coya-86929", "type": "primary"},
   rdAer2: {"title": "Red Dot｜Joolz Aer² · Product Design 2025", "url": "https://www.red-dot.org/project/joolz-aer2-79931", "type": "primary"},
   user: {title:'你提供嘅補充數字 · 2026-10-25',url:null,type:'user'},
-  tw: {title:'媽咪學苑｜台灣 SWAN Pro.TW 總代理商品頁',url:'https://shop.mommycare.cc/products/gb-swan-pro',type:'primary'},
-  twYahoo: {title:'Yahoo 台灣自營｜SWAN Pro 座闊標示',url:'https://tw.buy.yahoo.com/gdsale/gb-SWAN-Pro-%E7%A2%B3%E7%BA%96%E7%B6%AD%E6%A5%B5%E8%87%B4%E8%BC%95%E7%9B%88%E9%9B%99%E5%90%91%E6%8E%A8%E8%BB%8A-%E9%AB%98%E6%99%AF%E8%A7%80-%E6%89%8B%E6%8A%8A%E6%8F%9B%E5%90%91-%E9%99%84%E8%B4%88%E8%9A%8A%E5%B8%B3-12146209.html',type:'retailer'},
-  twDealer: {title:'俏媽咪｜SWAN Pro 商品及保養資料',url:'https://www.chaumami.com.tw/products/gb-swan-pro-carbon-fiber-extremely-lightweight-two-way-stroller',type:'retailer'},
   swan: {title:'gbbaby｜海外 A8000 商品資料（內地批次須核對）',url:'https://gbbaby.com/products/gb-swan-pro-stroller',type:'reference'},
   gmark: {title:'Good Design Award 2024｜SWAN Pro 申報資料',url:'https://www.g-mark.org/en/gallery/winners/25589?years=2024',type:'primary'},
   agr: {title:'AGR｜認證推車官方名單及評估原則',url:'https://agr-ev.de/en/certified-products/prams-pushchairs-and-buggies',type:'primary'},
@@ -93,7 +89,6 @@ window.SOURCES = {
   aer: {title:'Joolz｜Aer² 官方座椅尺寸及重量',url:'https://www.joolz.com/lu/en/strollers/320000-M.html',type:'primary'},
   aerCompare: {title:'Joolz｜Aer² 官方調節及避震規格',url:'https://www.joolz.com/au/en/parent-hideout/aer-plus-vs-aer2.html',type:'primary'},
   aerHK: {title:'Jakewell｜Aer² 太空黑香港售價',url:'https://www.jakewell.com.hk/en/products/joolz-aer2-buggy-space-black',type:'retailer'},
-  fxTWD: {title:'Wise｜台幣兌港幣參考匯率',url:'https://wise.com/us/currency-converter/twd-to-hkd-rate',type:'reference'},
   fxCNY: {title:'Wise｜人民幣兌港幣參考匯率',url:'https://wise.com/us/currency-converter/cny-to-hkd-rate',type:'reference'}
 };
 
@@ -101,33 +96,6 @@ window.SOURCES = {
   const c = (value, status='verified', sources=[], detail='', number) => ({value,status,sources,detail,...(number === undefined ? {} : {number})});
   const unknown = (detail='未找到可靠、對應版本嘅公開數字。') => c('未公布／未核實','unknown',[],detail);
   window.STROLLER_DATA = [
-    {
-      id:'swan-tw',name:'gb SWAN Pro',brand:'gb',version:'台灣版 · SWAN Pro.TW',category:'雙向日常',accent:'#7b815b',
-      recognitions:[{"kind":"red-dot","name":"Red Dot Design Award","logo":"award-red-dot.png","sources":["rdSwan","rdSwanTW"],"detail":"Red Dot 官方獲獎名稱為 Swan Pro；gb Taiwan 亦明確宣傳台灣銷售嘅 SWAN Pro 獲 2025 紅點產品設計獎。獎項屬產品設計評選，並非醫療或護脊認證。","year":"2025","scope":"","status":"verified"}],
-      fields:{
-        launch:{"value": "台灣推出日期未核實", "status": "unknown", "sources": ["tw"], "detail": "台灣總代理產品頁未列首次開售日期；不套用內地天鵝Pro的紀錄，亦不以2024／2025設計獎年份代替上市日。"},
-        price:c('約 HK$4,530','reference',['tw','fxTWD'],'台灣總代理 NT$18,800；查詢時售罄。以 NT$1 ≈ HK$0.2407 換算，未計運費及付款匯差。',4530),
-        load:c('22 kg','verified',['tw'],'總代理產品標籤列0–36個月、22kg以下。',22),
-        weight:c('約 7.8 kg','verified',['tw'],'總代理稱「產品重量／淨重」，未列拆除配件條件；另一零售商寫「僅車架」，口徑有差異。',7.8),
-        seatWidth:c('33 cm','reference',['twYahoo'],'Yahoo自營標示；總代理未公布量度方法。不能直接與另一版本36cm判定實際相差3cm。',33),
-        seatHeight:c('58 cm','user',['user','tw'],'你提供；亦與台灣總代理「座位離地高度58cm」一致。',58),
-        backrestHeight:unknown('未公布靠背長度；座位離地高度不能當作靠背長。'),
-        recline:c('可調；段數未核實','reference',['tw'],'單手調節，座板會隨靠背聯動。未找到台版正式段數或角度，不能直接套用海外A8000三段數字。'),
-        calf:c('可調腿托','verified',['tw'],'腳托可另行調節；未核實台版檔位數。'),
-        direction:c('雙向 · 推把換向','verified',['tw'],'不用拆下座椅反轉；換向時輪向聯動。'),
-        folded:c('40 × 55 × 69 cm','verified',['tw'],'長 × 闊 × 高；總代理公佈尺寸。'),
-        unfolded:c('71 × 55 × 101 cm','verified',['tw'],'長 × 闊 × 高；勿與海外A8000尺寸混用。'),
-        suspension:c('四輪系統；細節待核','reference',['tw'],'總代理寫360°全地形四輪動力系統；未清楚公布台版各輪彈簧避震配置，不能直接套用海外圖。'),
-        wheels:c('前 20 / 後 20 cm','verified',['tw'],'四輪轉向；推把換向後，輪向會聯動。'),
-        basket:unknown('未找到台版購物籃承重數字。'),
-        structure:c('聯動座背；非固定L形','reference',['tw'],'座背夾角可打開，腳托另調；不是固定L形座椅整張後傾。10°座板，雙層可拆座艙。'),
-        ergonomic:c('10°座板；可調坐躺姿勢','reference',['tw','agr'],'座板設計與可調姿勢有實用價值，但未見臨床證據證明護脊優於其他款；AGR名單未直接列SWAN Pro.TW。'),
-        strengths:c('碳纖維車架 · 高座位 · 換向方便','verified',['tw'],'58cm座高；四輪轉向；可拆透氣座布，雙層座艙。碳纖維車架不代表碳纖維背板。'),
-        limits:c('跨境售後及規格須對清','reference',['tw','twDealer'],'收摺後仍較大。台版靠背段數未核實；不能將台版與內地版所有參數視作相同。'),
-        included:c('蚊帳','verified',['tw'],'其他配件及跨境運費按實際訂單確認。'),
-        warranty:c('台灣零售商列 1 年','reference',['twDealer'],'未確認跨境買到香港後，維修能否在香港處理。')
-      }
-    },
     {
       id:'swan-cn',name:'gb 天鵝 Pro',brand:'gb',version:'內地 A8000 · 旗艦店圖補充',category:'雙向日常',accent:'#7b815b',
       recognitions:[{"kind":"agr","name":"AGR 人體工學認證","logo":"award-agr.png","sources":["agr"],"detail":"AGR 官方推車名單列明 Goodbaby SWAN（A8000、A8100）。本表內地版以 A8000 對照；此標誌不自動涵蓋 SWAN Pro.TW。認證可作人體工學參考，並非治療、矯正脊椎或預防側彎保證。","year":"","scope":"A8000 / A8100","status":"verified"},{"kind":"red-dot","name":"Red Dot Design Award","logo":"award-red-dot.png","sources":["rdSwan"],"detail":"Red Dot 官方列 Swan Pro 為 2025 Product Design 得獎產品，製造商為 Goodbaby Child Products。不是原版 SWAN 嘅 2018 年獎項。","year":"2025","scope":"","status":"verified"},{"kind":"good-design","name":"日本 Good Design Award","logo":"award-good-design.svg","sources":["gmark"],"detail":"日本設計振興會官方獲獎記錄：SWAN PRO，2024 年，獎項編號 24G020090。此為日本 G Mark 設計獎；不是護脊或醫療認證。","year":"2024","scope":"","status":"verified"}],
