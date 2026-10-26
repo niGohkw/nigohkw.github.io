@@ -1,5 +1,8 @@
 /* Comparison snapshot: 2026-10-26. User-supplied values are explicitly distinguished. */
 window.SOURCES = {
+  userCoyaCorrection: {title:'你確認嘅Coya規格｜座闊40cm、靠背無段式110°–160°（2026-10-26）',url:null,type:'user'},
+  userCoyaSeat: {title:'你提供嘅Coya商品圖｜坐墊約40cm、腿托3段（2026-10-26）',url:'coya-user-seat-width-20261026.jpg',type:'user'},
+  userCoyaRecline: {title:'你提供嘅Coya操作圖｜靠背無段式調節（2026-10-26）',url:'coya-user-recline-20261026.png',type:'user'},
   userSwanPrice: {title:'你提供嘅內地天鵝 Pro 售價 ¥4,010 · 2026-10-26',url:null,type:'user'},
   fxCNY20261026: {title:'Xe｜人民幣兌港幣參考匯率（2026-10-26）',url:'https://www.xe.com/currencyconverter/convert/?Amount=1&From=CNY&To=HKD',type:'reference'},
   ixxa: {"title": "Nuna｜IXXA next 全球官方規格", "url": "https://nunababy.com/en/ixxa-next-pushchair", "type": "primary"},
@@ -245,17 +248,17 @@ window.SOURCES = {
     {
       id:'coya',name:'Cybex Coya',brand:'CYBEX',version:'2026 Style · 玫瑰金款',category:'輕便旅行',accent:'#a27b69',
       recognitions:[{"kind":"agr","name":"AGR 人體工學認證","logo":"award-agr.png","sources":["coya","agr"],"detail":"CYBEX 現行 Coya Style 官方產品頁嘅 Awards 區直接展示 AGR 認證標誌；AGR 官方推車名單亦列 Coÿa。認證可作人體工學參考，並非治療或矯正脊椎保證。","year":"","scope":"Coya Style","status":"verified"},{"kind":"red-dot","name":"Red Dot Design Award","logo":"award-red-dot.png","sources":["rdCoya","coya"],"detail":"Red Dot 官方 2026 得獎記錄為新代 COŸA；CYBEX Coya Style 官方產品頁亦展示 Red Dot 2026 標誌。此為產品設計獎。","year":"2026","scope":"","status":"verified"}],
-      marketEvidence:{"value": "Coya｜淘寶圖片代別待確認", "status": "reference", "sources": ["coyaTaobaoImage", "coyaTaobaoRecline", "coyaTaobao"], "detail": "此淘寶商品頁只標Coya，未註明2026 Style或可對應SKU。圖片只供外觀參考，未用來修改主表新代規格、價格或認證；商家護脊宣傳不等於已證實醫療功效。原圖由公開商品轉載頁取得。"},
+      marketEvidence:{"buttonLabel": "資料／圖", "ariaLabel": "你提供的圖片及淘寶資料", "heading": "Coya 圖片及版本備註", "value": "Coya｜你提供圖片及淘寶參考", "status": "reference", "sources": ["userCoyaCorrection", "userCoyaSeat", "userCoyaRecline", "coyaTaobaoImage", "coyaTaobaoRecline", "coyaTaobao"], "detail": "按你於2026-10-26提供嘅圖片及文字確認，更新座位闊40cm、靠背無段式110°–160°及腿托3段。圖片未標年份或SKU，2026 Style適用性待核；另附淘寶外觀參考圖，不改動其餘新代官方規格、售價及認證。"},
       fields:{
         launch:{"value": "2026-04-21｜新代公布", "status": "verified", "sources": ["coyaLaunch", "coyaLaunchJP"], "detail": "CYBEX公布包括Coya在內的新Platinum系列；日本官方翌日亦公布Coya Style及預購安排。香港開售日未核實，不套用舊版Coya的2023年日期。"},
         price:c('HK$4,999','verified',['coyaHK'],'Jakewell Style玫瑰金款；查詢時頁面售罄。',4999),
         load:c('22 kg','verified',['coya'],'初生至約4歲，按說明書使用適當躺姿。',22),
         weight:c('7.3 kg','verified',['coya'],'新代官方規格；普通款前扶手另購。香港部分新款頁仍混用舊代6.6kg。',7.3),
-        seatWidth:unknown('官方未公布座椅內闊；45cm為整架車闊度。'),
+        seatWidth:{...c('40 cm','user',['userCoyaCorrection','userCoyaSeat'],'採用你確認嘅座位闊度40cm；附圖另標坐墊約400mm。量度方法及2026 Style適用性未獨立核實。',40),providedDate:'2026年10月26日'},
         seatHeight:c('46 cm','user',['user'],'你提供嘅Coya座高；未指明新舊代，本表採用但保留2026 Style適用性待確認。',46),
         backrestHeight:unknown('未找到2026 Style可靠官方靠背長。'),
-        recline:c('單手調節至躺姿；段數未公布','reference',['coya'],'官方稱ergonomic lie-flat；未清楚列固定段數及精確角度。'),
-        calf:c('內置加長可調腿托','verified',['coya'],'可獨立調節。'),
+        recline:{...c('無段式 · 110°–160°','user',['userCoyaCorrection','userCoyaRecline'],'採用你補充嘅110°–160°範圍；靠背無段式連續調節，沒有固定段數。附圖支持無段式操作，角度由你文字補充，未作獨立實測。'),providedDate:'2026年10月26日'},
+        calf:{...c('3段腿托','user',['userCoyaSeat'],'你提供座艙圖明確標示腿靠三檔調節；3段屬腿托，並非靠背。圖片未標示年份／批次。'),providedDate:'2026年10月26日'},
         direction:c('向前','verified',['coya'],'標準座椅不能反轉面向家長。'),
         folded:c('53.5 × 45 × 22 cm','verified',['coya'],'新代最緊湊收摺尺寸；長 × 闊 × 高。'),
         unfolded:c('82.5 × 45 × 106 cm','verified',['coya'],'長 × 闊 × 高；2026新代數字。'),
