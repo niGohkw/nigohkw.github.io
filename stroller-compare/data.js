@@ -1,5 +1,6 @@
-/* Comparison snapshot: 2026-10-26. User-supplied values are explicitly distinguished. */
+/* Comparison snapshot: 2026-10-27. User-supplied values are explicitly distinguished. */
 window.SOURCES = {
+  userTrivPrice: {title:'自己提供嘅Nuna TRIV next淘寶88VIP價 HK$3,500 · 2026-10-27',url:null,type:'user'},
   userSwivPrice: {title:'你提供嘅Nuna SWIV淘寶88VIP價 HK$6,000 · 2026-10-26',url:null,type:'user'},
   userCoyaCorrection: {title:'你確認嘅Coya規格｜座闊40cm、靠背無段式110°–160°（2026-10-26）',url:null,type:'user'},
   userCoyaSeat: {title:'你提供嘅Coya商品圖｜坐墊約40cm、腿托3段（2026-10-26）',url:'coya-user-seat-width-20261026.jpg',type:'user'},
@@ -211,12 +212,12 @@ window.SOURCES = {
       }
     },
     {
-      id:'triv-next',name:'Nuna TRIV next',brand:'Nuna',version:'標準款 · 香港行貨資料',category:'雙向日常',accent:'#587a79',
+      id:'triv-next',name:'Nuna TRIV next',brand:'Nuna',version:'標準款 · 香港規格參考',category:'雙向日常',accent:'#587a79',
       recognitions:[{"kind":"red-dot","name":"Red Dot Design Award","logo":"award-red-dot.png","sources":["rdTriv"],"detail":"Red Dot 官方直接列明 TRIV next 獲 2022 Product Design 獎。此記錄對應 next 型號，沒有套用舊版 TRIV 嘅獎項。","year":"2022","scope":"","status":"verified"}],
       marketEvidence:{"value": "TRIV next｜55cm座高及操作圖", "status": "reference", "sources": ["trivTmallHeight", "trivTmallSuspension", "trivTmallDirection", "trivTmall"], "detail": "商家原圖由公開商品轉載頁取得，座高圖明確寫55cm，與你提供嘅數字一致。商品頁混有標準款及BMW聯名圖，香港頁另寫52cm；保留差異，靠背仍採用你指定嘅3段。"},
       fields:{
         launch:{"value": "2022-10-01｜美國上市宣傳", "status": "reference", "sources": ["trivLaunch"], "detail": "美國Albee Baby當日發出TRIV next上市電郵，存檔標示美東時間2022-10-01；香港開售日及後續版本另計。"},
-        price:c('HK$5,680','verified',['trivHK'],'香港行貨標準款；非BMW聯名版或TRIV lx。',5680),
+        price:{...c('HK$3,500 · 淘寶88VIP','user',['userTrivPrice'],'2026-10-27自己提供嘅淘寶88VIP會員價；按HK$3,500參與排序。優惠條件、運費、實售版本及配件以店舖結算為準；未確認適用香港行貨保養。',3500),providedDate:'2026年10月27日'},
         load:c('22 kg','verified',['triv','trivManual'],'初生至4歲或22kg，以先到者為準。',22),
         weight:c('8.72 kg*','verified',['trivHK','triv'],'*香港商戶註不含冬墊、頂篷、前扶手；國際頁排除項不同。香港全配重量未核實。',8.72),
         seatWidth:c('35 cm','user',['user'],'你提供嘅座位闊度；本次未獨立核實量度方法。',35),
@@ -234,8 +235,8 @@ window.SOURCES = {
         ergonomic:c('坐姿調整完整 · 額外座底避震','reference',['triv','trivManual'],'靠背、腿托及下方腳踏配合成長；這是結構比較，不代表臨床護脊功效較高。'),
         strengths:c('雙向皆可收 · 5段推把 · 冬夏座椅','verified',['triv','trivManual'],'冬墊可拆，底下透氣網布；Merino羊毛／TENCEL坐墊，單手收車、自立。'),
         limits:c('車闊約58cm；全配重量待核','verified',['trivHK'],'適合重視日常功能，但搬樓梯及細空間需要試清楚；香港頁定位機口寄艙。'),
-        included:c('雨罩 + 指定提籃／睡窩轉接器','verified',['trivHK'],'汽座及睡籃另購；不要套用美國版環狀轉接器配置。'),
-        warranty:c('香港行貨 2 年','verified',['trivHK'],'頁面列2024-07-02起購買適用，以實際購買條款為準。')
+        included:c('雨罩 + 指定提籃／睡窩轉接器','verified',['trivHK'],'香港標準款配件參考；汽座及睡籃另購，不套用美國版環狀轉接器配置。淘寶88VIP優惠套裝所含配件待店舖確認。'),
+        warranty:c('香港行貨2年；淘寶條款待核','reference',['trivHK'],'2年保養只按原香港行貨資料列示（2024-07-02起購買適用），不能直接套用淘寶88VIP優惠；淘寶訂單保養及跨境維修安排待店舖確認。')
       }
     },
     {
