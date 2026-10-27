@@ -1,5 +1,8 @@
 /* Comparison snapshot: 2026-10-27. User-supplied values are explicitly distinguished. */
 window.SOURCES = {
+  userMelioCustomerWeight: {"title": "自己提供嘅客服回覆｜Melio Carbon 整車8kg、車架淨重5.9kg（2026-10-27）", "url": null, "type": "user"},
+  userLxSeatWidth: {"title": "自己提供嘅 TRVL lx 座闊35cm（2026-10-27）", "url": null, "type": "user"},
+  userSwivSeatDimensions: {"title": "自己提供嘅 SWIV 座闊35cm、座高55cm（2026-10-27）", "url": null, "type": "user"},
   userMelioSpecs: {"title": "自己提供嘅 Melio Carbon 2026 尺寸及配件原圖（2026-10-27）", "url": "melio-user-specs-20261027.jpg", "type": "user"},
   melio: {"title": "CYBEX｜Melio Carbon 2026 官方規格（526 系列）", "url": "https://www.cybex-online.com/en/gb/p/st-go-melio-carbon-6.html", "type": "primary"},
   melioHK: {"title": "Twins Baby｜Melio Carbon 香港行貨（5260 開首貨號）", "url": "https://www.twinsbaby.hk/product/cybex-melio-stroller/", "type": "retailer"},
@@ -169,7 +172,7 @@ window.SOURCES = {
         price:c('HK$4,380','verified',['lxHK'],'香港行貨推車單車售價。',4380),
         load:c('22 kg','verified',['lx','lxManual'],'初生至4歲或22kg，以先到者為準。',22),
         weight:c('7.1 kg*','verified',['lxHK','lx'],'*香港商戶註明不含頂篷及前扶手。海外官方排除配件口徑不同；完整實用重量未核實。',7.1),
-        seatWidth:unknown('52cm是整架車闊度，不能當座位內闊。'),
+        seatWidth:{"value": "35 cm", "number": 35, "status": "user", "sources": ["userLxSeatWidth"], "detail": "按自己補充更新座位闊度為35cm；量度方法未獨立核實。52cm是整車闊度。", "providedDate": "2026年10月27日"},
         seatHeight:c('50 cm','user',['user','lxHK'],'你提供；香港商戶亦有約50cm座高標示。',50),
         backrestHeight:c('44 cm','user',['user'],'你提供嘅靠背長度；本次未獨立核實量度方法。',44),
         recline:c('無段式捲軸調節','verified',['lx','lxHK'],'可以微調至較直坐姿；香港頁稱近全躺，未提供精確角度。'),
@@ -830,16 +833,24 @@ window.SOURCES = {
       "number": 9.5
     },
     "seatWidth": {
-      "value": "未公布／未核實",
-      "status": "unknown",
-      "sources": [],
-      "detail": "54cm是整架車闊度，不能當作座位內闊。"
+      "value": "35 cm",
+      "number": 35,
+      "status": "user",
+      "sources": [
+        "userSwivSeatDimensions"
+      ],
+      "detail": "按自己補充更新座位闊度為35cm；量度方法未獨立核實。54cm是整車闊度。",
+      "providedDate": "2026年10月27日"
     },
     "seatHeight": {
-      "value": "未公布／未核實",
-      "status": "unknown",
-      "sources": [],
-      "detail": "未取得可靠、對應香港標準款的座椅離地高度；不採用網上推測數字。"
+      "value": "55 cm",
+      "number": 55,
+      "status": "user",
+      "sources": [
+        "userSwivSeatDimensions"
+      ],
+      "detail": "按自己補充更新座椅離地高度為55cm；量度方法未獨立核實。",
+      "providedDate": "2026年10月27日"
     },
     "backrestHeight": {
       "value": "未公布／未核實",
@@ -1013,6 +1024,7 @@ window.SOURCES = {
     "status": "user",
     "providedDate": "2026年10月27日",
     "sources": [
+      "userMelioCustomerWeight",
       "userMelioSpecs",
       "melioReclineImage",
       "melioDirectionImage",
@@ -1020,7 +1032,7 @@ window.SOURCES = {
       "melioHK",
       "melioJP"
     ],
-    "detail": "2026年款由自己確認；座椅尺寸、輪徑、收車及重量計法按所附原圖補充，圖註手工量度可能有1–3cm誤差。香港價格及保養另按香港商戶資料。圖中包裝另列71×31×51.7cm、包裝重量9.2kg，並非整車淨重；箱面列前扶手、雨罩及提籃轉換器，套裝配件須與訂單核對。"
+    "detail": "2026年款由自己確認；座椅尺寸、輪徑及收車尺寸按所附原圖補充，圖註手工量度可能有1–3cm誤差。香港價格及保養另按香港商戶資料。圖中包裝另列71×31×51.7cm、包裝重量9.2kg，並非整車淨重；箱面列前扶手、雨罩及提籃轉換器，套裝配件須與訂單核對。 重量以自己轉述嘅最新客服回覆更新：整車8kg，5.9kg只係車架淨重；原圖重量註腳保留作來源對照。"
   },
   "fields": {
     "price": {
@@ -1052,16 +1064,14 @@ window.SOURCES = {
       "number": 15
     },
     "weight": {
-      "value": "5.9 kg*",
+      "value": "8 kg（整車）",
+      "number": 8,
       "status": "user",
       "sources": [
-        "userMelioSpecs",
-        "melio",
-        "melioJP"
+        "userMelioCustomerWeight"
       ],
-      "detail": "*原圖明確註不含新生兒棉墊、護肩、前扶手及置物籃；並非齊配件重量。香港官方／商戶計重口徑未逐項核對。",
-      "providedDate": "2026年10月27日",
-      "number": 5.9
+      "detail": "按自己轉述嘅客服回覆：整車重8kg，5.9kg只係車架淨重；本表改以8kg參與重量排序，未作獨立實測。",
+      "providedDate": "2026年10月27日"
     },
     "seatWidth": {
       "value": "34 cm",
