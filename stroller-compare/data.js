@@ -1,5 +1,13 @@
 /* Comparison snapshot: 2026-10-27. User-supplied values are explicitly distinguished. */
 window.SOURCES = {
+  melio: {"title": "CYBEX｜Melio Carbon 2026 官方規格（526 系列）", "url": "https://www.cybex-online.com/en/gb/p/st-go-melio-carbon-6.html", "type": "primary"},
+  melioHK: {"title": "Twins Baby｜Melio Carbon 香港行貨（5260 開首貨號）", "url": "https://www.twinsbaby.hk/product/cybex-melio-stroller/", "type": "retailer"},
+  melioJP: {"title": "CYBEX 日本｜Melio Carbon 2026 規格及操作圖", "url": "https://cybex-japan.com/products/melio-carbon-2026", "type": "primary"},
+  melioLaunchJP: {"title": "CYBEX 日本｜2026 年款於 2 月 6 日開售", "url": "https://cybex-japan.com/pages/melio-carbon-2026", "type": "primary"},
+  melioLaunch: {"title": "好孩子國際｜2026 Melio Carbon 於 2 月 26 日海外發售", "url": "https://www.gbinternational.com.hk/zh-hk/news/cybex-melio-carbon-the-ultra-light-stroller", "type": "primary"},
+  melioHeightJP: {"title": "BrightBaby｜2026 日本款座椅高度 52cm（零售參考）", "url": "https://item.rakuten.co.jp/babykids-shop/u247606/", "type": "retailer"},
+  melioReclineImage: {"title": "CYBEX 日本官方原圖｜2026 四段靠背調節", "url": "https://cdn.shopify.com/s/files/1/0530/5476/7260/t/21/assets/72fe7f0a029a--CYB-26-INT-Excl-US-y270-MelioCarbon-CIYE-Recline-Steps-FWF-screen-standard-b85ee8.png?v=1766557266", "type": "primary"},
+  melioDirectionImage: {"title": "CYBEX 日本官方原圖｜2026 雙向座椅", "url": "https://cdn.shopify.com/s/files/1/0530/5476/7260/t/21/assets/72fe7f0a029a--CYB-26-INT-y270-MelioCarbon-CIYE-Rotation-screen-HD-36d256.jpg?v=1766557359", "type": "primary"},
   userTrivPrice: {title:'自己提供嘅Nuna TRIV next淘寶88VIP價 HK$3,500 · 2026-10-27',url:null,type:'user'},
   userSwivPrice: {title:'你提供嘅Nuna SWIV淘寶88VIP價 HK$6,000 · 2026-10-26',url:null,type:'user'},
   userCoyaCorrection: {title:'你確認嘅Coya規格｜座闊40cm、靠背無段式110°–160°（2026-10-26）',url:null,type:'user'},
@@ -967,6 +975,233 @@ window.SOURCES = {
         "swivJakewell"
       ],
       "detail": "2年保養只按原香港行貨資料列示，不能直接套用淘寶88VIP優惠；淘寶訂單保養及跨境維修安排待店舖確認。"
+    }
+  }
+},
+{
+  "id": "melio-carbon",
+  "name": "Cybex Melio Carbon",
+  "brand": "CYBEX",
+  "version": "2026款 · 香港行貨／526系列",
+  "category": "雙向日常",
+  "accent": "#6f8ca5",
+  "aliases": [
+    "Melio",
+    "メリオ",
+    "碳纖維"
+  ],
+  "recognitions": [
+    {
+      "kind": "agr",
+      "name": "AGR 人體工學認證",
+      "logo": "award-agr.png",
+      "year": "",
+      "scope": "Melio Carbon",
+      "sources": [
+        "agr"
+      ],
+      "status": "verified",
+      "detail": "AGR 現行官方名單明確列出 Melio Carbon；年份未列，不另猜測。認證可作人體工學參考，並不代表能矯正脊椎。"
+    }
+  ],
+  "marketEvidence": {
+    "buttonLabel": "官方資料／圖",
+    "ariaLabel": "官方資料及商品圖",
+    "heading": "Melio Carbon 2026 版本及操作圖",
+    "value": "Melio Carbon｜四段調背、雙向座椅",
+    "status": "reference",
+    "sources": [
+      "melioReclineImage",
+      "melioDirectionImage",
+      "melio",
+      "melioHK",
+      "melioJP"
+    ],
+    "detail": "主表採香港現售526系列及2026官方資料；日本版52cm座高另標參考。官方原圖展示四段調背及拆座換向；不沿用舊款座闊、背長或收車尺寸。"
+  },
+  "fields": {
+    "price": {
+      "value": "HK$4,199",
+      "status": "verified",
+      "sources": [
+        "melioHK"
+      ],
+      "detail": "香港商戶5260開首貨號行貨列價；顏色及現貨／訂貨按店舖確認。",
+      "number": 4199
+    },
+    "launch": {
+      "value": "2026-02-06 日本／02-26 海外",
+      "status": "verified",
+      "sources": [
+        "melioLaunchJP",
+        "melioLaunch"
+      ],
+      "detail": "指2026年款：日本2月6日開售，官方海外公告列2月26日。並非整個系列首次推出日；香港上市日未核實。"
+    },
+    "load": {
+      "value": "15 kg",
+      "status": "verified",
+      "sources": [
+        "melio",
+        "melioHK"
+      ],
+      "detail": "香港／海外頁列初生至約3歲；日本版由1個月起。達體重上限即須停用。",
+      "number": 15
+    },
+    "weight": {
+      "value": "5.9 kg*",
+      "status": "verified",
+      "sources": [
+        "melio",
+        "melioJP"
+      ],
+      "detail": "*官方標重；日本官網註不含配件，香港未列完整配件計重口徑。",
+      "number": 5.9
+    },
+    "seatWidth": {
+      "value": "未公布／未核實",
+      "status": "unknown",
+      "sources": [],
+      "detail": "未取得可靠2026款座位內闊；49cm是整車闊度，不能當作座闊。"
+    },
+    "seatHeight": {
+      "value": "52 cm（日本款參考）",
+      "status": "reference",
+      "sources": [
+        "melioHeightJP"
+      ],
+      "detail": "日本零售商2026款標示；香港526系列同一量度口徑未獨立核實。",
+      "number": 52
+    },
+    "backrestHeight": {
+      "value": "未公布／未核實",
+      "status": "unknown",
+      "sources": [],
+      "detail": "未取得可靠2026款靠背長度，不套用舊款實測數字。"
+    },
+    "recline": {
+      "value": "4段靠背 · 可平躺",
+      "status": "verified",
+      "sources": [
+        "melio",
+        "melioJP",
+        "melioReclineImage"
+      ],
+      "detail": "單手調背，官方列完全平躺位置；未公布各段精確角度。"
+    },
+    "calf": {
+      "value": "腿托可另調；段數待核",
+      "status": "reference",
+      "sources": [
+        "melioJP"
+      ],
+      "detail": "日本官方說明按兩側按鈕調節腿托，未列固定段數。"
+    },
+    "direction": {
+      "value": "雙向 · 拆座換向",
+      "status": "verified",
+      "sources": [
+        "melio",
+        "melioJP"
+      ],
+      "detail": "面向父母或向前；日本2026官網列兩個方向均可收車、自立。"
+    },
+    "structure": {
+      "value": "獨立調背、腿托；非固定L形",
+      "status": "reference",
+      "sources": [
+        "melioJP",
+        "melioReclineImage"
+      ],
+      "detail": "依官方操作說明及躺姿圖判斷：靠背角度可改變、腿托另調，不是固定L形整張後傾。"
+    },
+    "suspension": {
+      "value": "後輪懸掛 + 前輪減震",
+      "status": "verified",
+      "sources": [
+        "melio"
+      ],
+      "detail": "官方列後輪懸掛及前輪減震器；未有本次路面實測。"
+    },
+    "wheels": {
+      "value": "四輪 · 8個滾珠軸承",
+      "status": "reference",
+      "sources": [
+        "melioJP"
+      ],
+      "detail": "日本2026官方列全輪共8個滾珠軸承；對應香港款前／後輪直徑未核實。"
+    },
+    "folded": {
+      "value": "59 × 49 × 29 cm*",
+      "status": "reference",
+      "sources": [
+        "melio",
+        "melioHK",
+        "melioJP"
+      ],
+      "detail": "*香港及海外官網列最緊湊尺寸（長×闊×高）。日本頁另列自立54×49×69cm／最小69×49×29cm；姿態及版本有差異，按實物核對。"
+    },
+    "unfolded": {
+      "value": "82–91 × 49 × 96.5–107 cm",
+      "status": "verified",
+      "sources": [
+        "melio"
+      ],
+      "detail": "長×闊×高；推把高度可調。"
+    },
+    "basket": {
+      "value": "5 kg（日本資料約38 L）",
+      "status": "verified",
+      "sources": [
+        "melio",
+        "melioJP"
+      ],
+      "detail": "承重5kg；38L容量來自日本2026官網。",
+      "number": 5
+    },
+    "ergonomic": {
+      "value": "AGR · 四段調背 · 可調腿托",
+      "status": "reference",
+      "sources": [
+        "agr",
+        "melio",
+        "melioJP"
+      ],
+      "detail": "方便切換坐躺姿勢；透氣網背可拆內墊。腰背是否貼合仍需按BB身形試坐。"
+    },
+    "strengths": {
+      "value": "碳纖維車架 · 雙向 · 單手收車",
+      "status": "verified",
+      "sources": [
+        "melio",
+        "melioJP"
+      ],
+      "detail": "一拉式安全帶、UPF50+大篷及3段推把；以輕身城市出行為主。"
+    },
+    "limits": {
+      "value": "承重15kg；非手提行李尺寸保證",
+      "status": "reference",
+      "sources": [
+        "melio"
+      ],
+      "detail": "成長承重空間較22kg車款少；是否可放機艙須按航空公司規定，不能保證。"
+    },
+    "included": {
+      "value": "扶手、篷、新生兒內墊、舒適內墊",
+      "status": "verified",
+      "sources": [
+        "melio",
+        "melioHK"
+      ],
+      "detail": "含車架、輪、座椅及購物籃；雨罩、汽座、睡籃及汽座轉接器另購。"
+    },
+    "warranty": {
+      "value": "香港行貨 1 年",
+      "status": "verified",
+      "sources": [
+        "melioHK"
+      ],
+      "detail": "按香港商戶列示；日本2年條款不直接套用香港或跨境訂單。"
     }
   }
 }
