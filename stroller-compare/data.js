@@ -1,5 +1,20 @@
-/* Comparison snapshot: 2026-10-27. User-supplied values are explicitly distinguished. */
+/* Comparison snapshot: 2026-10-28. User-supplied values are explicitly distinguished. */
 window.SOURCES = {
+  parcelLX: {"title": "Joie｜Parcel lx 全球官方規格", "url": "https://joiebaby.com/en/signature-parcel-lx-lightweight-stroller", "type": "primary"},
+  parcelLXManual: {"title": "Joie｜Parcel lx 全球說明書（4段靠背／3段腿托）", "url": "https://dl.joiebaby.com/Instruction_Manual/GL/Parcel-lx/Joie-signature-parcel-lx-instruction-manual.pdf", "type": "primary"},
+  parcelLXBundle: {"title": "Joie｜官方套裝頁內 Parcel lx 分項規格", "url": "https://joiebaby.com/en/signature/joie-signature-bundle/signature-parcel-lx-travel-system-with-i-starter", "type": "primary"},
+  parcelLXHK: {"title": "Twins Baby｜Parcel lx 香港規格、配件及保養", "url": "https://www.twinsbaby.hk/product/joie-parcel-lx-stroller/", "type": "retailer"},
+  parcelLXPrice: {"title": "Blove｜Parcel lx 香港行貨售價", "url": "https://www.blove.com.hk/shop/joie-parcel-lx-stroller/", "type": "retailer"},
+  parcelLXLaunch: {"title": "baby & junior｜2025年3月20日德國 Signature 系列發表報道", "url": "https://babyundjunior.de/de/Produkte/Baby-Mobil/Neue-Joie-Signature-Kollektion", "type": "reference"},
+  parcelLXImage: {"title": "Joie 官方原圖｜Parcel lx 產品外觀", "url": "https://dd.joiebaby.com/media/catalog/product/0/1/01_-_s2311aaecl000_parcel_lx_eclipse_001_cs_cc_hr.jpg", "type": "primary"},
+  parcelLXComfortImage: {"title": "Joie 官方原圖｜Parcel lx 乘坐設計", "url": "https://dd.joiebaby.com/media/catalog/product/0/6/06_-_joie-baby-amp-7834-cc_hr.jpg", "type": "primary"},
+  porto: {"title": "Joie 新加坡｜Porto 現行官方規格", "url": "https://joiebaby.com/sg/porto-lightweight-cabin-stroller", "type": "primary"},
+  portoDE: {"title": "Joie 德國｜Porto 靠背調節及規格", "url": "https://joiebaby.com/de/porto-handgepaecktauglicher-reisebuggy", "type": "primary"},
+  portoManual: {"title": "Joie｜Porto 全球說明書（2段腿托）", "url": "https://dl.joiebaby.com/Instruction_Manual/GL/Porto/Joie-pushchair-porto-instruction-manual.pdf", "type": "primary"},
+  portoHK: {"title": "Twins Baby｜Porto 香港行貨售價、規格及保養", "url": "https://www.twinsbaby.hk/product/joie-porto-stroller/", "type": "retailer"},
+  portoLaunchCN: {"title": "新浪／資訊中國｜Porto 2026年7月11日內地上市、38cm座艙", "url": "https://news.sina.com.cn/sx/2026-07-13/detail-inihqety9505561.shtml", "type": "reference"},
+  portoImage: {"title": "Joie 官方原圖｜Porto 產品外觀", "url": "https://dd.joiebaby.com/media/catalog/product/p/0/p01-joie-pushchair-porto-raven-right-angle.jpg", "type": "primary"},
+  portoAccessoriesImage: {"title": "Joie 官方原圖｜Porto 隨車配件", "url": "https://dd.joiebaby.com/media/catalog/product/m/4/m4-d-joie-pushchair-porto-accessories_1.jpg", "type": "primary"},
   userMelioCustomerWeight: {"title": "自己提供嘅客服回覆｜Melio Carbon 整車8kg、車架淨重5.9kg（2026-10-27）", "url": null, "type": "user"},
   userLxSeatWidth: {"title": "自己提供嘅 TRVL lx 座闊35cm（2026-10-27）", "url": null, "type": "user"},
   userSwivSeatDimensions: {"title": "自己提供嘅 SWIV 座闊35cm、座高55cm（2026-10-27）", "url": null, "type": "user"},
@@ -1237,5 +1252,428 @@ window.SOURCES = {
   }
 }
 
+,
+{
+  "id": "joie-parcel-lx",
+  "name": "Joie Parcel lx",
+  "brand": "Joie Signature",
+  "version": "S2311 · 香港行貨／全球資料對照",
+  "category": "城市單向",
+  "accent": "#95516a",
+  "aliases": [
+    "Parcel",
+    "palcel lx",
+    "parcel lx"
+  ],
+  "recognitions": [],
+  "marketEvidence": {
+    "buttonLabel": "官方資料／圖",
+    "ariaLabel": "官方資料及商品圖",
+    "heading": "Parcel lx 版本及操作資料",
+    "value": "4段靠背 · 3段腿托 · 單手收車",
+    "status": "reference",
+    "sources": [
+      "parcelLXImage",
+      "parcelLXComfortImage",
+      "parcelLXManual",
+      "parcelLX",
+      "parcelLXHK"
+    ],
+    "detail": "採用 Parcel lx／S2311，沒有套用舊 Parcel 數據。主表尺寸用香港商戶標示，全球頁高度及收摺方向另列備註。香港頁及全球說明書列 Ramble 睡籃兼容，但現行全球FAQ寫不支援睡籃，須核對實售版及轉接器。"
+  },
+  "fields": {
+    "price": {
+      "value": "HK$2,299",
+      "status": "verified",
+      "sources": [
+        "parcelLXPrice"
+      ],
+      "detail": "Blove 香港行貨列價，原價HK$2,680；顏色、庫存及實際套裝按訂單確認。",
+      "number": 2299
+    },
+    "launch": {
+      "value": "2025-03-20｜德國系列發表",
+      "status": "reference",
+      "sources": [
+        "parcelLXLaunch"
+      ],
+      "detail": "現場報道列柏林 Signature 新系列於當日發表，包含 Parcel LX；不是已核實的全球首次開售日，香港上市日未核實。"
+    },
+    "load": {
+      "value": "22 kg",
+      "status": "verified",
+      "sources": [
+        "parcelLX",
+        "parcelLXManual"
+      ],
+      "detail": "初生至約4歲或22kg，以先到者為準。",
+      "number": 22
+    },
+    "weight": {
+      "value": "7.72 kg*",
+      "status": "verified",
+      "sources": [
+        "parcelLX",
+        "parcelLXHK"
+      ],
+      "detail": "*官方及香港商戶公布重量，未逐項交代計重配件；不是獨立實測齊配重量。",
+      "number": 7.72
+    },
+    "seatWidth": {
+      "value": "未公布／未核實",
+      "status": "unknown",
+      "sources": [],
+      "detail": "未找到可靠 Parcel lx 座位內闊；53cm是整車闊度。"
+    },
+    "seatHeight": {
+      "value": "未公布／未核實",
+      "status": "unknown",
+      "sources": [],
+      "detail": "未找到可靠、對應 Parcel lx 版本的座椅離地高度。"
+    },
+    "backrestHeight": {
+      "value": "未公布／未核實",
+      "status": "unknown",
+      "sources": [],
+      "detail": "未取得可靠 Parcel lx 靠背長度，不套用舊 Parcel 數字。"
+    },
+    "recline": {
+      "value": "4段靠背",
+      "status": "verified",
+      "sources": [
+        "parcelLXManual",
+        "parcelLX"
+      ],
+      "detail": "全球官方說明書列4段；產品頁稱lie-flat／FAQ稱near-flat，未列各段精確角度。"
+    },
+    "calf": {
+      "value": "3段腿托",
+      "status": "verified",
+      "sources": [
+        "parcelLXManual"
+      ],
+      "detail": "全球官方說明書列3段，腿托與靠背分開調節。"
+    },
+    "direction": {
+      "value": "向前",
+      "status": "verified",
+      "sources": [
+        "parcelLX",
+        "parcelLXManual"
+      ],
+      "detail": "標準座椅不能反轉；另配汽座不等於標準座椅雙向。"
+    },
+    "structure": {
+      "value": "獨立調背、腿托；非固定L形",
+      "status": "reference",
+      "sources": [
+        "parcelLXManual"
+      ],
+      "detail": "依說明書圖19–22判斷，座背夾角可打開、腿托另調；並非固定L形整座後傾。"
+    },
+    "suspension": {
+      "value": "四輪避震",
+      "status": "verified",
+      "sources": [
+        "parcelLX"
+      ],
+      "detail": "全球官方FAQ明確列四輪避震；前輪可鎖定方向。"
+    },
+    "wheels": {
+      "value": "前16.5 / 後21.5 cm",
+      "status": "reference",
+      "sources": [
+        "parcelLXBundle"
+      ],
+      "detail": "全球官方套裝頁內 Parcel lx 分項規格；香港實售批次未另行核對。"
+    },
+    "folded": {
+      "value": "78 × 53 × 36 cm",
+      "status": "reference",
+      "sources": [
+        "parcelLXHK",
+        "parcelLX"
+      ],
+      "detail": "香港列長×闊×高；全球另列36×53×77.5cm，擺放方向及標示有差異。收後可自立。"
+    },
+    "unfolded": {
+      "value": "88 × 53 × 101 cm",
+      "status": "reference",
+      "sources": [
+        "parcelLXHK",
+        "parcelLX"
+      ],
+      "detail": "採香港長×闊×高；全球頁高度另列107cm，實售版本需核對。"
+    },
+    "basket": {
+      "value": "4.5 kg",
+      "status": "verified",
+      "sources": [
+        "parcelLXManual",
+        "parcelLXBundle"
+      ],
+      "detail": "全球官方說明書及套裝頁分項列購物籃承重4.5kg。",
+      "number": 4.5
+    },
+    "ergonomic": {
+      "value": "4段靠背 · 3段腿托 · 通風網窗",
+      "status": "reference",
+      "sources": [
+        "parcelLXManual",
+        "parcelLX"
+      ],
+      "detail": "方便切換坐躺姿勢；腰背貼合仍要試坐，未有證據證明護脊優於其他款，亦未核實本型號AGR認證。"
+    },
+    "strengths": {
+      "value": "單手收車 · 自立 · AutoClick磁扣",
+      "status": "verified",
+      "sources": [
+        "parcelLX"
+      ],
+      "detail": "UPF50+可延伸防潑水篷、通風網窗、3段安全帶高度；可配另購指定汽座及隨附轉接器。"
+    },
+    "limits": {
+      "value": "單向；收摺最長邊約78cm",
+      "status": "reference",
+      "sources": [
+        "parcelLX",
+        "parcelLXHK",
+        "parcelLXManual"
+      ],
+      "detail": "不能保證登機；香港與全球尺寸有差異。Ramble睡籃兼容說法亦有矛盾，須核對實售版／轉接器。"
+    },
+    "included": {
+      "value": "雨罩、旅行袋、轉接器",
+      "status": "verified",
+      "sources": [
+        "parcelLXHK",
+        "parcelLX"
+      ],
+      "detail": "香港單車套裝資料；汽座及睡籃另購，睡籃兼容性按實售版確認。"
+    },
+    "warranty": {
+      "value": "香港行貨2年",
+      "status": "verified",
+      "sources": [
+        "parcelLXHK"
+      ],
+      "detail": "香港原廠總代理行貨條款；以購買商戶及實際訂單確認。"
+    }
+  }
+},
+{
+  "id": "joie-porto",
+  "name": "Joie Porto",
+  "brand": "Joie",
+  "version": "香港行貨 · 海外／內地資料對照",
+  "category": "旅行單向",
+  "accent": "#6f8ca5",
+  "aliases": [
+    "porto",
+    "Porto輕旅車"
+  ],
+  "recognitions": [],
+  "marketEvidence": {
+    "buttonLabel": "官方資料／圖",
+    "ariaLabel": "官方資料及商品圖",
+    "heading": "Porto 版本及規格差異",
+    "value": "單手自動收車 · 肩帶 · 2段腿托",
+    "status": "reference",
+    "sources": [
+      "portoImage",
+      "portoAccessoriesImage",
+      "portoManual",
+      "portoHK",
+      "porto",
+      "portoLaunchCN"
+    ],
+    "detail": "香港主表採7.8kg及收摺闊44cm；現行新加坡官方另列7.6kg及45.2cm。38cm座艙來自內地上市宣傳稿，量法及港版適用性未核實。沒有把航空行李尺寸宣傳當作安全認證或保證登機。"
+  },
+  "fields": {
+    "price": {
+      "value": "HK$2,232",
+      "status": "verified",
+      "sources": [
+        "portoHK"
+      ],
+      "detail": "Twins Baby 香港行貨列價，原價HK$2,480；按顏色、庫存及訂單確認。",
+      "number": 2232
+    },
+    "launch": {
+      "value": "2026-07-11｜內地上市發表",
+      "status": "reference",
+      "sources": [
+        "portoLaunchCN"
+      ],
+      "detail": "新浪轉載上市稿明確列當日新品發布及上市；屬內地市場事件，全球首發及香港開售日未核實。"
+    },
+    "load": {
+      "value": "22 kg",
+      "status": "verified",
+      "sources": [
+        "porto",
+        "portoHK",
+        "portoManual"
+      ],
+      "detail": "初生至約4歲或22kg，以先到者為準。",
+      "number": 22
+    },
+    "weight": {
+      "value": "7.8 kg*（香港資料）",
+      "status": "reference",
+      "sources": [
+        "portoHK",
+        "porto"
+      ],
+      "detail": "*香港未逐項列計重配件；現行新加坡官方另列7.6kg，不將不同市場／口徑強行合併。",
+      "number": 7.8
+    },
+    "seatWidth": {
+      "value": "38 cm（內地座艙參考）",
+      "status": "reference",
+      "sources": [
+        "portoLaunchCN"
+      ],
+      "detail": "內地上市宣傳稿寫38cm座艙，未交代量法；未核實是否等同香港版座面內闊。",
+      "number": 38
+    },
+    "seatHeight": {
+      "value": "未公布／未核實",
+      "status": "unknown",
+      "sources": [],
+      "detail": "未取得可靠 Porto 座椅離地高度。"
+    },
+    "backrestHeight": {
+      "value": "未公布／未核實",
+      "status": "unknown",
+      "sources": [],
+      "detail": "未取得可靠 Porto 靠背長度。"
+    },
+    "recline": {
+      "value": "可調至躺姿 · 段數未公布",
+      "status": "reference",
+      "sources": [
+        "portoHK",
+        "portoManual",
+        "portoDE"
+      ],
+      "detail": "香港頁及說明書未列固定段數／角度；德國官網另稱無段式，香港實售款調節方式需核對。"
+    },
+    "calf": {
+      "value": "2段腿托",
+      "status": "verified",
+      "sources": [
+        "portoManual"
+      ],
+      "detail": "全球官方說明書明確列2段，與靠背分開調節。"
+    },
+    "direction": {
+      "value": "向前",
+      "status": "verified",
+      "sources": [
+        "porto",
+        "portoManual"
+      ],
+      "detail": "標準座椅向前；另購指定汽座面向父母安裝不等於標準座椅雙向。"
+    },
+    "structure": {
+      "value": "獨立調背、腿托；非固定L形",
+      "status": "reference",
+      "sources": [
+        "portoManual"
+      ],
+      "detail": "依說明書圖20–23判斷，靠背夾角可改變，腿托另調；不是固定L形整座後傾。"
+    },
+    "suspension": {
+      "value": "四輪避震",
+      "status": "verified",
+      "sources": [
+        "porto",
+        "portoHK"
+      ],
+      "detail": "四輪避震搭配EVA輪胎；未有本次路面實測。"
+    },
+    "wheels": {
+      "value": "前13.9 / 後16.5 cm",
+      "status": "verified",
+      "sources": [
+        "portoHK",
+        "porto"
+      ],
+      "detail": "香港／英文官方規格；EVA輪胎，德國前輪標示四捨五入為14cm。"
+    },
+    "folded": {
+      "value": "23 × 44 × 55.3 cm*",
+      "status": "reference",
+      "sources": [
+        "portoHK",
+        "porto"
+      ],
+      "detail": "*香港長×闊×高，最緊湊尺寸不含扶手；現行新加坡官方另列闊45.2cm。收後可自立。"
+    },
+    "unfolded": {
+      "value": "88.5 × 45.2 × 106 cm",
+      "status": "verified",
+      "sources": [
+        "portoHK",
+        "porto"
+      ],
+      "detail": "長×闊×高；採香港及英文官方展開尺寸。"
+    },
+    "basket": {
+      "value": "4.5 kg",
+      "status": "verified",
+      "sources": [
+        "portoManual",
+        "porto"
+      ],
+      "detail": "全球官方說明書列購物籃承重4.5kg。",
+      "number": 4.5
+    },
+    "ergonomic": {
+      "value": "可調靠背 · 2段腿托 · 通風背部",
+      "status": "reference",
+      "sources": [
+        "portoManual",
+        "porto"
+      ],
+      "detail": "方便配合坐躺姿勢及通風，腰背貼合仍要試坐；未有證據證明護脊優於其他款，亦未核實本型號AGR認證。"
+    },
+    "strengths": {
+      "value": "單手自動收車 · 自立 · 加厚肩帶",
+      "status": "verified",
+      "sources": [
+        "porto",
+        "portoHK"
+      ],
+      "detail": "肩帶可收納；指定Joie汽座免轉接器安裝，UPF50+防潑水篷、通風網布及後背拉鏈袋。"
+    },
+    "limits": {
+      "value": "單向；最小收車尺寸須拆扶手",
+      "status": "reference",
+      "sources": [
+        "portoHK",
+        "porto"
+      ],
+      "detail": "機艙攜帶最終按航空公司及航班規定，不能保證；重量及收車闊度有市場差異。"
+    },
+    "included": {
+      "value": "雨罩、旅行袋、杯架",
+      "status": "verified",
+      "sources": [
+        "portoHK"
+      ],
+      "detail": "香港單車套裝資料；汽座及soft carry cot另購。"
+    },
+    "warranty": {
+      "value": "香港行貨2年",
+      "status": "verified",
+      "sources": [
+        "portoHK"
+      ],
+      "detail": "香港原廠總代理行貨，按實際購買及保養條款。"
+    }
+  }
+}
   ];
 })();
